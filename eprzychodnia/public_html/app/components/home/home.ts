@@ -20,7 +20,7 @@ export class Home {
   onLogout() {
     this.auth.logout()
       .subscribe(
-        () => this.router.navigate(['../Login']),
+        () => this.router.navigate(['/logowanie']),
       );
   }
 }

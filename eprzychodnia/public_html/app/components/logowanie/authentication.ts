@@ -29,6 +29,25 @@ export class Authentication {
 
       for the purpose of this cookbook, we will juste simulate that
     */
+    var db = new PouchDB('http://localhost:5984/eprzychodnia', {
+
+        auth: {
+            username: 'pfic',
+            password: 'piotr7109'
+          }
+    });
+    var dane = '["'+login+'","'+ haslo+'"]';
+    db.query(function(doc) {
+        if(doc.login && doc.haslo)
+          emit([doc.login, doc.haslo], doc._id)
+    }, {key: ["lekarz", "arr2"]})
+    .then(function (result) {
+        console.log(result.rows[0].id);
+    }).catch(function (err) {
+        // handle any errors
+    });
+    
+    
     if (login === 'test' && haslo === 'test') {
       this.token = 'token';
       localStorage.setItem('token', this.token);
