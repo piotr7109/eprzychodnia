@@ -23,4 +23,4 @@ export class Home {
         () => this.router.navigate(['/logowanie']),
       );
   }
-}
+} 
