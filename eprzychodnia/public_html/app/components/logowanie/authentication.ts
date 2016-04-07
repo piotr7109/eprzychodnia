@@ -2,7 +2,7 @@
 import {Injectable} from 'angular2/core';
 
 @Injectable()
-export class Authentication {
+export class Authentication { 
   token: string;
 
   constructor() {
