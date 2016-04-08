@@ -19,8 +19,5 @@ import {Lekarz} from '/app/modules/uzytkownik/lekarz/lekarz.ts';
 
 export class App{
     constructor(){
-        let lekarz = new Lekarz();
-        lekarz.setId(10);
-        console.log(lekarz);
     }
 }

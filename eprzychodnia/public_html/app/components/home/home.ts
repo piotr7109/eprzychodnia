@@ -7,10 +7,7 @@ import {czyZalogowany}  from '/app/services/logowanie/czy-zalogowany.ts';
 @Component({
   selector: 'home',
   directives: [],
-  template: `
-    <h2>I am logged in</h2>
-    <a href="#" (click)="onLogout()">Logout</a>
-  `
+  templateUrl:"/app/views/home/home.html" 
 })
 
 @CanActivate(() => czyZalogowany())

@@ -5,28 +5,45 @@ import {Authentication} from 'app/components/logowanie/authentication.ts';
 
 @Component({
     selector: 'logowanie',
-    directives: [ FORM_DIRECTIVES, NgIf],
+    directives: [FORM_DIRECTIVES, NgIf],
     templateUrl: '/app/views/logowanie/logowanie.html'
 })
 
-export class LogowanieComponent
-{
+export class LogowanieComponent {
     form: ControlGroup;
     error: boolean = false;
-    constructor(fb: FormBuilder, public auth: Authentication, public router: Router)
-    {
+    constructor(fb: FormBuilder, public auth: Authentication, public router: Router) {
         this.form = fb.group({
-            login: ['', Validators.required], 
+            login: ['', Validators.required],
             haslo: ['', Validators.required]
         });
     }
-    
-    onSubmit(value: any)
-    {
+
+    onSubmit(value: any) {
         this.auth.login(value.login, value.haslo)
-            .subscribe(
-                (token: any) =>{this.router.navigate(['../Home']); },
-                () => {this.error = true; }
-            );
+            .then(function(uzytkownik) {
+                if (uzytkownik == null) {
+                    this.error = true;
+
+                }
+                return this.error;
+            })
+            .then(function(czy_error:boolean) {
+                if (czy_error) 
+                {
+                    $("#logowanie_alert").css("display","block");
+                }
+                else
+                {
+                    $("#logowanie_alert").css("display","none");
+                }
+            })
+            .then(
+                (token: any) => { this.router.navigate(['../Home']); }
+
+            )
+            .catch(function(err) {
+                this.error = true;
+            });
     }
 }
