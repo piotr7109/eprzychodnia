@@ -8,10 +8,20 @@ export class UzytkownikFactory
     {
         var uz = new Uzytkownik();
         uz.setId(row.id);
-        uz.setLogin(row.key[0]);
-        uz.setHaslo(row.key[1]);
+        uz.setLogin(row.login);
+        uz.setHaslo(row.haslo);
         
         return uz;
+    }
+    static getUzytkownik(id:number)
+    {
+        var db = Database.db;
+        
+        return db.get(id).then(function (doc) {
+            return UzytkownikFactory.fetchObject(doc);
+          }).catch(function (err) {
+            console.log(err);
+          });
     }
     
     static getIdUzytkownikaByLoginAndHaslo(uzytkownik:Uzytkownik):number
@@ -20,7 +30,17 @@ export class UzytkownikFactory
         return db.query(function(doc) {
             if(doc.login && doc.haslo)
               emit([doc.login, doc.haslo], doc._id)
-        }, {key: [uzytkownik.login, uzytkownik.haslo]});
+        }, {key: [uzytkownik.login, uzytkownik.haslo]})
+        .then(function(result) 
+            {
+                if (result.rows.length > 0) {
+                    return result.rows[0].id;
+                }
+                else {
+                    return null;
+                }
+                
+            });
         
     }
 }

@@ -39,7 +39,7 @@ export class LogowanieComponent {
                 }
             })
             .then(
-                (token: any) => { this.router.navigate(['../Home']); }
+                (token: any) => { this.router.navigate(['/Home']); }
 
             )
             .catch(function(err) {

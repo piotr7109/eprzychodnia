@@ -17,20 +17,16 @@ export class Authentication {
         uzytkownik.setLogin(login);
         uzytkownik.setHaslo(haslo);
         return UzytkownikFactory.getIdUzytkownikaByLoginAndHaslo(uzytkownik)
-            .then(function(result) {
-                if (result.rows.length > 0) {
-                    console.log("A");
-                    var row = result.rows[0];
-                    uzytkownik = UzytkownikFactory.fetchObject(row);
-                    this.token = uzytkownik.getId();
+            .then(function(id_uzytkownika:number){
+                if (id_uzytkownika != null && id_uzytkownika != 0)
+                {
+                    this.token = id_uzytkownika;
                     localStorage.setItem('token', this.token);
-                    console.log("B");
+                    return UzytkownikFactory.getUzytkownik(id_uzytkownika);
                 }
-                else {
-                    uzytkownik = null;
-                }
-
-            }).catch(function(err) {
+                return null;
+            })
+            .catch(function(err) {
                 // handle any errors
             });
     }
