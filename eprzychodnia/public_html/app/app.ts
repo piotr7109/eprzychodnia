@@ -3,6 +3,8 @@ import {RouteConfig, ROUTER_DIRECTIVES, Router} from 'angular2/router';
 import {LogowanieComponent} from '/app/components/logowanie/logowanie.component.ts';
 import {Home} from '/app/components/home/home.ts';
 
+import {Lekarz} from '/app/modules/uzytkownik/lekarz/lekarz.ts';
+
 @Component({
     selector: 'app',
     directives: [ROUTER_DIRECTIVES],
@@ -16,5 +18,9 @@ import {Home} from '/app/components/home/home.ts';
 ])
 
 export class App{
-    constructor(){}
+    constructor(){
+        let lekarz = new Lekarz();
+        lekarz.setId(10);
+        console.log(lekarz);
+    }
 }
