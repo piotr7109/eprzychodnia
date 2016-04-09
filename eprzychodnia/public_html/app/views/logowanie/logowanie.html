@@ -1,6 +1,6 @@
 <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
     class="fa navbar-form navbar-left form-singin">
-    <div class="alert alert-danger" role="alert" id="logowanie_alert" style="display:none">
+    <div *ngIf="error" class="alert alert-danger" role="alert" id="logowanie_alert" >
             <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
             Błędne dane logowania :(
     </div>

@@ -2,12 +2,19 @@
 import {Injectable} from 'angular2/core';
 import {UzytkownikFactory} from "/app/modules/uzytkownik/uzytkownik_factory.ts";
 import {Uzytkownik} from "/app/modules/uzytkownik/uzytkownik.ts";
+import {Http} from 'angular2/http';
+import {Observable} from 'rxjs/Observable';
+import {Observer} from 'rxjs/Observer';
+import 'rxjs/add/operator/share';
+import 'rxjs/add/operator/map';
+import {Database} from "/app/components/config/database.ts"
+
 
 @Injectable()
 export class Authentication {
     token: string;
 
-    constructor() {
+    constructor(public http: Http) {
         this.token = localStorage.getItem('token');
     }
 
@@ -16,19 +23,8 @@ export class Authentication {
         let uzytkownik = new Uzytkownik();
         uzytkownik.setLogin(login);
         uzytkownik.setHaslo(haslo);
-        return UzytkownikFactory.getIdUzytkownikaByLoginAndHaslo(uzytkownik)
-            .then(function(id_uzytkownika:number){
-                if (id_uzytkownika != null && id_uzytkownika != 0)
-                {
-                    this.token = id_uzytkownika;
-                    localStorage.setItem('token', this.token);
-                    return UzytkownikFactory.getUzytkownik(id_uzytkownika);
-                }
-                return null;
-            })
-            .catch(function(err) {
-                // handle any errors
-            });
+        return UzytkownikFactory.getIdUzytkownikaByLoginAndHaslo(this.http,uzytkownik);
+
     }
 
     logout() {
@@ -45,7 +41,6 @@ export class Authentication {
           localStorage.removeItem('token');
         });
          */
-
         this.token = undefined;
         localStorage.removeItem('token');
 

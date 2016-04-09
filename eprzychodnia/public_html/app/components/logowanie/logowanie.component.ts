@@ -21,29 +21,14 @@ export class LogowanieComponent {
 
     onSubmit(value: any) {
         this.auth.login(value.login, value.haslo)
-            .then(function(uzytkownik) {
-                if (uzytkownik == null) {
-                    this.error = true;
+            
+            .subscribe(
+            (id: number) => {localStorage.setItem('token', id); this.router.navigate(['/Home']); },
+            () => { this.error = true; console.log("BLAD") }
 
-                }
-                return this.error;
-            })
-            .then(function(czy_error:boolean) {
-                if (czy_error) 
-                {
-                    $("#logowanie_alert").css("display","block");
-                }
-                else
-                {
-                    $("#logowanie_alert").css("display","none");
-                }
-            })
-            .then(
-                (token: any) => { this.router.navigate(['/Home']); }
-
-            )
-            .catch(function(err) {
-                this.error = true;
-            });
+            );
+        /*.catch(function(err) {
+            this.error = true;
+        });*/
     }
 }
