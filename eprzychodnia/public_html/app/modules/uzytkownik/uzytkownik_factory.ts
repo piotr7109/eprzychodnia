@@ -12,14 +12,18 @@ export class UzytkownikFactory {
 
         return uz;
     }
-    static getUzytkownik(id: number) {
+    static getUzytkownik(http:Http,     id: number) {
         var db = Database.db;
-
-        return db.get(id).then(function(doc) {
-            return UzytkownikFactory.fetchObject(doc);
-        }).catch(function(err) {
-            console.log(err);
-        });
+        var query = id;
+        return http.get(db + query)
+            .map((res: any) => {
+                let data = res.json();
+                
+                if (data!= null) {
+                    return UzytkownikFactory.fetchObject(data);
+                }
+                return null;
+            });
     }
 
     static getIdUzytkownikaByLoginAndHaslo(http: Http, uzytkownik: Uzytkownik): number {
