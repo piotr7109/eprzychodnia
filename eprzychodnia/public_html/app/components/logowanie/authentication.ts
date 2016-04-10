@@ -23,24 +23,12 @@ export class Authentication {
         let uzytkownik = new Uzytkownik();
         uzytkownik.setLogin(login);
         uzytkownik.setHaslo(haslo);
-        return UzytkownikFactory.getIdUzytkownikaByLoginAndHaslo(this.http,uzytkownik);
+        return UzytkownikFactory.getIdUzytkownikaByLoginAndHaslo(this.http, uzytkownik);
 
     }
 
     logout() {
-        /*
-         * If we had a login api, we would have done something like this
-    
-        return this.http.get(this.config.serverUrl + '/auth/logout', {
-          headers: new Headers({
-            'x-security-token': this.token
-          })
-        })
-        .map((res : any) => {
-          this.token = undefined;
-          localStorage.removeItem('token');
-        });
-         */
+
         this.token = undefined;
         localStorage.removeItem('token');
         localStorage.removeItem('typ_uzytkownika');
