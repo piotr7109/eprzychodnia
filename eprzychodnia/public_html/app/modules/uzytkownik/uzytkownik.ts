@@ -1,4 +1,6 @@
 import {BaseModule} from "/app/modules/base_module.ts";
+import {Database} from "/app/components/config/database.ts";
+import {Http, Headers} from 'angular2/http';
 
 export class Uzytkownik extends BaseModule {
     protected id: number;
@@ -10,10 +12,9 @@ export class Uzytkownik extends BaseModule {
     protected pesel: number;
     protected telefon: number;
     protected email: String;
-    protected typ_uzytkownika:String;
-    
-    constructor()
-    {
+    protected typ_uzytkownika: String;
+
+    constructor(private http: Http) {
         super();
         this.kategoria = "uzytkownik";
         this.typ_uzytkownika = "base_uzytkownik";
@@ -74,13 +75,22 @@ export class Uzytkownik extends BaseModule {
     getEmail(): String {
         return this.email;
     }
-    getTypUzytkownika():String
-    {
+    getTypUzytkownika(): String {
         return this.typ_uzytkownika
     }
-    setTypUzytkownika(typ_uzytkownika:String)
-    {
+    setTypUzytkownika(typ_uzytkownika: String) {
         this.typ_uzytkownika = typ_uzytkownika;
     }
-    
+
+    insert(http:Http, value:any) {
+        let db = Database.db;
+        let headers = new Headers();
+        headers.append('Accept', 'application/json');
+        headers.append('Content-Type', 'application/json');
+        return http.post(db, JSON.stringify(value), {
+            headers: headers
+        })
+        .map(res => res.json()).subscribe();
+    }
+
 }

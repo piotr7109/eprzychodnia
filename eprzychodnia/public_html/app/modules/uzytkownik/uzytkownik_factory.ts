@@ -4,7 +4,7 @@ import {Http} from 'angular2/http';
 
 export class UzytkownikFactory {
 
-    static fetchObject(row: any): Uzytkownik {
+    public static fetchObject(row: any): Uzytkownik {
         var uz = new Uzytkownik();
         uz.setId(row._id);
         uz.setLogin(row.login);
