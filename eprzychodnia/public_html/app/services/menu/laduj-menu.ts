@@ -4,7 +4,7 @@ import {bootstrap} from 'angular2/platform/browser';
 import {MenuLekarz}  from '/app/components/menu/menu_lekarz.ts';
 import {MenuPacjent}  from '/app/components/menu/menu_lekarz.ts';
 import {MenuAsystent}  from '/app/components/menu/menu_lekarz.ts';
-import {ManuPielegniarka}  from '/app/components/menu/menu_lekarz.ts';
+import {MenuPielegniarka}  from '/app/components/menu/menu_lekarz.ts';
 
 
 export function ladujMenu() {
