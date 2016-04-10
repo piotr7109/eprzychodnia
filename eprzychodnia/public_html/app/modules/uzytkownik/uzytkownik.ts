@@ -13,6 +13,7 @@ export class Uzytkownik extends BaseModule {
     protected telefon: number;
     protected email: String;
     protected typ_uzytkownika: String;
+    protected aktywny:String;
 
     constructor(private http: Http) {
         super();
@@ -80,6 +81,14 @@ export class Uzytkownik extends BaseModule {
     }
     setTypUzytkownika(typ_uzytkownika: String) {
         this.typ_uzytkownika = typ_uzytkownika;
+    }
+    getAktywny():String
+    {
+        return this.aktywny;
+    }
+    setAktywny(aktywny:String)
+    {
+        this.aktywny = aktywny;
     }
 
     insert(http:Http, value:any) {

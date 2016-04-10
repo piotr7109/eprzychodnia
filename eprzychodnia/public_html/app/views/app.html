@@ -1,9 +1,29 @@
-<div id="menu" >
+<div *ngIf='typ_uzytkownika=="lekarz"' id="menu" >
     <ul>
         <li><a [routerLink]="['/Home']">Lekarz</a></li>
         <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
         <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
-
+    </ul>
+</div>
+<div *ngIf='typ_uzytkownika=="pacjent"' id="menu" >
+    <ul>
+        <li><a [routerLink]="['/Home']">Pacjent</a></li>
+        <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
+        <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
+    </ul>
+</div>
+<div *ngIf='typ_uzytkownika=="pielegniarka"' id="menu" >
+    <ul>
+        <li><a [routerLink]="['/Home']">Pielęgniarka</a></li>
+        <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
+        <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
+    </ul>
+</div>
+<div *ngIf='typ_uzytkownika=="asystent"' id="menu" >
+    <ul>
+        <li><a [routerLink]="['/Home']">Asystent</a></li>
+        <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
+        <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
     </ul>
 </div>
 <div id="content-right">
