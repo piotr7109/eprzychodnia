@@ -6,26 +6,50 @@
         <title>E-przychodnia</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/assets/libs/jquery.min.js"></script>
+        <script src="/assets/libs/sprintf.min.js"></script>
+
+
+
         <script src="https://code.angularjs.org/tools/traceur-runtime.js"></script>
         <script src="https://code.angularjs.org/tools/system.js"></script>
         <script src="https://code.angularjs.org/tools/typescript.js"></script>
         <script src="https://code.angularjs.org/2.0.0-alpha.53/angular2.js"></script>
         <script src="https://code.angularjs.org/2.0.0-alpha.53/router.dev.js"></script>
-        <script src="https://npmcdn.com/@reactivex/rxjs@5.0.0-alpha.14/dist/global/Rx.js"></script>
+        <script src="https://code.angularjs.org/2.0.0-beta.13/angular2-polyfills.js"></script>
+        <script src="https://code.angularjs.org/2.0.0-beta.11/Rx.js"></script>
+        <script src="/assets/libs/http.dev.js"></script>
         <script src="/assets/libs/pouchdb.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/assets/libs/bootstrap/css/bootstrap.css"></link>
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css"></link>
+        <script src="/assets/libs/bootstrap/js/bootstrap.js"></script>
         <script>
             System.config({
-                transpiler: 'typescript', 
-                typescriptOptions: { emitDecoratorMetadata: true }, 
-                packages: {'src': {defaultExtension: 'ts'}} 
+                transpiler: 'typescript',
+                typescriptOptions: {emitDecoratorMetadata: true},
+                packages: {'src': {defaultExtension: 'ts'}},
+                "meta": {
+                    "app.js": {
+                        "format": "register"
+                    }
+                }
             });
         </script>
         <script>
             System.import('/app/bootstrap.ts').then(null, console.error.bind(console));
         </script>
     </head>
-    <body>
-        <div>TROLOLO</div>
-    <app></app>
+    <body class="col-lg-12">
+        <div class="wrapper col-lg-12 " id="main-container">
+            <div id="header">
+                <h1>E-przychodnia</h1>
+            </div>
+            <div id="content">
+
+                <app></app>
+
+            </div>
+        </div>
+
     </body>
 </html>

@@ -1,80 +1,38 @@
 // authentication.ts
 import {Injectable} from 'angular2/core';
+import {UzytkownikFactory} from "/app/modules/uzytkownik/uzytkownik_factory.ts";
+import {Uzytkownik} from "/app/modules/uzytkownik/uzytkownik.ts";
+import {Http} from 'angular2/http';
+import {Observable} from 'rxjs/Observable';
+import {Observer} from 'rxjs/Observer';
+import 'rxjs/add/operator/share';
+import 'rxjs/add/operator/map';
+import {Database} from "/app/components/config/database.ts"
+
 
 @Injectable()
-export class Authentication { 
-  token: string;
+export class Authentication {
+    token: string;
 
-  constructor() {
-    this.token = localStorage.getItem('token');
-  }
-
-  login(login: String, haslo: String) {
-    /*
-     * If we had a login api, we would have done something like this
-
-    return this.http.post('/auth/login', JSON.stringify({
-        username: username,
-        password: password
-      }), {
-        headers: new Headers({
-          'Content-Type': 'application/json'
-        })
-      })
-      .map((res : any) => {
-        let data = res.json();
-        this.token = data.token;
-        localStorage.setItem('token', this.token);
-      });
-
-      for the purpose of this cookbook, we will juste simulate that
-    */
-    var db = new PouchDB('http://localhost:5984/eprzychodnia', {
-
-        auth: {
-            username: 'pfic',
-            password: 'piotr7109'
-          }
-    });
-    var dane = '["'+login+'","'+ haslo+'"]';
-    db.query(function(doc) {
-        if(doc.login && doc.haslo)
-          emit([doc.login, doc.haslo], doc._id)
-    }, {key: ["lekarz", "arr2"]})
-    .then(function (result) {
-        console.log(result.rows[0].id);
-    }).catch(function (err) {
-        // handle any errors
-    });
-    
-    
-    if (login === 'test' && haslo === 'test') {
-      this.token = 'token';
-      localStorage.setItem('token', this.token);
-      return Rx.Observable.of('token'); 
+    constructor(public http: Http) {
+        this.token = localStorage.getItem('token');
     }
 
-    return Rx.Observable.throw('authentication failure');
-  }
+    login(login: String, haslo: String) {
 
-  logout() {
-    /*
-     * If we had a login api, we would have done something like this
+        let uzytkownik = new Uzytkownik();
+        uzytkownik.setLogin(login);
+        uzytkownik.setHaslo(haslo);
+        return UzytkownikFactory.getIdUzytkownikaByLoginAndHaslo(this.http, uzytkownik);
 
-    return this.http.get(this.config.serverUrl + '/auth/logout', {
-      headers: new Headers({
-        'x-security-token': this.token
-      })
-    })
-    .map((res : any) => {
-      this.token = undefined;
-      localStorage.removeItem('token');
-    });
-     */
+    }
 
-    this.token = undefined;
-    localStorage.removeItem('token');
+    logout() {
 
-    return Rx.Observable.of(true);
-  }
+        this.token = undefined;
+        localStorage.removeItem('token');
+        localStorage.removeItem('typ_uzytkownika');
+
+        return Rx.Observable.of(true);
+    }
 }
