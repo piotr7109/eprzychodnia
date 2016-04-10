@@ -9,17 +9,24 @@ export class UzytkownikFactory {
         uz.setId(row._id);
         uz.setLogin(row.login);
         uz.setHaslo(row.haslo);
+        uz.setDataZalozenia(row.data_zalozenia);
+        uz.setImie(row.imie);
+        uz.setNazwisko(row.nazwisko);
+        uz.setPesel(row.pesel);
+        uz.setTelefon(row.telefon);
+        uz.setEmail(row.email);
+        uz.setTypUzytkownika(row.typ_uzytkownika);
 
         return uz;
     }
-    static getUzytkownik(http:Http,     id: number) {
+    static getUzytkownik(http: Http, id: number) {
         var db = Database.db;
         var query = id;
         return http.get(db + query)
             .map((res: any) => {
                 let data = res.json();
-                
-                if (data!= null) {
+
+                if (data != null) {
                     return UzytkownikFactory.fetchObject(data);
                 }
                 return null;
@@ -33,9 +40,14 @@ export class UzytkownikFactory {
         return http.get(db + query)
             .map((res: any) => {
                 let data = res.json();
+                console.log(data.rows.length);
                 if (data.rows.length > 0) {
-                    let id = data.rows[0].id;
-                    return id;
+
+                    let uz: Uzytkownik = new Uzytkownik();
+                    uz.setId(data.rows[0].id);
+                    uz.setTypUzytkownika(data.rows[0].value);
+
+                    return uz;
                 }
                 return Rx.Observable.throw('authentication failure');
             });

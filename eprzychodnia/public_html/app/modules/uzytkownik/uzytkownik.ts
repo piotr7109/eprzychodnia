@@ -78,5 +78,9 @@ export class Uzytkownik extends BaseModule {
     {
         return this.typ_uzytkownika
     }
+    setTypUzytkownika(typ_uzytkownika:String)
+    {
+        this.typ_uzytkownika = typ_uzytkownika;
+    }
     
 }
