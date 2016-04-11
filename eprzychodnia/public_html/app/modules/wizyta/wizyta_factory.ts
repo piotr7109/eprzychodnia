@@ -12,7 +12,6 @@ expost class WizytaFactory {
         wz.setId_lekarza(row.id_lekarza);
         wz.setChoroba_nazwa(row.choroba_nazwa);
         wz.setChoroba_opis(row.choroba_opis);
-        wz.setEmail(row.email);
         
         return wz;
     }

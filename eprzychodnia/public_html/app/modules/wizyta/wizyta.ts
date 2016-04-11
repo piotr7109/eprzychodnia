@@ -9,7 +9,6 @@ export class Wizyta extends BaseModule {
     protected id_lekarza: number;
     protected choroba_nazwa: String;
     protected choroba_opis: String;
-    protected email: String;
 
     constructor(private http: Http) {
         super();
@@ -52,12 +51,7 @@ export class Wizyta extends BaseModule {
     setChoroba_opis(choroba_opis: String) {
         this.choroba_opis = choroba_opis;
     }
-    getEmail(): String {
-        return this.email;
-    }
-    setEmail(email: String) {
-        this.email = email;
-    }
+
 
 
 
