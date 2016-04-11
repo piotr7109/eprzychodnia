@@ -2,13 +2,13 @@
     <ul>
         <li><a [routerLink]="['/Home']">Lekarz</a></li>
         <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
+        <li><a [routerLink]="['/PacjenciLista']">Lista pacjentów</a></li>
         <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
     </ul>
 </div>
 <div *ngIf='typ_uzytkownika=="pacjent"' id="menu" >
     <ul>
         <li><a [routerLink]="['/Home']">Pacjent</a></li>
-        <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
         <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
     </ul>
 </div>
