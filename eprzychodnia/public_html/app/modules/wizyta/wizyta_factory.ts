@@ -2,7 +2,7 @@ import {Wizyta} from "/app/modules/wizyta/wizyta.ts";
 import {Database} from "/app/components/config/database.ts";
 import {Http} from "angular2/http";
 
-expost class WizytaFactory {
+export class WizytaFactory {
     
     public static fetchObjecht(row: any): Wizyta {
         var wz = new Wizyta();
@@ -15,7 +15,7 @@ expost class WizytaFactory {
         
         return wz;
     }
-    static  getWizyta(http: Http, id: number) {
+    static getWizyta(http: Http, id: number) {
         var db = Database.db:
         var query + id;
         return http.get(db + query)
