@@ -19,7 +19,7 @@ import {Home} from '/app/components/home/home.ts';
     { path: '/', redirectTo: ['Logowanie'] },
     { path: '/logowanie', name: 'Logowanie', component: LogowanieComponent },
     { path: '/home', name: 'Home', component: Home },
-    { path: '/rejestracja_pacjenta', name: 'RejestracjaPacjenta', component: RejestracjaPacjenta }
+    { path: '/rejestracja_pacjenta', name: 'RejestracjaPacjenta', component: RejestracjaPacjenta },
     { path: '/pacjenci_lista', name: 'PacjenciLista', component: PacjenciLista }
 ])
 
