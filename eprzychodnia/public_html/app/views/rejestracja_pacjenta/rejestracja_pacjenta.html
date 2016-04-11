@@ -1,5 +1,7 @@
+<h2 id="content-header">Rejestracja pacjenta</h2>
+
 <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
-    >
+    class=" navbar-left form-singin">
     <div *ngIf="error" class="alert alert-danger" role="alert" id="logowanie_alert" >
             <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
             Błędne dane logowania :(
@@ -18,6 +20,16 @@
         <input type="text" class="form-control" placeholder="Nazwisko" ngControl="nazwisko" required="">
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Zaloguj</button>
+        <input type="text" class="form-control" placeholder="PESEL" ngControl="pesel" required="">
     </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Telefon kontaktowy" ngControl="telefon" required="">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="E-mail" ngControl="email" required="">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Rejestruj</button>
+    </div>
+    
 </form>

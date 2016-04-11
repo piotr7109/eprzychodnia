@@ -16,10 +16,7 @@ export class UzytkownikFactory {
         uz.setTelefon(row.telefon);
         uz.setEmail(row.email);
         uz.setTypUzytkownika(row.typ_uzytkownika);
-<<<<<<< HEAD
-=======
         uz.setAktywny(row.aktywny);
->>>>>>> origin/master
 
         return uz;
     }

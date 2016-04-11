@@ -70,8 +70,6 @@ body
 #content #content-right
 {
     margin-left: 160px;
-<<<<<<< HEAD
-=======
 }
 
 #content #content-right #content-header
@@ -87,5 +85,4 @@ body
     background: rgba(255,255,255, 0.4);
     height: 60px;
     
->>>>>>> origin/master
 }

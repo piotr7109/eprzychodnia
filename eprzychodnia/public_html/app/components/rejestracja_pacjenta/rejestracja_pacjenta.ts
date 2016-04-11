@@ -8,7 +8,7 @@ import {Http} from 'angular2/http';
 @Component({
     selector: 'rejestracja-pacjenta',
     directives: [FORM_DIRECTIVES, NgIf],
-    templateUrl: "/app/views/rejestracja_pacjenta/rejestracja_pacjenta.html"
+    templateUrl: "/app/views/pacjent/rejestracja_pacjenta.html"
 
 })
 
@@ -21,7 +21,10 @@ export class RejestracjaPacjenta implements OnInit()
             login: ['', Validators.required],
             haslo: ['', Validators.required],
             imie: ['', Validators.required],
-            nazwisko: ['', Validators.required]
+            nazwisko: ['', Validators.required],
+            pesel: ['', Validators.required],
+            telefon: ['', Validators.required],
+            email : ['', Validators.required]
         });
     }
     ngOnInit()
@@ -31,6 +34,8 @@ export class RejestracjaPacjenta implements OnInit()
     onSubmit(value: any) {
 
         let uz:Uzytkownik = UzytkownikFactory.fetchObject( value);
+        value.kategoria = "uzytkownik";
+        value.typ_uzytkownika = "pacjent";
         uz.insert(this.http,value);
         
     }

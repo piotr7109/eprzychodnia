@@ -2,10 +2,6 @@ import {Component, OnInit} from 'angular2/core';
 import {Router, CanActivate} from 'angular2/router';
 import {Authentication} from '/app/components/logowanie/authentication.ts';
 import {czyZalogowany}  from '/app/services/logowanie/czy-zalogowany.ts';
-<<<<<<< HEAD
-//import {ladujMenu}  from '/app/services/menu/laduj-menu.ts';
-=======
->>>>>>> origin/master
 import {UzytkownikFactory}  from '/app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Uzytkownik}  from '/app/modules/uzytkownik/uzytkownik.ts';
 import {Http}  from 'angular2/http';
@@ -29,26 +25,6 @@ export class Home implements OnInit {
         UzytkownikFactory.getUzytkownik(this.http, this.id_uzytkownika)
             .subscribe((uzytkownik: Uzytkownik) => {
                 this.uzytkownik = uzytkownik;
-<<<<<<< HEAD
-                
-            });
-
-    }
-    onLogout() {
-        this.auth.logout()
-            .subscribe(
-            () => this.router.navigate(['../Login']),
-        );
-    }
-}
-  onLogout() {
-    this.auth.logout()
-      .subscribe(
-        () => this.router.navigate(['/logowanie']),
-      );
-  }
-} 
-=======
 
             });
 
@@ -60,4 +36,3 @@ export class Home implements OnInit {
         );
     }
 }
->>>>>>> origin/master
