@@ -13,6 +13,10 @@ export class Uzytkownik extends BaseModule {
     protected telefon: number;
     protected email: String;
     protected typ_uzytkownika: String;
+<<<<<<< HEAD
+=======
+    protected aktywny:String;
+>>>>>>> origin/master
 
     constructor(private http: Http) {
         super();
@@ -81,6 +85,17 @@ export class Uzytkownik extends BaseModule {
     setTypUzytkownika(typ_uzytkownika: String) {
         this.typ_uzytkownika = typ_uzytkownika;
     }
+<<<<<<< HEAD
+=======
+    getAktywny():String
+    {
+        return this.aktywny;
+    }
+    setAktywny(aktywny:String)
+    {
+        this.aktywny = aktywny;
+    }
+>>>>>>> origin/master
 
     insert(http:Http, value:any) {
         let db = Database.db;

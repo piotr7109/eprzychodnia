@@ -1,0 +1,11 @@
+
+<h2 id="content-header">Lista pacjentów</h2>
+
+<div *ngFor="#pacjent of pacjenci; #i = index">
+    <h3 class="col-lg-4">Login: {{pacjent.login}}</h3>
+    <div class="col-lg-4">Imię: {{pacjent.imie}}</div>
+    <div class="col-lg-4">Nazwisko: {{pacjent.nazwisko}}</div>
+    <div class="col-lg-4">PESEL: {{pacjent.pesel}}</div>
+    <div class="col-lg-4">Telefon: {{pacjent.telefon}}</div>
+    <div class="col-lg-4">E-mail {{pacjent.email}}</div>
+</div>

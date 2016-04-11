@@ -1,4 +1,21 @@
 
+<<<<<<< HEAD
 <h2>I am logged in</h2>
 <h3>Zalogowany jako: {{uzytkownik.getLogin()}}</h3>
 <a href="#" (click)="onLogout()">Logout</a>
+=======
+<h2 id="content-header">{{uzytkownik.getTypUzytkownika()}}</h2>
+
+<div>Login: {{uzytkownik.getLogin()}}</div>
+<div>Imię: {{uzytkownik.getImie()}}</div>
+<div>Nazwisko: {{uzytkownik.getNazwisko()}}</div>
+<div>PESEL: {{uzytkownik.getPesel()}}</div>
+<div>Telefon: {{uzytkownik.getTelefon()}}</div>
+<div>E-mail: {{uzytkownik.getEmail()}}</div>
+
+<a href="#" (click)="onLogout()">
+    <button class="btn btn-danger" type="submit">
+        <span class="glyphicon glyphicon-remove-sign"></span> Wyloguj
+    </button>
+</a>
+>>>>>>> origin/master

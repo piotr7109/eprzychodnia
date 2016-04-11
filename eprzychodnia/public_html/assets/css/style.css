@@ -70,4 +70,22 @@ body
 #content #content-right
 {
     margin-left: 160px;
+<<<<<<< HEAD
+=======
+}
+
+#content #content-right #content-header
+{
+    text-transform: capitalize;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width:300px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255, 0.4);
+    height: 60px;
+    
+>>>>>>> origin/master
 }
