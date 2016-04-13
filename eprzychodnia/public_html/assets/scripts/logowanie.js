@@ -13,8 +13,9 @@ if($(document).ready())
         
         //var opacity = $(".jumbotron").opacity();
         //alert(opacity);
+        
         $(".home_page_well").css({opacity:0.5+scrolling/500});
-        $(".home_page_jumbotron").css({opacity:1-scrolling/500});
+        //$(".home_page_jumbotron").css({opacity:1-scrolling/3000});
         
     });
 }

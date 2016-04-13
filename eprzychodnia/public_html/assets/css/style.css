@@ -15,3 +15,10 @@ body
     display: inline-block;
     float:left;
 }
+.home_page_jumbotron
+{
+    background-image: url(/assets/img/home_jumbotron.png);
+    background-size: auto;
+    color: #f8f8f8;
+    
+}
