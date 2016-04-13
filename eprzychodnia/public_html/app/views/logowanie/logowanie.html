@@ -1,84 +1,89 @@
-
+<head>
+    <script type="text/javascript" src="/app/components/modules/uzytkownik/views/logowanie/logowanie.js">alert("cos");</script>
+</head>
+<body>
     
-<div class="col-sm-12" style="white-space: nowrap;">
-    <div class="col-sm-2 home_header_picture_div">
-    <img src="/assets/img/logo.png" width="98" height="37" alt="logo"/>
+
+    <div class="col-sm-12" style="white-space: nowrap;">
+        <div class="col-sm-2 home_header_picture_div">
+        <img src="/assets/img/logo.png" width="98" height="37" alt="logo"/>
 
 
-    </div>
-    <div class="col-sm-10 header_text home_header_div">
-        <span>
-            Elektroniczna platforma
-            <br>
-            Obsługi przychodni
+        </div>
+        <div class="col-sm-10 header_text home_header_div">
+            <span>
+                Elektroniczna platforma
+                <br>
+                Obsługi przychodni
 
-        </span>
-    </div>
-</div>
-
-<div class="col-sm-12" style="margin-top: 60px; ">
-
-
-    <div class="col-sm-4 col-sm-offset-2 text-center jumbotron">
-        <img style="align-content: center;" src="assets/img/People-Patient-Male-icon.png" width="256" height="256" alt="People-Patient-Male-icon"/>
-        <h2>Jestem pacjentem</h2>
-        <h5>Kliknij poniżej jeżeli jesteś pacjentem i chcesz się zarejestrować 
-        , bądź wejść na swój panel</h5>
-        <a href="#" class="btn btn-default" role="button">Panel pacjenta</a>
+            </span>
+        </div>
     </div>
 
-    <div class="col-sm-4 col-sm-offset-1 text-center jumbotron">
-        <img src="assets/img/doctor.png" width="256" height="256" alt="doctor"/>
-        <h3>Jestem pracownikiem przychodni</h3>
-        <h5>Kliknij poniżej jeżeli jesteś pracownikiem przychodni i chcesz 
-        skorzystać z możliwości jakie oferuje ta platforma</h5>
-        <a href="#" class="btn btn-default" role="button">Panel lekarza</a>
-    </div>
-    
-</div>
-<div class="col-sm-offset-3 col-sm-2 well">
-        <img src="../../../assets/img/question_mark.png" width="140" height="140" alt="Co to jest?" class="img-rounded center-block"/>
-
-        <h4>
-            CZYM JEST SYSTEM uDUŚ?
-        </h4>
-    </div>
-    <div class="col-sm-2 well">
-        <img src="../../../assets/img/question_who.png" width="140" height="140" alt="question_who" class="img-circle center-block"/>
-
-        <h4>
-            KTO MOŻE KOŻYSTAĆ Z uDUŚ?
-        </h4>
-    </div>
-    <div class="col-sm-2 well">
-        <img src="../../../assets/img/palm_shake.png" width="140" height="140" alt="palm_shake" class="img-circle center-block"/>
-
-        <h4>
-            CO ZROBIĆ ABY STAĆ SIĘ UŻYTKOWNIKIEM TEGO SYSTEMU
-        </h4>
-    </div>
-   
-        
+    <div class="col-sm-12" style="margin-top: 60px; ">
 
 
+        <div class="col-sm-4 col-sm-offset-2 text-center jumbotron home_page_jumbotron">
+            <img style="align-content: center; " src="assets/img/People-Patient-Male-icon.png" width="256" height="256" alt="People-Patient-Male-icon"/>
+            <h2>Jestem pacjentem</h2>
+            <h5>Kliknij poniżej jeżeli jesteś pacjentem i chcesz się zarejestrować 
+            , bądź wejść na swój panel</h5>
+            <a href="#" class="btn btn-default" role="button">Panel pacjenta</a>
+        </div>
+
+        <div class="col-sm-4 col-sm-offset-1 text-center jumbotron home_page_jumbotron">
+            <img src="assets/img/doctor.png" width="256" height="256" alt="doctor"/>
+            <h3>Jestem pracownikiem przychodni</h3>
+            <h5>Kliknij poniżej jeżeli jesteś pracownikiem przychodni i chcesz 
+            skorzystać z możliwości jakie oferuje ta platforma</h5>
+            <a href="#" class="btn btn-default" role="button">Panel lekarza</a>
+        </div>
+
+    </div>
+    <div class="col-sm-offset-3 col-sm-2 well home_page_well">
+            <img src="../../../assets/img/question_mark.png" width="140" height="140" alt="Co to jest?" class="img-rounded center-block"/>
+
+            <h4>
+                CZYM JEST SYSTEM uDUŚ?
+            </h4>
+        </div>
+        <div class="col-sm-2 well home_page_well">
+            <img src="../../../assets/img/question_who.png" width="140" height="140" alt="question_who" class="img-circle center-block"/>
+
+            <h4>
+                KTO MOŻE KOŻYSTAĆ Z uDUŚ?
+            </h4>
+        </div>
+        <div class="col-sm-2 well home_page_well">
+            <img src="../../../assets/img/palm_shake.png" width="140" height="140" alt="palm_shake" class="img-circle center-block"/>
+
+            <h4>
+                CO ZROBIĆ ABY STAĆ SIĘ UŻYTKOWNIKIEM TEGO SYSTEMU
+            </h4>
+        </div>
 
 
-<!--<h2 id="content-header">Logowanie</h2>
 
-<form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
-    class="fa navbar-form navbar-left form-singin">
-    <div *ngIf="error" class="alert alert-danger" role="alert" id="logowanie_alert" >
-            <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
-            Błędne dane logowania :(
-    </div>
-    
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Login" ngControl="login" required="">
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control" placeholder="Hasło" ngControl="haslo" required="">
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Zaloguj</button>
-    </div>
-</form>-->
+
+
+
+    <!--<h2 id="content-header">Logowanie</h2>
+
+    <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
+        class="fa navbar-form navbar-left form-singin">
+        <div *ngIf="error" class="alert alert-danger" role="alert" id="logowanie_alert" >
+                <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
+                Błędne dane logowania :(
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Login" ngControl="login" required="">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Hasło" ngControl="haslo" required="">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Zaloguj</button>
+        </div>
+    </form>-->
+</body>
