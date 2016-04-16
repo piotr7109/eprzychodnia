@@ -6,6 +6,7 @@ import {UzytkownikFactory}  from '/app/modules/uzytkownik/uzytkownik_factory.ts'
 import {Uzytkownik}  from '/app/modules/uzytkownik/uzytkownik.ts';
 import {Http}  from 'angular2/http';
 
+
 @Component({
     selector: 'home',
     templateUrl: "/app/views/home/home.html"
