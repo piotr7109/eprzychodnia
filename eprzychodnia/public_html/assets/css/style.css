@@ -21,4 +21,22 @@ body
     background-size: auto;
     color: #f8f8f8;
     
+    
+}
+.home_img
+{
+    width: 100px;
+    height: 100px;
+}
+.home_page_well
+{
+    height: 200px;
+    
+}
+.home_page_jumbotron:hover
+{
+    background-image: url(/assets/img/home_jumbotron_hover.png);
+    background-size: auto;
+    cursor: pointer;    
+    color: #f8f8f8;
 }
