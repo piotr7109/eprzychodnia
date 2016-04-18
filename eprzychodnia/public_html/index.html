@@ -7,26 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <script>
-            System.config({
-                transpiler: 'typescript',
-                typescriptOptions: {emitDecoratorMetadata: true},
-                packages: {'src': {defaultExtension: 'ts'}},
-                "meta": {
-                    "app.js": {
-                        "format": "register"
-                    }
-                }
-            });
-        </script>
-        <script>
-            System.import('/app/bootstrap.ts').then(null, console.error.bind(console));
-        </script>
         
-        <!--dominikowe-->
-        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-        <script src="/assets/scripts/logowanie.js"></script>
-        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     </head>
     <body class="col-lg-12">
         <div class="wrapper col-lg-12 " id="main-container">
@@ -54,4 +35,24 @@
         <link rel="stylesheet" type="text/css" href="/assets/libs/bootstrap/css/bootstrap.css"></link>
         <link rel="stylesheet" type="text/css" href="/assets/css/style.css"></link>
         <script src="/assets/libs/bootstrap/js/bootstrap.js"></script>
+        <script>
+            System.config({
+                transpiler: 'typescript',
+                typescriptOptions: {emitDecoratorMetadata: true},
+                packages: {'src': {defaultExtension: 'ts'}},
+                "meta": {
+                    "app.js": {
+                        "format": "register"
+                    }
+                }
+            });
+        </script>
+        <script>
+            System.import('/app/bootstrap.ts').then(null, console.error.bind(console));
+        </script>
+        
+        <!--dominikowe-->
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+        <script src="/assets/scripts/logowanie.js"></script>
+        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 </html>
