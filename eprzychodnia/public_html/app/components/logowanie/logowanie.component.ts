@@ -32,4 +32,8 @@ export class LogowanieComponent {
 
             );
     }
+    navigate(location)
+    {
+         this.router.navigate(location);
+    }
 }
