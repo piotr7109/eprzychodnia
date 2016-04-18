@@ -1,6 +1,6 @@
 body
 {
-    background-image:url(/assets/img/bg.jpg);
+    /*background-image:url(/assets/img/bg.jpg);*/
 }
 .home_header_div
 {
@@ -39,4 +39,10 @@ body
     background-size: auto;
     cursor: pointer;    
     color: #f8f8f8;
+}
+.logowanie_lekarza
+{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
