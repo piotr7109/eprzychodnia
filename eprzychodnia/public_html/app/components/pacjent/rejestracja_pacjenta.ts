@@ -34,9 +34,9 @@ export class RejestracjaPacjenta implements OnInit()
     onSubmit(value: any) {
 
         let uz:Uzytkownik = UzytkownikFactory.fetchObject( value);
-        value.kategoria = "uzytkownik";
-        value.typ_uzytkownika = "pacjent";
-        uz.insert(this.http,value);
+        uz.kategoria = "uzytkownik";
+        uz.typ_uzytkownika = "pacjent";
+        uz.insert(this.http,uz);
         
     }
 }

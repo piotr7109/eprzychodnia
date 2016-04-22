@@ -4,14 +4,14 @@ import {Http} from "angular2/http";
 
 export class WizytaFactory {
     
-    public static fetchObjecht(row: any): Wizyta {
+    public static fetchObject(row: any): Wizyta {
         var wz = new Wizyta();
         wz.setId(row._id);
-        wz.setId_pacjenta(row.id_pacjenta);
-        wz.setData_wizyty(row.data_wizyty);
-        wz.setId_lekarza(row.id_lekarza);
-        wz.setChoroba_nazwa(row.choroba_nazwa);
-        wz.setChoroba_opis(row.choroba_opis);
+        wz.setIdPacjenta(row.id_pacjenta);
+        wz.setDataWizyty(row.data_wizyty);
+        wz.setIdLekarza(row.id_lekarza);
+        wz.setChorobaNazwa(row.choroba_nazwa);
+        wz.setChorobaOpis(row.choroba_opis);
         
         return wz;
     }

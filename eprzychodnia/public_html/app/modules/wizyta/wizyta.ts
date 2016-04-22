@@ -21,34 +21,34 @@ export class Wizyta extends BaseModule {
     setId(id: number) {
         this.id = id;
     }
-    getId_pacjenta(): number {
+    getIdPacjenta(): number {
         return this.id_pacjenta;
     }
-    setId_pacjenta(id_pacjenta: number) {
+    setIdPacjenta(id_pacjenta: number) {
         this.id_pacjenta = id_pacjenta;
     }
-    getData_wizyty(): Date {
+    getDataWizyty(): Date {
         return this.data_wizyty;
     }
-    setData_wizyty(data_wyzyty: Date) {
+    setDataWizyty(data_wizyty: Date) {
         this.Data_wizyty = data_wizyty;
     }
-    getId_lekarza(): number {
+    getIdLekarza(): number {
         return this.id_lekarza;
     }
-    setId_lekarza(id_lekarza: number) {
+    setIdLekarza(id_lekarza: number) {
         this.id_lekarza = id_lekarza;
     }
-    getChoroba_nazwa(): String {
+    getChorobaNazwa(): String {
         return this.choroba_nazwa;
     }
-    setChoroba_nazwa(choroba_nazwa: String) {
+    setChorobaNazwa(choroba_nazwa: String) {
         this.choroba_nazwa = choroba_nazwa;
     }
-    getChoroba_opis(): String {
+    getChorobaOpis(): String {
         return this.choroba_opis;
     }
-    setChoroba_opis(choroba_opis: String) {
+    setChorobaOpis(choroba_opis: String) {
         this.choroba_opis = choroba_opis;
     }
 
@@ -56,6 +56,8 @@ export class Wizyta extends BaseModule {
 
 
     insert(http: Http, value: any) {
+        
+        value.kategoria = "wizyta";
         let db = Database.db;
         let headers = new Headers();
         headers.append('Accept', 'application/json');
@@ -63,7 +65,7 @@ export class Wizyta extends BaseModule {
         return http.post(db, JSON.stringify(value), {
             headers: headers
         })
-            .map(res => res.json()).subscribe();
+            .map(res => {res.json(); return true});
     }
 
 }/* 
