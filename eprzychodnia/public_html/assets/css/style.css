@@ -1,6 +1,6 @@
 body
 {
-    background-image:url(/assets/img/bg.jpg);
+    /*background-image:url(/assets/img/bg.jpg);*/
 }
 .home_header_div
 {
@@ -25,12 +25,12 @@ body
 }
 .home_img
 {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 .home_page_well
 {
-    height: 200px;
+    
     
 }
 .home_page_jumbotron:hover
@@ -39,4 +39,10 @@ body
     background-size: auto;
     cursor: pointer;    
     color: #f8f8f8;
+}
+.logowanie_lekarza
+{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
