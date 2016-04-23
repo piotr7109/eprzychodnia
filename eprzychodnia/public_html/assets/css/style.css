@@ -1,6 +1,12 @@
+html
+{
+    overflow-y: scroll;
+}
 body
 {
-    /*background-image:url(/assets/img/bg.jpg);*/
+    background-image:url(/assets/img/bg.jpg);
+    background-size: 100%;
+    
 }
 .home_header_div
 {
@@ -13,12 +19,15 @@ body
 .home_header_picture_div
 {
     display: inline-block;
-    float:left;
+    float: left;
+    margin-left: 30px;
 }
 .home_page_jumbotron
 {
+    margin-top: 40px;
     background-image: url(/assets/img/home_jumbotron.png);
-    background-size: auto;
+    background-size: 200%;
+    
     color: #f8f8f8;
     
     
@@ -33,6 +42,12 @@ body
     
     
 }
+
+.home_page_right_panel
+{
+    margin-top: 40px;
+}
+
 .home_page_jumbotron:hover
 {
     background-image: url(/assets/img/home_jumbotron_hover.png);
@@ -40,9 +55,19 @@ body
     cursor: pointer;    
     color: #f8f8f8;
 }
+.login_page_jubotron
+{
+    background-image: url(/assets/img/login_page_jumbotron.jpg);
+    padding-left:200px;
+    padding-right: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-size: cover;
+}
 .logowanie_lekarza
 {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    padding-top: 10%;
 }
