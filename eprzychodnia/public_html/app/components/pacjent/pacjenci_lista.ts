@@ -18,7 +18,6 @@ export class PacjenciLista implements OnInit {
     }
 
     ngOnInit() {
-        console.log("init");
         UzytkownikLista.getPacjenciLista(this.http)
         .subscribe(
         (pacjenci:any) => {

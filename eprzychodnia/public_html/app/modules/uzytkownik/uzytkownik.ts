@@ -92,6 +92,7 @@ export class Uzytkownik extends BaseModule {
     }
 
     insert(http:Http, value:any) {
+        value.kategoria = "uzytkownik";
         let db = Database.db;
         let headers = new Headers();
         headers.append('Accept', 'application/json');
