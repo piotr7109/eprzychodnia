@@ -8,4 +8,9 @@
     <div class="col-lg-4">PESEL: {{pacjent.pesel}}</div>
     <div class="col-lg-4">Telefon: {{pacjent.telefon}}</div>
     <div class="col-lg-4">E-mail {{pacjent.email}}</div>
+    <a (click)="onSelect(pacjent)">
+        <button type="button" class="btn btn-warning">
+                Historia pacjenta
+        </button>
+    </a>
 </div>
