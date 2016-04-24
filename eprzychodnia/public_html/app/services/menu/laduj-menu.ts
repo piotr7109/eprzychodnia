@@ -1,10 +1,10 @@
 import {Router, CanActivate, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {provide} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
-import {MenuLekarz}  from '/app/components/menu/menu_lekarz.ts';
-import {MenuPacjent}  from '/app/components/menu/menu_lekarz.ts';
-import {MenuAsystent}  from '/app/components/menu/menu_lekarz.ts';
-import {MenuPielegniarka}  from '/app/components/menu/menu_lekarz.ts';
+import {MenuLekarz}  from 'app/components/menu/menu_lekarz.ts';
+import {MenuPacjent}  from 'app/components/menu/menu_lekarz.ts';
+import {MenuAsystent}  from 'app/components/menu/menu_lekarz.ts';
+import {MenuPielegniarka}  from 'app/components/menu/menu_lekarz.ts';
 
 
 export function ladujMenu() {

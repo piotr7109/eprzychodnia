@@ -2,14 +2,14 @@ import {Component, OoInit} from 'angular2/core';
 import {Router, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {Http} from 'angular2/http';
 
-import {Uzytkownik}  from '/app/modules/uzytkownik/uzytkownik.ts';
-import {UzytkownikLista}  from '/app/modules/uzytkownik/uzytkownik_lista.ts';
+import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
+import {UzytkownikLista}  from 'app/modules/uzytkownik/uzytkownik_lista.ts';
 
 
 
 @Component({
     selector: "pacjenci-lista",
-    templateUrl: "/app/views/pacjent/pacjenci_lista.html"
+    templateUrl: "app/views/pacjent/pacjenci_lista.html"
 })
 
 export class PacjenciLista implements OnInit {

@@ -1,15 +1,15 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router, CanActivate} from 'angular2/router';
-import {Authentication} from '/app/components/logowanie/authentication.ts';
-import {czyZalogowany}  from '/app/services/logowanie/czy-zalogowany.ts';
-import {UzytkownikFactory}  from '/app/modules/uzytkownik/uzytkownik_factory.ts';
-import {Uzytkownik}  from '/app/modules/uzytkownik/uzytkownik.ts';
+import {Authentication} from 'app/components/logowanie/authentication.ts';
+import {czyZalogowany}  from 'app/services/logowanie/czy-zalogowany.ts';
+import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
+import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
 import {Http}  from 'angular2/http';
 
 
 @Component({
     selector: 'home',
-    templateUrl: "/app/views/home/home.html"
+    templateUrl: "app/views/home/home.html"
 })
 @CanActivate(() => czyZalogowany())
 export class Home implements OnInit {

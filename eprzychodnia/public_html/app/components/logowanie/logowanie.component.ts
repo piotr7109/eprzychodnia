@@ -6,7 +6,7 @@ import {Authentication} from 'app/components/logowanie/authentication.ts';
 @Component({
     selector: 'logowanie',
     directives: [FORM_DIRECTIVES, NgIf],
-    templateUrl: '/app/views/logowanie/logowanie.html'
+    templateUrl: 'app/views/logowanie/logowanie.html'
 })
 
 export class LogowanieComponent {

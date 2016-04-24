@@ -1,21 +1,21 @@
 import {Component, OnChanges} from 'angular2/core';
 import {NgIf} from 'angular/common';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from 'angular2/router';
-import {RejestracjaPacjenta} from '/app/components/pacjent/rejestracja_pacjenta.ts';
-import {PacjenciLista} from '/app/components/pacjent/pacjenci_lista.ts';
-import {PacjentHistoria} from '/app/components/pacjent/pacjent_historia.ts';
+import {RejestracjaPacjenta} from 'app/components/pacjent/rejestracja_pacjenta.ts';
+import {PacjenciLista} from 'app/components/pacjent/pacjenci_lista.ts';
+import {PacjentHistoria} from 'app/components/pacjent/pacjent_historia.ts';
 
-import {LogowanieComponent} from '/app/components/logowanie/logowanie.component.ts';
-import {LogowaniePacjenta} from '/app/components/logowanie/logowanie_pacjenta.ts';
-import {LogowanieLekarza} from '/app/components/logowanie/logowanie_lekarza.ts';
-import {DodajWizyte} from '/app/components/wizyty/dodaj_wizyte.ts';
-import {Home} from '/app/components/home/home.ts';
+import {LogowanieComponent} from 'app/components/logowanie/logowanie.component.ts';
+import {LogowaniePacjenta} from 'app/components/logowanie/logowanie_pacjenta.ts';
+import {LogowanieLekarza} from 'app/components/logowanie/logowanie_lekarza.ts';
+import {DodajWizyte} from 'app/components/wizyty/dodaj_wizyte.ts';
+import {Home} from 'app/components/home/home.ts';
 
 
 @Component({
     selector: 'app',
     directives: [ROUTER_DIRECTIVES, Home],
-    templateUrl: "/app/views/app.html"
+    templateUrl: "app/views/app.html"
 
 
 })

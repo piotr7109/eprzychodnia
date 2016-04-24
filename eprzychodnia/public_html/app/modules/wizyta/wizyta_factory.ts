@@ -1,5 +1,5 @@
-import {Wizyta} from "/app/modules/wizyta/wizyta.ts";
-import {Database} from "/app/components/config/database.ts";
+import {Wizyta} from "app/modules/wizyta/wizyta.ts";
+import {Database} from "app/components/config/database.ts";
 import {Http} from "angular2/http";
 
 export class WizytaFactory {

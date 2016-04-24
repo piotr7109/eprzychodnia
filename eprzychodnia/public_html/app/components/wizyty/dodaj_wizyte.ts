@@ -3,15 +3,15 @@ import {Router, CanActivate} from 'angular2/router';
 import {FORM_DIRECTIVES, FormBuilder, Validators, ControlGroup, NgIf} from 'angular2/common';
 import {Http} from 'angular2/http';
 
-import {UzytkownikLista}  from '/app/modules/uzytkownik/uzytkownik_lista.ts';
-import {Wizyta} from '/app/modules/wizyta/wizyta.ts';
-import {WizytaFactory} from '/app/modules/wizyta/wizyta_factory.ts';
+import {UzytkownikLista}  from 'app/modules/uzytkownik/uzytkownik_lista.ts';
+import {Wizyta} from 'app/modules/wizyta/wizyta.ts';
+import {WizytaFactory} from 'app/modules/wizyta/wizyta_factory.ts';
 
 
 @Component({
     selector: "dodaj-wizyte",
     directives: [FORM_DIRECTIVES, NgIf],
-    templateUrl: "/app/views/wizyty/dodaj_wizyte.html"
+    templateUrl: "app/views/wizyty/dodaj_wizyte.html"
 })
 
 export class DodajWizyte implements OnInit {

@@ -1,5 +1,5 @@
-import {BaseModule} from "/app/modules/base_module.ts";
-import {Database} from "/app/components/config/database.ts";
+import {BaseModule} from "app/modules/base_module.ts";
+import {Database} from "app/components/config/database.ts";
 import {Http, Headers} from 'angular2/http';
 
 export class Wizyta extends BaseModule {
