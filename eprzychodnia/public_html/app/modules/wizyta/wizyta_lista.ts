@@ -9,7 +9,9 @@ export class WizytaLista {
     static getWizytyPacjenta(http: Http, id_pacjenta:number) {
         let db = Database.db;
         let query = sprintf('_design/users/_view/getWizytyPacjenta?key="%1$s"', id_pacjenta);
-        return http.get(db + query)
+        return http.get(db + query, {
+            headers: Database.getHeaders()
+        })
             .map((res: any) => {
                 let data = res.json();
                 let wizyty: Array = new Array();

@@ -9,7 +9,9 @@ export class UzytkownikLista {
     static getPacjenciLista(http: Http) {
         var db = Database.db;
         var query = "_design/users/_view/pacjenci_lista";
-        return http.get(db + query)
+        return http.get(db + query, {
+            headers: Database.getHeaders()
+        })
             .map((res: any) => {
                 let data = res.json();
                 let uzytkownicy: Array = new Array();
