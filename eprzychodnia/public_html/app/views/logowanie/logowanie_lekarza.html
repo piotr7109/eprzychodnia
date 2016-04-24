@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 
     <body>
-        <div class="col-sm-offset-1 col-sm-3 text-center logowanie_lekarza">
+        <div class="col-sm-offset-1 col-sm-3 logowanie_lekarza">
             <div class="login_page_jubotron img-rounded">
             <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)" >
                 <div class="login_form col-sm-12">
@@ -26,7 +26,7 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <img src="/assets/img/key.png" width="50" height="108" alt="key"/>
+                        <img class="login_key_picture" src="/assets/img/key.png" width="50" height="108" alt="key"/>
 
                     </div>
                     

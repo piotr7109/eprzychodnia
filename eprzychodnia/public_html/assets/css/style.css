@@ -5,8 +5,7 @@ html
 body
 {
     background-image:url(/assets/img/bg.jpg);
-    background-size: 100%;
-    
+    background-size: auto;   
 }
 .home_header_div
 {
@@ -61,7 +60,7 @@ body
     padding-left:10px;
     padding-right: 10px;
     padding-top: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     background-size: cover;
 }
 .login_form
@@ -79,4 +78,8 @@ body
     display: flex;
     align-items: center;
     padding-top: 10%;
+}
+.login_key_picture
+{
+    margin-top: 25px;
 }
