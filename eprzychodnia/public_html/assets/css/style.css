@@ -83,3 +83,27 @@ body
 {
     margin-top: 25px;
 }
+.customer-page-carousel
+{
+    position: relative;
+    min-height: 1px;
+    padding-right: 0;
+    padding-left: 15px;
+    float: left;
+    width: 50%;
+   
+    
+}
+.login_customer_carousel
+{
+    background-image: url(/assets/img/login_carousel.jpg);
+    background-size: cover;
+    color: black;
+}
+.item
+{
+    height: 100vh;
+    padding-top: 40%;
+    width: 85%;
+    padding-left: 10%;
+}
