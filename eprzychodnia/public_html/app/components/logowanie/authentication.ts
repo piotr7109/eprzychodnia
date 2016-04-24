@@ -5,7 +5,7 @@ import {Uzytkownik} from "app/modules/uzytkownik/uzytkownik.ts";
 import {Http} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
-import 'rxjs/add/operator/share';
+import {Rx} from 'rxjs/add/operator/share';
 import 'rxjs/add/operator/map';
 import {Database} from "app/components/config/database.ts"
 

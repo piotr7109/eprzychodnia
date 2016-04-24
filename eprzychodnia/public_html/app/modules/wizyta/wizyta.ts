@@ -59,7 +59,7 @@ export class Wizyta extends BaseModule {
         
         value.kategoria = "wizyta";
         let db = Database.db;
-        let headers = new Headers();
+        let headers = Database.getHeaders();
         headers.append('Accept', 'application/json');
         headers.append('Content-Type', 'application/json');
         return http.post(db, JSON.stringify(value), {

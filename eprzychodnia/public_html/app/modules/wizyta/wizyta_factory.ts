@@ -18,7 +18,9 @@ export class WizytaFactory {
     static getWizyta(http: Http, id: number) {
         var db = Database.db:
         var query + id;
-        return http.get(db + query)
+        return http.get(db + query, {
+            headers: Database.getHeaders()
+        })
             .map((res:any) => {
                 let data = res.json();
                 

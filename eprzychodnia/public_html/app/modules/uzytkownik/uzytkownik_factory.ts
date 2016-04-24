@@ -23,7 +23,9 @@ export class UzytkownikFactory {
     static getUzytkownik(http: Http, id: number) {
         var db = Database.db;
         var query = id;
-        return http.get(db + query)
+        return http.get(db + query, {
+            headers: Database.getHeaders()
+        })
             .map((res: any) => {
                 let data = res.json();
 
@@ -37,8 +39,9 @@ export class UzytkownikFactory {
     static getIdUzytkownikaByLoginAndHaslo(http: Http, uzytkownik: Uzytkownik): number {
         let db = Database.db;
         let query = sprintf('_design/users/_view/getUser?key=["%1$s","%2$s"]', uzytkownik.getLogin(), uzytkownik.getHaslo());
-
-        return http.get(db + query)
+        return http.get(db + query, {
+            headers: Database.getHeaders()
+        })
             .map((res: any) => {
                 let data = res.json();
                 console.log(data.rows.length);
