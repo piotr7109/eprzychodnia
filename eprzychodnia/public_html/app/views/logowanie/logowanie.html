@@ -21,7 +21,7 @@
     
     
     <div class="col-sm-4">
-        <div class="text-center jumbotron home_page_jumbotron img-rounded" >
+        <div class="text-center jumbotron home_page_jumbotron img-rounded" (click)="navigate(['../LogowaniePacjenta'])">
             <img src="/assets/img/People-Patient-Male-icon.png" width="256" height="256" alt="People-Patient-Male-icon"/>
             <h2>Jestem pacjentem</h2>
             <h5>Kliknij poniżej jeżeli jesteś pacjentem i chcesz się zarejestrować 
@@ -31,7 +31,7 @@
     </div>
     
     <div class="col-sm-4">    
-        <div onclick="window.location='#'" class="text-center jumbotron home_page_jumbotron img-rounded" (click)="navigate(['../LogowanieLekarza'])">
+        <div class="text-center jumbotron home_page_jumbotron img-rounded" (click)="navigate(['../LogowanieLekarza'])">
             <img src="/assets/img/doctor.png" width="256" height="256" alt="doctor"/>
             <h3>Jestem pracownikiem przychodni</h3>
             <h5>Kliknij poniżej jeżeli jesteś pracownikiem przychodni i chcesz 

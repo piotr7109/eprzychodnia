@@ -6,6 +6,7 @@ import {PacjenciLista} from '/app/components/pacjent/pacjenci_lista.ts';
 import {PacjentHistoria} from '/app/components/pacjent/pacjent_historia.ts';
 
 import {LogowanieComponent} from '/app/components/logowanie/logowanie.component.ts';
+import {LogowaniePacjenta} from '/app/components/logowanie/logowanie_pacjenta.ts';
 import {LogowanieLekarza} from '/app/components/logowanie/logowanie_lekarza.ts';
 import {DodajWizyte} from '/app/components/wizyty/dodaj_wizyte.ts';
 import {Home} from '/app/components/home/home.ts';
@@ -24,6 +25,7 @@ import {Home} from '/app/components/home/home.ts';
     { path: '/', redirectTo: ['Logowanie'] },
     { path: '/logowanie', name: 'Logowanie', component: LogowanieComponent },
     { path: '/logowanie_lekarza', name: 'LogowanieLekarza', component: LogowanieLekarza},
+    { path: '/logowanie_pacjenta', name: 'LogowaniePacjenta', component: LogowaniePacjenta},
     { path: '/home', name: 'Home', component: Home },
     { path: '/rejestracja_pacjenta', name: 'RejestracjaPacjenta', component: RejestracjaPacjenta },
     { path: '/pacjenci_lista', name: 'PacjenciLista', component: PacjenciLista },
