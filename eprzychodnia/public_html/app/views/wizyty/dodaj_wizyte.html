@@ -1,16 +1,16 @@
 <div class="col-sm-offset-4  col-sm-4 jumbotron patient_registration img-rounded">
-    <div id="content-header" class="text-capitalize text-center">Rejestracja pacjenta</div>
+    <div id="content-header" class="text-capitalize text-center">Zapisz wyniki wizyty</div>
     <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
         class=" navbar-left form-singin">
 
         <div *ngIf="success" class="alert alert-success" role="alert" id="form-success" >
                 <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
-                Wizyta została dodana!
+                Wizyta została zapisana!
         </div>
 
         <div class="form-group col-sm-12">
             <select (change)="onChange($event.target.value)" class="form-control">
-                <option *ngFor="#pacjent of pacjenci" [value]="pacjent.id">{{pacjent.imie}}</option>
+                <option *ngFor="#pacjent of pacjenci" [value]="pacjent.getId()">{{pacjent.imie }} {{pacjent.nazwisko}}({{pacjent.getPesel()}})</option>
             </select>
         </div>
         <div class="form-group col-sm-12">
@@ -20,7 +20,7 @@
             <input type="text" class="form-control" placeholder="Nazwa choroby" ngControl="choroba_nazwa" required="">
         </div>
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="Opis choroby" ngControl="choroba_opis" required="">
+            <textarea type="textarea" class="form-control" placeholder="Opis choroby" ngControl="choroba_opis" required=""></textarea>
         </div>
         <div class="form-group ">
             <button type="submit" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj wizytę</button>
