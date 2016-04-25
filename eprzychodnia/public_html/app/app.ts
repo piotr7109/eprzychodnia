@@ -55,10 +55,9 @@ export class App implements OnChanges  {
     }
 
     onLogout() {
-        this.auth.logout()
-            .subscribe(
-            () => this.router.navigate(['../Login']),
-        );
+        this.auth.logout();
+        this.router.navigate(['../Logowanie']);
+        
     }
 
 
