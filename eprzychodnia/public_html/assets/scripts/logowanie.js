@@ -46,6 +46,7 @@
 //});
 function show_doctors_calendar()
 {
+    $("#kalendarz_lekarza").html("");
     $("#kalendarz_lekarza").monthly();
 }
 function show_alert()

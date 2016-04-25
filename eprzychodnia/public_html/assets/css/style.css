@@ -30,6 +30,17 @@ body
     color: #f8f8f8;   
     
 }
+.patient_registration
+{
+    background-image: url(../img/registration_page_background.jpg);
+    background-size: cover;
+    color: #f8f8f8; 
+}
+.nopadding
+{
+    padding: 0 !important;
+    margin-left: 16px;
+}
 .doctor_data
 {
     margin-top: 7%;
