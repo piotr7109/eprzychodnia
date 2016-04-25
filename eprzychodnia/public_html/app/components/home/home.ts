@@ -27,7 +27,9 @@ export class Home implements OnInit {
                 this.uzytkownik = uzytkownik;
 
             });
-            show_doctors_calendar();
+                show_doctors_calendar();
+                ukrywanie_przyciskow_w_home();
+                podmiana_przycisków_w_home();
 
     }
     onLogout() {

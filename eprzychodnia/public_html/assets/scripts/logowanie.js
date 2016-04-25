@@ -44,6 +44,29 @@
 //    }
 //
 //});
+function podmiana_przycisków_w_home()
+{
+    $("#zmień_dane_użytkownika_button").click(function (){
+        $("#zmień_dane_użytkownika_button").hide();
+        $("#wyslij_dane_do_bazy_button").show();
+        var elements = document.getElementsByClassName('home_data_input');
+        for (var i = elements.length -1 ; i>=0;i--)
+        {
+            elements[i].disabled=false;
+        }
+    });
+    
+}
+function ukrywanie_przyciskow_w_home()
+{
+    $("#zmień_dane_użytkownika_button").show();
+    $("#wyslij_dane_do_bazy_button").hide();
+    var elements = document.getElementsByClassName('home_data_input');
+        for (var i = elements.length -1 ; i>=0;i--)
+        {
+            elements[i].disabled=true;
+        }
+}
 function init_rejestracja_pacjenta()
 {
     $("#registration_password").on("keyup",function ()
