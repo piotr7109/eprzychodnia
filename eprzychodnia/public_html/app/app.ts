@@ -5,6 +5,7 @@ import {Authentication} from 'app/components/logowanie/authentication.ts';
 
 import {RejestracjaPacjenta} from 'app/components/pacjent/rejestracja_pacjenta.ts';
 import {PacjenciLista} from 'app/components/pacjent/pacjenci_lista.ts';
+import {PacjenciLekarza} from 'app/components/pacjent/pacjent_historia.ts';
 import {PacjentHistoria} from 'app/components/pacjent/pacjent_historia.ts';
 
 import {LogowanieComponent} from 'app/components/logowanie/logowanie.component.ts';
@@ -32,7 +33,8 @@ import {Home} from 'app/components/home/home.ts';
     { path: '/rejestracja_pacjenta', name: 'RejestracjaPacjenta', component: RejestracjaPacjenta },
     { path: '/pacjenci_lista', name: 'PacjenciLista', component: PacjenciLista },
     { path: '/dodaj_wizyte', name: 'DodajWizyte', component: DodajWizyte },
-    { path: '/pacjent_historia', name: 'PacjentHistoria', component: PacjentHistoria }
+    { path: '/pacjent_historia', name: 'PacjentHistoria', component: PacjentHistoria },
+    { path: '/pacjentci_lekarza', name: 'PacjenciLekarza', component: PacjenciLekarza }
 ])
 
 export class App implements OnChanges  {
