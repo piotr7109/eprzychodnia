@@ -33,6 +33,6 @@ export class Authentication {
         localStorage.removeItem('token');
         localStorage.removeItem('typ_uzytkownika');
 
-        return Rx.Observable.of(true);
+        
     }
 }

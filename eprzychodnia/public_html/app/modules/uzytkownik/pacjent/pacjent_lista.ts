@@ -28,7 +28,6 @@ export class PacjentLista extends UzytkownikLista
     static getPacjenciLekarzaLista(http: Http, id_lekarza:number) {
         var db = Database.db;
         var query = '_design/users/_view/pacjenciLekarz_lista?key="'+id_lekarza+'"';
-        console.log(db+query);
         return http.get(db + query, {
             headers: Database.getHeaders()
         })
