@@ -1,11 +1,11 @@
-import {Uzytkownik} from "app/modules/uzytkownik/uzytkownik.ts";
-import {Database} from "app/components/config/database.ts";
+import {Uzytkownik} from "/app/modules/uzytkownik/uzytkownik.ts";
+import {Database} from "/app/components/config/database.ts";
 import {Http} from 'angular2/http';
 
 export class UzytkownikFactory {
 
-    public static fetchObject(row: any): Uzytkownik {
-        var uz = new Uzytkownik();
+    public static fetchObject(row: Uzytkownik): Uzytkownik {
+        let uz:Uzytkownik = new Uzytkownik();
         uz.setId(row._id);
         uz.setLogin(row.login);
         uz.setHaslo(row.haslo);
@@ -17,7 +17,8 @@ export class UzytkownikFactory {
         uz.setEmail(row.email);
         uz.setTypUzytkownika(row.typ_uzytkownika);
         uz.setAktywny(row.aktywny);
-
+        uz.setRev(row._rev);
+        
         return uz;
     }
     static getUzytkownik(http: Http, id: number) {

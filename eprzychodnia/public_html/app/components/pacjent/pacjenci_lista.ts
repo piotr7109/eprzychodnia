@@ -3,8 +3,8 @@ import {Router, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from '
 import {Http} from 'angular2/http';
 
 import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
-import {UzytkownikLista}  from 'app/modules/uzytkownik/uzytkownik_lista.ts';
-
+import {Pacjent}  from 'app/modules/uzytkownik/pacjent/pacjent.ts';
+import {PacjentLista}  from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
 
 
 @Component({
@@ -13,7 +13,7 @@ import {UzytkownikLista}  from 'app/modules/uzytkownik/uzytkownik_lista.ts';
 })
 
 export class PacjenciLista implements OnInit {
-    public pacjenci: Uzytkownik[];
+    public pacjenci: Pacjent[];
 
     constructor(public http: Http, public router:Router) {
 
@@ -21,7 +21,7 @@ export class PacjenciLista implements OnInit {
     }
 
     ngOnInit() {
-        UzytkownikLista.getPacjenciLista(this.http)
+        PacjentLista.getPacjenciLista(this.http)
         .subscribe(
         (pacjenci:any) => {
             this.pacjenci = pacjenci;
@@ -31,6 +31,11 @@ export class PacjenciLista implements OnInit {
     }
     onSelect(pacjent)
     {
-         this.router.navigate(['PacjentHistoria',  { id: pacjent.id }]);
+        this.router.navigate(['PacjentHistoria',  { id: pacjent._id }]);
+    }
+    przypiszPacjenta(pacjent:Pacjent)
+    {
+        pacjent.id_lekarza = localStorage.getItem('token');
+        pacjent.update(this.http, pacjent);
     }
 }
