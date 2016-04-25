@@ -8,7 +8,7 @@ import {PacjenciLista} from 'app/components/pacjent/pacjenci_lista.ts';
 import {PacjenciLekarza} from 'app/components/pacjent/pacjenci_lekarza.ts';
 import {PacjentHistoria} from 'app/components/pacjent/pacjent_historia.ts';
 
-import {DodajTermin} from "/app/components/termin/dodaj_termin.ts";
+import {DodajTermin} from "app/components/termin/dodaj_termin.ts";
 
 import {LogowanieComponent} from 'app/components/logowanie/logowanie.component.ts';
 import {LogowaniePacjenta} from 'app/components/logowanie/logowanie_pacjenta.ts';
