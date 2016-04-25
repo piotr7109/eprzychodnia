@@ -19,7 +19,7 @@ export class PacjentLista extends UzytkownikLista
                     for (var i = 0; i < ilosc; i++) {
                         pacjenci[i] = PacjentFactory.fetchObject(data.rows[i].value);
                     }
-                    console.log(pacjenci);
+
                     return pacjenci;
                 }
                 return null;

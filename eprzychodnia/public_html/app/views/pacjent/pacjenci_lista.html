@@ -8,8 +8,8 @@
     <div class="col-lg-4">PESEL: {{pacjent.pesel}}</div>
     <div class="col-lg-4">Telefon: {{pacjent.telefon}}</div>
     <div class="col-lg-4">E-mail {{pacjent.email}}</div>
-     <div class="col-lg-4">Lekarz: </div>
-    <a (click)="przypiszPacjenta(pacjent)">
+    <div  class="col-lg-4">Lekarz: {{getDaneLekarza(i)}} </div>
+    <a *ngIf="!czyPrzypisany(i)" (click)="przypiszPacjenta(i)">
         <button type="button" class="btn btn-warning">
             Przypisz pacjenta
         </button>

@@ -17,6 +17,7 @@ export class PacjentFactory extends UzytkownikFactory
         uz.setTypUzytkownika(row.typ_uzytkownika);
         uz.setAktywny(row.aktywny);
         uz.setRev(row._rev);
+        uz.setIdLekarza(row.id_lekarza);
        // uz.setIdLekarza(row.id_lekarza);
         
         return uz;

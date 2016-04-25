@@ -1,8 +1,9 @@
-import {Component, OoInit} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {Router, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {Http} from 'angular2/http';
+import {NgIf} from 'angular2/common';
 
-import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
+import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Pacjent}  from 'app/modules/uzytkownik/pacjent/pacjent.ts';
 import {PacjentLista}  from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
 
@@ -17,25 +18,49 @@ export class PacjenciLista implements OnInit {
 
     constructor(public http: Http, public router:Router) {
 
-        console.log("constr");
     }
 
     ngOnInit() {
         PacjentLista.getPacjenciLista(this.http)
         .subscribe(
         (pacjenci:any) => {
-            this.pacjenci = pacjenci;
-           
-        }
-        );
+            this.pacjenci = pacjenci;  
+            for(let i=0; i< pacjenci.length; i++ ) 
+               this.getLekarz(pacjenci[i].getIdLekarza(),i);     
+        });
     }
     onSelect(pacjent)
     {
         this.router.navigate(['PacjentHistoria',  { id: pacjent._id }]);
     }
-    przypiszPacjenta(pacjent:Pacjent)
+    przypiszPacjenta(i)
     {
-        pacjent.id_lekarza = localStorage.getItem('token');
-        pacjent.update(this.http, pacjent);
+        this.pacjenci[i].id_lekarza = localStorage.getItem('token');
+        this.pacjenci[i].update(this.http, this.pacjenci[i])
+        .subscribe(() =>{ this.getLekarz(this.pacjenci[i].getIdLekarza(),i)  });
+    }
+    getLekarz(id:number, j):Uzytkownik
+    {
+        return UzytkownikFactory.getUzytkownik(this.http, id)
+        .subscribe((uz:Uzytkownik) => {
+            this.pacjenci[j].setLekarz(uz);
+        });
+        
+    }
+    getDaneLekarza(index)
+    {
+        let uz:Uzytkownik = this.pacjenci[index].getLekarz();
+        if(uz.getImie() && uz.getImie()) 
+            return uz.getImie()+" "+uz.getNazwisko();
+        else 
+            return "Pacjent nieprzypisany";
+    }
+    czyPrzypisany(index)
+    {
+        let uz:Uzytkownik = this.pacjenci[index].getLekarz();
+        if(uz.getImie() && uz.getImie()) 
+            return true;
+        else
+            return false;
     }
 }

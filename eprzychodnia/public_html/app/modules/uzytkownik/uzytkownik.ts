@@ -3,7 +3,7 @@ import {Database} from "app/components/config/database.ts";
 import {Http, Headers} from 'angular2/http';
 
 export class Uzytkownik extends BaseModule {
-    protected _id: number;
+    protected _id: String;
     protected login: String;
     protected haslo: String;
     protected data_zalozenia: Date;
@@ -24,77 +24,77 @@ export class Uzytkownik extends BaseModule {
     
     
     
-    getId(): number {
+    public getId(): String {
         return this._id;
     }
-    setId(id: number) {
+    public setId(id: String) {
         this._id = id;
     }
-    getLogin(): String {
+    public getLogin(): String {
         return this.login;
     }
-    setLogin(login: String) {
+    public setLogin(login: String) {
         this.login = login;
     }
-    getHaslo(): String {
+    public getHaslo(): String {
         return this.haslo;
     }
-    setHaslo(haslo: String) {
+    public setHaslo(haslo: String) {
         this.haslo = haslo;
     }
-    getDataZalozenia(): Date {
+    public getDataZalozenia(): Date {
         return this.data_zalozenia;
     }
-    setDataZalozenia(data_zalozenia: Date) {
+    public setDataZalozenia(data_zalozenia: Date) {
         this.data_zalozenia = data_zalozenia;
     }
-    setImie(imie: String) {
+    public setImie(imie: String) {
         this.imie = imie;
     }
-    getImie(): String {
+    public getImie(): String {
         return this.imie;
     }
-    setNazwisko(nazwisko: String) {
+    public setNazwisko(nazwisko: String) {
         this.nazwisko = nazwisko;
     }
-    getNazwisko(): String {
+    public getNazwisko(): String {
         return this.nazwisko;
     }
 
-    setPesel(pesel: number) {
+    public setPesel(pesel: number) {
         this.pesel = pesel;
     }
-    getPesel(): number {
+    public getPesel(): number {
         return this.pesel;
     }
-    setTelefon(telefon: number) {
+    public setTelefon(telefon: number) {
         this.telefon = telefon;
     }
-    getTelefon(): number {
+    public getTelefon(): number {
         return this.telefon;
     }
-    setEmail(email: String) {
+    public setEmail(email: String) {
         this.email = email;
     }
-    getEmail(): String {
+    public getEmail(): String {
         return this.email;
     }
-    getTypUzytkownika(): String {
+    public getTypUzytkownika(): String {
         return this.typ_uzytkownika
     }
-    setTypUzytkownika(typ_uzytkownika: String) {
+    public setTypUzytkownika(typ_uzytkownika: String) {
         this.typ_uzytkownika = typ_uzytkownika;
     }
-    getAktywny():String
+    public getAktywny():String
     {
         return this.aktywny;
     }
-    setAktywny(aktywny:String)
+    public setAktywny(aktywny:String)
     {
         this.aktywny = aktywny;
     }
 
-    insert(http:Http, value:any) {
+    public insert(http:Http, value:any) {
         value.kategoria = "uzytkownik";
         let db = Database.db;
         let headers = Database.getHeaders();
@@ -105,7 +105,7 @@ export class Uzytkownik extends BaseModule {
         })
         .map(res => res.json()).subscribe();
     }
-    update(http:Http, value:any)
+    public update(http:Http, value:any)
     {
         let db = Database.db;
         let headers = Database.getHeaders();
@@ -114,7 +114,7 @@ export class Uzytkownik extends BaseModule {
         return http.put(db+"/"+value._id, JSON.stringify(value), {
             headers: headers
         })
-        .map(res => res.json()).subscribe();
+        .map(res => res.json());
     }
 
 }

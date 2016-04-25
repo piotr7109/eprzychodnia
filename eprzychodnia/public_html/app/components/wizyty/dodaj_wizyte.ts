@@ -4,6 +4,7 @@ import {FORM_DIRECTIVES, FormBuilder, Validators, ControlGroup, NgIf} from 'angu
 import {Http} from 'angular2/http';
 
 import {PacjentLista}  from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
+import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Wizyta} from 'app/modules/wizyta/wizyta.ts';
 import {WizytaFactory} from 'app/modules/wizyta/wizyta_factory.ts';
 
@@ -39,8 +40,8 @@ export class DodajWizyte implements OnInit {
         .subscribe(
         (pacjenci:Pacjent[]) => {
             this.pacjenci = pacjenci;
-            console.log(this.pacjenci);
-            this.id_pacjenta = pacjenci[0]._id;
+            
+            this.id_pacjenta = pacjenci[0].getId();
            
         });
     }
