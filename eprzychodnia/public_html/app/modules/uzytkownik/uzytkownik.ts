@@ -114,7 +114,7 @@ export class Uzytkownik extends BaseModule {
         return http.put(db+"/"+value._id, JSON.stringify(value), {
             headers: headers
         })
-        .map(res => res.json());
+        .map(res => return res.json());
     }
 
 }
