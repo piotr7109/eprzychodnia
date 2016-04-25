@@ -44,6 +44,31 @@
 //    }
 //
 //});
+function init_rejestracja_pacjenta()
+{
+    $("#registration_password").on("keyup",function ()
+    {
+        var number_of_chars = $("#registration_password").val().length;
+        number_of_chars=number_of_chars*10;
+        $("#registration_progressbar").css({width:number_of_chars+"%"});
+        
+        if(number_of_chars>=30)
+        {
+            $("#registration_progressbar").removeClass("progress-bar-danger");
+            $("#registration_progressbar").addClass("progress-bar-warning");
+        }
+        else
+        {
+            $("#registration_progressbar").removeClass("progress-bar-warning");
+            $("#registration_progressbar").addClass("progress-bar-danger");
+        }
+        if(number_of_chars>=70)
+        {
+            $("#registration_progressbar").removeClass("progress-bar-warning");
+            $("#registration_progressbar").addClass("progress-bar-success");
+        }
+    });
+}
 function show_doctors_calendar()
 {
     $("#kalendarz_lekarza").html("");
@@ -53,7 +78,7 @@ function show_alert()
 {
     alert("99");
 }
-function set_home_page()
+function init_home_page()
 {    
     $(".home_page_well").css({opacity:0.8});
     $("#system_epop_h6").hide();

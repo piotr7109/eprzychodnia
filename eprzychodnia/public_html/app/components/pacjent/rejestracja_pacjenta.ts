@@ -29,6 +29,7 @@ export class RejestracjaPacjenta implements OnInit()
     }
     ngOnInit()
     {
+        init_rejestracja_pacjenta();
     }
 
     onSubmit(value: any) {

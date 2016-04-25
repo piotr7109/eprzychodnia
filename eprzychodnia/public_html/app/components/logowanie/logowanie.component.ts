@@ -20,7 +20,7 @@ export class LogowanieComponent {
     }
     ngOnInit()
     {
-        set_home_page();
+        init_home_page();
     }
     
     onSubmit(value: any) {
