@@ -32,6 +32,11 @@ body
 }
 .doctor_data
 {
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
+    background-image: url(../img/personal_data_background.jpg);
+    background-size: cover;
     
 }
 .home_img
