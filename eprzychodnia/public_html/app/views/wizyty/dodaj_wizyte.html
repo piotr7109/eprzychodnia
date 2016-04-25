@@ -1,28 +1,30 @@
-<div id="content-header">Rejestracja pacjenta</div>
-<form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
-    class=" navbar-left form-singin">
-    
-    <div *ngIf="success" class="alert alert-success" role="alert" id="form-success" >
-            <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
-            Wizyta została dodana!
-    </div>
-    
-    <div class="form-group">
-        <select (change)="onChange($event.target.value)" class="form-control">
-            <option *ngFor="#pacjent of pacjenci" [value]="pacjent.id">{{pacjent.imie}}</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Data wizyty" ngControl="data_wizyty" required="">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Nazwa choroby" ngControl="choroba_nazwa" required="">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Opis choroby" ngControl="choroba_opis" required="">
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Dodaj wizytę</button>
-    </div>
-    
-</form>
+<div class="col-sm-offset-4  col-sm-4 jumbotron patient_registration img-rounded">
+    <div id="content-header" class="text-capitalize text-center">Rejestracja pacjenta</div>
+    <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
+        class=" navbar-left form-singin">
+
+        <div *ngIf="success" class="alert alert-success" role="alert" id="form-success" >
+                <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
+                Wizyta została dodana!
+        </div>
+
+        <div class="form-group col-sm-12">
+            <select (change)="onChange($event.target.value)" class="form-control">
+                <option *ngFor="#pacjent of pacjenci" [value]="pacjent.id">{{pacjent.imie}}</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-12">
+            <input type="text" class="form-control" placeholder="Data wizyty" ngControl="data_wizyty" required="">
+        </div>
+        <div class="form-group col-sm-12">
+            <input type="text" class="form-control" placeholder="Nazwa choroby" ngControl="choroba_nazwa" required="">
+        </div>
+        <div class="form-group col-sm-12">
+            <input type="text" class="form-control" placeholder="Opis choroby" ngControl="choroba_opis" required="">
+        </div>
+        <div class="form-group ">
+            <button type="submit" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj wizytę</button>
+        </div>
+
+    </form>
+</div>
