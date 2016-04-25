@@ -1,33 +1,51 @@
-<div *ngIf='typ_uzytkownika=="lekarz"' id="menu" >
-    <ul>
-        <li><a [routerLink]="['/Home']">Lekarz</a></li>
-        <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
-        <li><a [routerLink]="['/PacjenciLista']">Lista pacjentów</a></li>
-        <li><a [routerLink]="['/DodajWizyte']">Dodaj wizytę</a></li>
-        <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
-    </ul>
-</div>
-<div *ngIf='typ_uzytkownika=="pacjent"' id="menu" >
-    <ul>
-        <li><a [routerLink]="['/Home']">Pacjent</a></li>
-        <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
-    </ul>
-</div>
-<div *ngIf='typ_uzytkownika=="pielegniarka"' id="menu" >
-    <ul>
-        <li><a [routerLink]="['/Home']">Pielęgniarka</a></li>
-        <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
-        <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
-    </ul>
-</div>
-<div *ngIf='typ_uzytkownika=="asystent"' id="menu" >
-    <ul>
-        <li><a [routerLink]="['/Home']">Asystent</a></li>
-        <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
-        <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
-    </ul>
-</div>
-<div id="content-right">
-    <router-outlet></router-outlet>
-</div>
 
+    <div *ngIf='typ_uzytkownika=="lekarz"' id="menu"  class="col-sm-12 menu_gorne">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li> 
+                <li><a href="#">Page 3</a></li> 
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+            </div>
+        </nav>
+        
+        <ul>
+            <li><a [routerLink]="['/Home']">Lekarz</a></li>
+            <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
+            <li><a [routerLink]="['/PacjenciLista']">Lista pacjentów</a></li>
+            <li><a [routerLink]="['/DodajWizyte']">Dodaj wizytę</a></li>
+            <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
+        </ul>
+    </div>
+    <div *ngIf='typ_uzytkownika=="pacjent"' id="menu" class="col-sm-2">
+        <ul>
+            <li><a [routerLink]="['/Home']">Pacjent</a></li>
+            <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
+        </ul>
+    </div>
+    <div *ngIf='typ_uzytkownika=="pielegniarka"' id="menu" class="col-sm-2">
+        <ul>
+            <li><a [routerLink]="['/Home']">Pielęgniarka</a></li>
+            <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
+            <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
+        </ul>
+    </div>
+    <div *ngIf='typ_uzytkownika=="asystent"' id="menu" class="col-sm-2">
+        <ul>
+            <li><a [routerLink]="['/Home']">Asystent</a></li>
+            <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
+            <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
+        </ul>
+    </div>
+    <div id="content-right">
+        <router-outlet></router-outlet>
+    </div>

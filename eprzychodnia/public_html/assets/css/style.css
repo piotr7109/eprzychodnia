@@ -14,12 +14,13 @@ body
     border-left-color: #ccc;
     display: inline-block;
     
+    
 }
 .home_header_picture_div
 {
     display: inline-block;
     float: left;
-    margin-left: 30px;
+    margin-left: 70px;
 }
 .home_page_jumbotron
 {
@@ -39,6 +40,10 @@ body
 .home_page_well
 {
     
+    
+}
+.menu_gorne
+{
     
 }
 

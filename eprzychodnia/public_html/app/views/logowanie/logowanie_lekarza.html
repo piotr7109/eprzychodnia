@@ -6,6 +6,22 @@ and open the template in the editor.
 -->
 
     <body>
+        <div class="col-sm-12" style="white-space: nowrap;">
+        <div class="col-sm-2 home_header_picture_div">
+        <img src="assets/img/logo1.png" width="98" height="37" alt="logo"/>
+
+
+        </div>
+        <div class="col-sm-9 header_text home_header_div">
+            <span>
+                Elektroniczna Platforma
+                <br>
+                Obsługi Przychodni
+
+            </span>
+        </div>
+    </div>
+        
         <div class="col-sm-offset-1 col-sm-3 logowanie_lekarza">
             <div class="login_page_jubotron img-rounded">
             <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)" >
