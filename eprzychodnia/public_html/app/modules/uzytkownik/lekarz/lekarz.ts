@@ -1,5 +1,5 @@
 import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
-import {Termin} from '/app/modules/termin/termin.ts';
+import {Termin} from 'app/modules/termin/termin.ts';
 
 export class Lekarz extends Uzytkownik
 {

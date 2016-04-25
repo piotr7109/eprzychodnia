@@ -5,7 +5,7 @@ import {Http} from 'angular2/http';
 
 import {LekarzLista}  from 'app/modules/uzytkownik/lekarz/lekarz_lista.ts';
 import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
-import {Termin} from '/app/modules/termin/termin.ts';
+import {Termin} from 'app/modules/termin/termin.ts';
 
 
 @Component({

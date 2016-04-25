@@ -1,6 +1,6 @@
-import {Lekarz}  from '/app/modules/uzytkownik/lekarz/lekarz.ts';
-import {Uzytkownik}  from '/app/modules/uzytkownik/uzytkownik.ts';
-import {UzytkownikFactory}  from '/app/modules/uzytkownik/uzytkownik_factory.ts';
+import {Lekarz}  from 'app/modules/uzytkownik/lekarz/lekarz.ts';
+import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
+import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 
 export class LekarzFactory extends UzytkownikFactory
 {

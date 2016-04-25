@@ -1,6 +1,6 @@
-import {UzytkownikLista} from '/app/modules/uzytkownik/uzytkownik_lista.ts';
+import {UzytkownikLista} from 'app/modules/uzytkownik/uzytkownik_lista.ts';
 import {Database} from "app/components/config/database.ts";
-import {LekarzFactory} from '/app/modules/uzytkownik/lekarz/lekarz_factory.ts';
+import {LekarzFactory} from 'app/modules/uzytkownik/lekarz/lekarz_factory.ts';
 
 export class LekarzLista extends UzytkownikLista
 {

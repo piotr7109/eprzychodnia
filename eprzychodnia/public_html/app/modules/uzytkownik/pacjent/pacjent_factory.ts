@@ -1,6 +1,6 @@
-import {Pacjent}  from '/app/modules/uzytkownik/pacjent/pacjent.ts';
-import {Uzytkownik}  from '/app/modules/uzytkownik/uzytkownik.ts';
-import {UzytkownikFactory}  from '/app/modules/uzytkownik/uzytkownik_factory.ts';
+import {Pacjent}  from 'app/modules/uzytkownik/pacjent/pacjent.ts';
+import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
+import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 export class PacjentFactory extends UzytkownikFactory
 {
     public static fetchObject(row: Pacjent): Pacjent {

@@ -3,7 +3,7 @@ import {Router, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from '
 import {Http} from 'angular2/http';
 import {NgIf} from 'angular2/common';
 
-import {PacjentLista} from '/app/modules/uzytkownik/pacjent/pacjent_lista.ts';
+import {PacjentLista} from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
 
 import {PacjenciLista} from 'app/components/pacjent/pacjenci_lista.ts';
 
