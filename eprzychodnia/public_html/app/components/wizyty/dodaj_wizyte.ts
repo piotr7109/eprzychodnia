@@ -3,7 +3,7 @@ import {Router, CanActivate} from 'angular2/router';
 import {FORM_DIRECTIVES, FormBuilder, Validators, ControlGroup, NgIf} from 'angular2/common';
 import {Http} from 'angular2/http';
 
-import {UzytkownikLista}  from 'app/modules/uzytkownik/uzytkownik_lista.ts';
+import {PacjentLista}  from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
 import {Wizyta} from 'app/modules/wizyta/wizyta.ts';
 import {WizytaFactory} from 'app/modules/wizyta/wizyta_factory.ts';
 
@@ -17,7 +17,7 @@ import {WizytaFactory} from 'app/modules/wizyta/wizyta_factory.ts';
 export class DodajWizyte implements OnInit {
     
    
-    pacjenci:Uzytkownik[];
+    pacjenci:Pacjent[];
     selected_pacjent:Uzytkownik;
     form: ControlGroup;
     success:boolean = false;
@@ -35,11 +35,12 @@ export class DodajWizyte implements OnInit {
     }
     
     ngOnInit() {
-        UzytkownikLista.getPacjenciLista(this.http)
+        PacjentLista.getPacjenciLista(this.http)
         .subscribe(
-        (pacjenci:any) => {
+        (pacjenci:Pacjent[]) => {
             this.pacjenci = pacjenci;
-            this.id_pacjenta = pacjenci[0].getId();
+            console.log(this.pacjenci);
+            this.id_pacjenta = pacjenci[0]._id;
            
         });
     }
