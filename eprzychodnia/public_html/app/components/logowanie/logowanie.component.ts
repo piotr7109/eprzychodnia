@@ -18,7 +18,11 @@ export class LogowanieComponent {
             haslo: ['', Validators.required]
         });
     }
-
+    ngOnInit()
+    {
+        set_home_page();
+    }
+    
     onSubmit(value: any) {
         this.auth.login(value.login, value.haslo)
 

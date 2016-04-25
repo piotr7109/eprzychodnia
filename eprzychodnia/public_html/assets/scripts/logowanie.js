@@ -44,8 +44,16 @@
 //    }
 //
 //});
-setTimeout(function()
+function show_doctors_calendar()
 {
+    $("#kalendarz_lekarza").monthly();
+}
+function show_alert()
+{
+    alert("99");
+}
+function set_home_page()
+{    
     $(".home_page_well").css({opacity:0.8});
     $("#system_epop_h6").hide();
     $("#kto_moze_korzystac_h6").hide();
@@ -83,7 +91,7 @@ setTimeout(function()
     {
         element.hide(time);
     }
-},3000);
+}
 
 
 

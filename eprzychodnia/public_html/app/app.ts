@@ -49,6 +49,7 @@ export class App implements OnChanges  {
 
     ngOnInit() {
         this.typ_uzytkownika = localStorage.getItem('typ_uzytkownika');
+        
     }
     ngOnChanges( changes) {
         console.log(changes);
