@@ -5,7 +5,7 @@ import {Authentication} from 'app/components/logowanie/authentication.ts';
 
 import {RejestracjaPacjenta} from 'app/components/pacjent/rejestracja_pacjenta.ts';
 import {PacjenciLista} from 'app/components/pacjent/pacjenci_lista.ts';
-import {PacjenciLekarza} from 'app/components/pacjent/pacjent_historia.ts';
+import {PacjenciLekarza} from 'app/components/pacjent/pacjenci_lekarza.ts';
 import {PacjentHistoria} from 'app/components/pacjent/pacjent_historia.ts';
 
 import {LogowanieComponent} from 'app/components/logowanie/logowanie.component.ts';
