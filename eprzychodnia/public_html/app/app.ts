@@ -50,6 +50,12 @@ export class App implements OnChanges  {
         console.log(changes);
     }
 
+    onLogout() {
+        this.auth.logout()
+            .subscribe(
+            () => this.router.navigate(['../Login']),
+        );
+    }
 
 
 
