@@ -1,17 +1,67 @@
-
-    <div *ngIf='typ_uzytkownika=="lekarz"' id="menu"  class="col-sm-12 menu_gorne">
+    <div *ngIf='typ_uzytkownika=="DEFAULT"' id="menu"  class="col-sm-12 ">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header">
                 <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
               </div>
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+              <ul class="nav navbar-nav">                
                 <li><a [routerLink]="['/Home']">Lekarz</a></li>
                 <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li> 
                 <li><a [routerLink]="['/PacjenciLista']">Lista pacjentów</a></li> 
                 <li><a [routerLink]="['/DodajWizyte']">Dodaj wizytę</a></li>
-                <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
+                <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
+              </ul>
+            </div>
+        </nav>
+<!--        <div class="col-sm-5">
+            <div style="white-space: nowrap;">
+            <div class="col-sm-2 home_header_picture_div">
+            <img src="assets/img/logo1.png" width="98" height="37" alt="logo"/>
+
+
+            </div>
+            <div class="col-sm-offset-3 col-sm-5 header_text home_header_div">
+                <span>
+                    Elektroniczna Platforma
+                    <br>
+                    Obsługi Przychodni
+
+                </span>
+            </div>
+        </div>-->
+    </div>
+        
+    <div *ngIf='typ_uzytkownika=="lekarz"' id="menu"  class="col-sm-12 menu_gorne">
+<!--        <div class="col-sm-5">
+            <div style="white-space: nowrap;">
+            <div class="col-sm-2 home_header_picture_div">
+            <img src="assets/img/logo1.png" width="98" height="37" alt="logo"/>
+
+
+            </div>
+            <div class="col-sm-offset-3 col-sm-5 header_text home_header_div">
+                <span>
+                    Elektroniczna Platforma
+                    <br>
+                    Obsługi Przychodni
+
+                </span>
+            </div>
+        </div>-->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
+              </div>
+              <ul class="nav navbar-nav">                
+                <li><a [routerLink]="['/Home']">Lekarz</a></li>
+                <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li> 
+                <li><a [routerLink]="['/PacjenciLista']">Lista pacjentów</a></li> 
+                <li><a [routerLink]="['/DodajWizyte']">Dodaj wizytę</a></li>
+                <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
@@ -22,24 +72,58 @@
         
     </div>
     <div *ngIf='typ_uzytkownika=="pacjent"' id="menu" class="col-sm-2">
-        <ul>
-            <li><a [routerLink]="['/Home']">Pacjent</a></li>
-            <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
-        </ul>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
+              </div>
+              <ul class="nav navbar-nav">                
+                <li><a [routerLink]="['/Home']">Pacjent</a></li>
+                <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
+              </ul>
+            </div>
+        </nav>
+        
     </div>
     <div *ngIf='typ_uzytkownika=="pielegniarka"' id="menu" class="col-sm-2">
-        <ul>
-            <li><a [routerLink]="['/Home']">Pielęgniarka</a></li>
-            <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
-            <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
-        </ul>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
+              </div>
+              <ul class="nav navbar-nav">               
+                <li><a [routerLink]="['/Home']">Pielęgniarka</a></li>
+                <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>                 
+                <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
+              </ul>
+            </div>
+        </nav>
+        
+        
     </div>
     <div *ngIf='typ_uzytkownika=="asystent"' id="menu" class="col-sm-2">
-        <ul>
-            <li><a [routerLink]="['/Home']">Asystent</a></li>
-            <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>
-            <li><a [routerLink]="['/Logowanie']">Logowanie</a></li>
-        </ul>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
+              </div>
+              <ul class="nav navbar-nav">                
+                <li><a [routerLink]="['/Home']">Asystent</a></li>
+                <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>                
+                <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
+              </ul>
+            </div>
+        </nav>
+        
     </div>
     <div id="content-right">
         <router-outlet></router-outlet>

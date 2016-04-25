@@ -1,15 +1,19 @@
+<div class="col-sm-2">
+    <div id="content-header">{{uzytkownik.getTypUzytkownika()}}</div>
 
-<div id="content-header">{{uzytkownik.getTypUzytkownika()}}</div>
+    <div>Login: {{uzytkownik.getLogin()}}</div>
+    <div>Imię: {{uzytkownik.getImie()}}</div>
+    <div>Nazwisko: {{uzytkownik.getNazwisko()}}</div>
+    <div>PESEL: {{uzytkownik.getPesel()}}</div>
+    <div>Telefon: {{uzytkownik.getTelefon()}}</div>
+    <div>E-mail: {{uzytkownik.getEmail()}}</div>
 
-<div>Login: {{uzytkownik.getLogin()}}</div>
-<div>Imię: {{uzytkownik.getImie()}}</div>
-<div>Nazwisko: {{uzytkownik.getNazwisko()}}</div>
-<div>PESEL: {{uzytkownik.getPesel()}}</div>
-<div>Telefon: {{uzytkownik.getTelefon()}}</div>
-<div>E-mail: {{uzytkownik.getEmail()}}</div>
-
-<a href="#" (click)="onLogout()">
-    <button class="btn btn-danger" type="submit">
-        <span class="glyphicon glyphicon-remove-sign"></span> Wyloguj
-    </button>
-</a>
+    <a href="#" (click)="onLogout()">
+        <button class="btn btn-danger" type="submit">
+            <span class="glyphicon glyphicon-remove-sign"></span> Wyloguj
+        </button>
+    </a>
+</div>
+<div class="col-sm-10">
+    <div id="kalendarz_lekarza"></div>
+</div>
