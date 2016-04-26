@@ -3,7 +3,7 @@
         
         <div id="content-header" class="text-capitalize text-center">{{uzytkownik.getTypUzytkownika()}}</div>
         <form [ngFormModel]="form" (submit)="$event.preventDefault();"
-        class=" navbar-left form-singin">
+        class=" navbar-left form-singin col-sm-12">
         <div *ngIf="success" class="alert alert-success" role="alert" id="logowanie_alert" >
                 Zmieniono pomyślnie dane!
         </div>
@@ -57,7 +57,7 @@
         </div>
         
         <div href="#">
-            <button class="btn btn-danger col-sm-6" type="submit">
+            <button class="btn btn-danger col-sm-6" type="submit" (click)="onLogout()">
                 <span class="glyphicon glyphicon-log-out"></span> Wyloguj
             </button>
         </div>
