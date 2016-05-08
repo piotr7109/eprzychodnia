@@ -13,7 +13,10 @@ import {DodajTermin} from "app/components/termin/dodaj_termin.ts";
 import {LogowanieComponent} from 'app/components/logowanie/logowanie.component.ts';
 import {LogowaniePacjenta} from 'app/components/logowanie/logowanie_pacjenta.ts';
 import {LogowanieLekarza} from 'app/components/logowanie/logowanie_lekarza.ts';
+
 import {DodajWizyte} from 'app/components/wizyty/dodaj_wizyte.ts';
+import {DodajSkierowanie} from 'app/components/wizyty/dodaj_skierowanie.ts';
+
 import {Home} from 'app/components/home/home.ts';
 
 
@@ -36,8 +39,9 @@ import {Home} from 'app/components/home/home.ts';
     { path: '/pacjenci_lista', name: 'PacjenciLista', component: PacjenciLista },
     { path: '/dodaj_wizyte', name: 'DodajWizyte', component: DodajWizyte },
     { path: '/pacjent_historia', name: 'PacjentHistoria', component: PacjentHistoria },
-    { path: '/pacjentci_lekarza', name: 'PacjenciLekarza', component: PacjenciLekarza },
-    { path: '/dodaj_termin', name: 'DodajTermin', component: DodajTermin }
+    { path: '/pacjenci_lekarza', name: 'PacjenciLekarza', component: PacjenciLekarza },
+    { path: '/dodaj_termin', name: 'DodajTermin', component: DodajTermin },
+    { path: '/dodaj_skierowanie', name: 'DodajSkierowanie', component: DodajSkierowanie }
 ])
 
 export class App implements OnChanges  {

@@ -16,7 +16,7 @@ export class PacjentHistoria implements OnInit
 {
     pacjent:Uzytkownik = new Uzytkownik();
     wizyty:Wizyta[];
-    constructor(private _router: Router, private _routeParams: RouteParams, public http:Http)
+    constructor(public _router: Router, private _routeParams: RouteParams, public http:Http)
     {
         
     }
@@ -31,6 +31,10 @@ export class PacjentHistoria implements OnInit
                 WizytaLista.getWizytyPacjenta(this.http, pacjent.id)
                 .subscribe((wizyty:any) => {this.wizyty = wizyty})
             });
+    }
+    navigateDodajSkierowanie(wizyta)
+    {
+        this._router.navigate(['DodajSkierowanie',  { id: wizyta._id }]);
     }
     
 }
