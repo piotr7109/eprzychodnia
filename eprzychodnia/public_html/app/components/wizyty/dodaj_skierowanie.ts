@@ -46,11 +46,10 @@ export class DodajSkierowanie implements OnInit {
     onSubmit(values: any) 
     {
         let item:Skierowanie = new Skierowanie();
-        item.data_skierowania = values.data;
+        item.data = values.data;
         item.nazwa = values.nazwa;
         item.opis = values.opis;
         this.wizyta.addSkierowanie(item);
-        console.log(this.wizyta);
         this.wizyta.update(this.http)
         .subscribe((w:Wizyta)=>{
             console.log(w);

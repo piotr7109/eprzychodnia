@@ -7,5 +7,9 @@
 <div class="col-lg-4">E-mail {{pacjent.email}}</div>
 
 <div *ngFor="#wizyta of wizyty; #i = index">
-    <div>{{i+1}}. Data: {{wizyta.data_wizyty}}, Choroba: {{wizyta.choroba_nazwa}}, Opis choroby: {{wizyta.choroba_opis}}<button (click)="navigateDodajSkierowanie(wizyta)" >Dodaj skierowanie</button></div>
+    <div>
+        {{i+1}}. Data: {{wizyta.data_wizyty}}, Choroba: {{wizyta.choroba_nazwa}}, Opis choroby: {{wizyta.choroba_opis}}
+        <p><button (click)="navigateDodajSkierowanie(wizyta)" >Dodaj skierowanie</button></p>
+        <p><button (click)="navigateDodajRecepte(wizyta)" >Dodaj receptę</button></p>
+    </div>
 </div>

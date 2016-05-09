@@ -2,7 +2,7 @@ import {BaseModule} from "app/modules/base_module.ts";
 import {Database} from "app/components/config/database.ts";
 import {Http, Headers} from 'angular2/http';
 
-import {Skierowanie} from '/app/modules/wizyta/skierowanie/skierowanie.ts';
+import {Skierowanie, Recepta} from '/app/modules/wizyta/skierowanie/skierowanie.ts';
 
 export class Wizyta extends BaseModule {
     protected id: number;
@@ -12,6 +12,7 @@ export class Wizyta extends BaseModule {
     protected choroba_nazwa: String;
     protected choroba_opis: String;
     protected skierowania:Skierowanie[] = new Array();
+    protected recepty:Recepta[] = new Array();
 
     constructor(private http: Http) {
         super();
@@ -61,6 +62,14 @@ export class Wizyta extends BaseModule {
             this.skierowania = new Array(); 
         }
         this.skierowania.push(item);
+    }
+    addRecepta(item:Recepta)
+    {
+        if(this.recepty == null)
+        {
+            this.recepty = new Array(); 
+        }
+        this.recepty.push(item);
     }
 
 

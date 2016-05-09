@@ -14,6 +14,7 @@ export class WizytaFactory {
         wz.setChorobaNazwa(row.choroba_nazwa);
         wz.setChorobaOpis(row.choroba_opis);
         wz.skierowania = row.skierowania;
+        wz.recepty = row.recepty;
         
         return wz;
     }
