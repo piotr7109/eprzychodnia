@@ -7,17 +7,19 @@ export class WizytaFactory {
     public static fetchObject(row: any): Wizyta {
         var wz = new Wizyta();
         wz.setId(row._id);
+        wz.setRev(row._rev);
         wz.setIdPacjenta(row.id_pacjenta);
         wz.setDataWizyty(row.data_wizyty);
         wz.setIdLekarza(row.id_lekarza);
         wz.setChorobaNazwa(row.choroba_nazwa);
         wz.setChorobaOpis(row.choroba_opis);
+        wz.skierowania = row.skierowania;
         
         return wz;
     }
     static getWizyta(http: Http, id: number) {
         var db = Database.db:
-        var query + id;
+        var query = id;
         return http.get(db + query, {
             headers: Database.getHeaders()
         })

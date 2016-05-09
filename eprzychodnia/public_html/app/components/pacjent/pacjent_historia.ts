@@ -23,18 +23,20 @@ export class PacjentHistoria implements OnInit
     
     ngOnInit()
     {
-        let id:number = this._routeParams.get('id');
+        let id:String = this._routeParams.get('id');
         UzytkownikFactory.getUzytkownik(this.http, id)
             .subscribe((pacjent:Uzytkownik) =>
             { 
                 this.pacjent = pacjent; 
-                WizytaLista.getWizytyPacjenta(this.http, pacjent.id)
-                .subscribe((wizyty:any) => {this.wizyty = wizyty})
+                WizytaLista.getWizytyPacjenta(this.http, pacjent._id)
+                .subscribe((wizyty:any) => {
+                this.wizyty = wizyty
+                });
             });
     }
     navigateDodajSkierowanie(wizyta)
     {
-        this._router.navigate(['DodajSkierowanie',  { id: wizyta._id }]);
+        this._router.navigate(['DodajSkierowanie',  { id: wizyta.id }]);
     }
     
 }

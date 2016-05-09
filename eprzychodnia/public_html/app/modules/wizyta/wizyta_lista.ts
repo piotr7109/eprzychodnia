@@ -6,7 +6,7 @@ import {Http} from 'angular2/http';
 export class WizytaLista {
 
 
-    static getWizytyPacjenta(http: Http, id_pacjenta:number) {
+    static getWizytyPacjenta(http: Http, id_pacjenta:String) {
         let db = Database.db;
         let query = sprintf('_design/users/_view/getWizytyPacjenta?key="%1$s"', id_pacjenta);
         return http.get(db + query, {

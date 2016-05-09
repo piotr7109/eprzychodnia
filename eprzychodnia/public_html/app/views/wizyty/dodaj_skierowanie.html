@@ -1,5 +1,5 @@
 <div class="col-sm-offset-4  col-sm-4 jumbotron patient_registration img-rounded">
-    <div id="content-header" class="text-capitalize text-center">Wypisz skierowanie</div>
+    <div id="content-header" class="text-capitalize text-center">Wypisz skierowanie {wizyta.data_wizyty}</div>
     <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
         class=" navbar-left form-singin">
 
@@ -8,13 +8,13 @@
                 Skierowanie zapisane!
         </div>
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="Data wystawienia skierowania" ngControl="data_skierowania" required="">
+            <input type="text" class="form-control" placeholder="Data wystawienia skierowania" ngControl="data" required="">
         </div>
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="Tytuł skierowania" ngControl="skierowanie_nazwa" required="">
+            <input type="text" class="form-control" placeholder="Tytuł skierowania" ngControl="nazwa" required="">
         </div>
         <div class="form-group col-sm-12">
-            <textarea type="textarea" class="form-control" placeholder="Opis skierowania" ngControl="skierowanie_opis" required=""></textarea>
+            <textarea type="textarea" class="form-control" placeholder="Opis skierowania" ngControl="opis" required=""></textarea>
         </div>
         <div class="form-group ">
             <button type="submit" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj skierowanie</button>

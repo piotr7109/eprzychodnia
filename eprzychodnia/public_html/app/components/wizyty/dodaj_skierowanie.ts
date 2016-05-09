@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {Router, CanActivate} from 'angular2/router';
+import {Router, CanActivate,RouteParams} from 'angular2/router';
 import {FORM_DIRECTIVES, FormBuilder, Validators, ControlGroup, NgIf} from 'angular2/common';
 import {Http} from 'angular2/http';
 
@@ -7,6 +7,7 @@ import {PacjentLista}  from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
 import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Wizyta} from 'app/modules/wizyta/wizyta.ts';
 import {WizytaFactory} from 'app/modules/wizyta/wizyta_factory.ts';
+import {Skierowanie} from '/app/modules/wizyta/skierowanie/skierowanie.ts';
 
 
 @Component({
@@ -20,24 +21,40 @@ export class DodajSkierowanie implements OnInit {
    
     form: ControlGroup;
     success:boolean = false;
+    protected wizyta:Wizyta;
     
     
-    constructor(public http: Http, fb: FormBuilder) 
+    constructor(public http: Http, fb: FormBuilder,private _routeParams: RouteParams,) 
     {
         this.form = fb.group({
-            data_skierowania: ['', Validators.required],
-            skierowanie_nazwa: ['', Validators.required],
-            skierowanie_opis: ['', Validators.required]
+            data: ['', Validators.required],
+            nazwa: ['', Validators.required],
+            opis: ['', Validators.required]
         });
 
     }
     
-    ngOnInit() {
-       
+    ngOnInit() 
+    {
+       let id:number = this._routeParams.get('id');
+       WizytaFactory.getWizyta(this.http, id )
+       .subscribe((wizyta:Wizyta) =>{
+           console.log(wizyta);
+           this.wizyta = wizyta;
+       });
     }
     onSubmit(values: any) 
     {
-        
+        let item:Skierowanie = new Skierowanie();
+        item.data_skierowania = values.data;
+        item.nazwa = values.nazwa;
+        item.opis = values.opis;
+        this.wizyta.addSkierowanie(item);
+        console.log(this.wizyta);
+        this.wizyta.update(this.http)
+        .subscribe((w:Wizyta)=>{
+            console.log(w);
+        });
     }
 
     
