@@ -18,6 +18,14 @@ export class Uzytkownik extends BaseModule {
 
     constructor(private http: Http) {
         super();
+        login = "ddda";
+        haslo = "";
+        data_zalozenia = "";
+        imie = "";
+        nazwisko = "";
+        pesel = 0;
+        telefon = 0;
+        email = "";
         this.kategoria = "uzytkownik";
         this.typ_uzytkownika = "base_uzytkownik";
     }

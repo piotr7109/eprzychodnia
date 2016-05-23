@@ -6,10 +6,13 @@ import {czyZalogowany}  from 'app/services/logowanie/czy-zalogowany.ts';
 import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
 import {Http}  from 'angular2/http';
+import { ValidationService, ControlMessages } from '/app/services/form/form_helpers.ts';
+ 
 
 
 @Component({
     selector: 'home',
+    directives: [FORM_DIRECTIVES, NgIf,ControlMessages],
     templateUrl: "app/views/home/home.html"
 })
 @CanActivate(() => czyZalogowany())
@@ -17,19 +20,19 @@ export class Home implements OnInit {
     
     public uzytkownik: Uzytkownik = new Uzytkownik();
     private success:boolean = false;
+    form: ControlGroup;
     
-    constructor(fb: FormBuilder, public auth: Authentication, public router: Router, public http: Http) {
-
-        this.uzytkownik.setLogin("DEFAULT");
+    constructor(public fb: FormBuilder, public auth: Authentication, public router: Router, public http: Http) {
+        
         this.id_uzytkownika = localStorage.getItem('token');
-        this.form = fb.group({
-        login: ['', Validators.required],
-            haslo: ['', Validators.required],
-            imie: ['', Validators.required],
-            nazwisko: ['', Validators.required],
-            pesel: ['', Validators.required],
-            telefon: ['', Validators.required],
-            email : ['', Validators.required]
+        this.form = this.fb.group({
+            'login': ['', Validators.required],
+            'haslo': ['', Validators.required],
+            'imie': ['', Validators.required],
+            'nazwisko': ['', Validators.required],
+            'pesel': ['', Validators.compose([Validators.required, ValidationService.peselValidator])],
+            'telefon': ['', Validators.compose([Validators.required, ValidationService.numberValidator])],
+            'email' : ['123', Validators.compose([Validators.required, ValidationService.emailValidator])]
          });
 
     }
@@ -47,8 +50,22 @@ export class Home implements OnInit {
         UzytkownikFactory.getUzytkownik(this.http, this.id_uzytkownika)
             .subscribe((uzytkownik: Uzytkownik) => {
                 this.uzytkownik = uzytkownik;
+                this.updateForm(uzytkownik);
+                
 
             });
+    }
+    updateForm(uzytkownik:Uzytkownik)
+    {
+        this.form.controls['login'].updateValue(uzytkownik.login);
+        this.form.controls['haslo'].updateValue(uzytkownik.haslo);
+        this.form.controls['imie'].updateValue(uzytkownik.imie);
+        this.form.controls['nazwisko'].updateValue(uzytkownik.nazwisko);
+        this.form.controls['pesel'].updateValue(uzytkownik.pesel);
+        this.form.controls['telefon'].updateValue(uzytkownik.telefon);
+        this.form.controls['email'].updateValue(uzytkownik.email);
+
+
     }
     onLogout() {
         this.auth.logout()

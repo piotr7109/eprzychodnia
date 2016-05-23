@@ -4,8 +4,7 @@ import {Router, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from '
 import {Pacjent} from 'app/modules/uzytkownik/pacjent/pacjent.ts';
 import {PacjentFactory} from 'app/modules/uzytkownik/pacjent/pacjent_factory.ts';
 import {Http} from 'angular2/http';
-import { ValidationService } from '/app/services/form/validation.ts';
-import {ControlMessages} from '/app/services/form/messages.ts';
+import { ValidationService, ControlMessages } from '/app/services/form/form_helpers.ts';
 
 @Component({
     selector: 'rejestracja-pacjenta',
@@ -40,8 +39,7 @@ export class RejestracjaPacjenta implements OnInit()
         uz.kategoria = "uzytkownik";
         uz.typ_uzytkownika = "pacjent";
         uz.id_lekarza = "";
-        //uz.insert(this.http,uz);
-        console.log(uz);
+        uz.insert(this.http,uz);
         
     }
 }
