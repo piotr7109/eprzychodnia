@@ -44,7 +44,7 @@ export class PacjentHistoria implements OnInit
     }
     navigateToSzczegoly(wizyta:Wizyta)
     {
-        //this._router.navigate(['WizytaSzczegoly', {id: wizyta.id}]);
+        this._router.navigate(['WizytaSzczegoly', {id: wizyta.id}]);
     }
     
 }

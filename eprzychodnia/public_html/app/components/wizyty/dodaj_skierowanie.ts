@@ -39,7 +39,6 @@ export class DodajSkierowanie implements OnInit {
        let id:number = this._routeParams.get('id');
        WizytaFactory.getWizyta(this.http, id )
        .subscribe((wizyta:Wizyta) =>{
-           console.log(wizyta);
            this.wizyta = wizyta;
        });
     }

@@ -11,11 +11,11 @@ import {WizytaFactory} from '/app/modules/wizyta/wizyta_factory.ts';
 
 export class WizytaSzczegoly implements OnInit{
     
-    protected wizyta:Wizyta;
-    protected skierowania:Skierowanie;
-    protected recepty:Skierowanie;
+    protected wizyta:Wizyta = new Wizyta();
+    protected skierowania:Skierowanie[];
+    protected recepty:Skierowanie[];
     
-    constuctor(http: Http)
+    constructor(public _router: Router, private _routeParams: RouteParams, public http:Http)
     {
         
     }
@@ -25,8 +25,10 @@ export class WizytaSzczegoly implements OnInit{
         let id:number = this._routeParams.get('id');
         WizytaFactory.getWizyta(this.http, id )
        .subscribe((wizyta:Wizyta) =>{
-           console.log(wizyta);
            this.wizyta = wizyta;
+           this.skierowania = wizyta.skierowania;
+           this.recepty = wizyta.recepty;
+
        });
     }
     

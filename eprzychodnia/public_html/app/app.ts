@@ -1,4 +1,4 @@
-import {Component, OnChanges} from 'angular2/core';
+    import {Component, OnChanges} from 'angular2/core';
 import {NgIf} from 'angular/common';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from 'angular2/router';
 import {Authentication} from 'app/components/logowanie/authentication.ts';
@@ -18,6 +18,7 @@ import {LogowanieLekarza} from 'app/components/logowanie/logowanie_lekarza.ts';
 import {DodajWizyte} from 'app/components/wizyty/dodaj_wizyte.ts';
 import {DodajSkierowanie} from 'app/components/wizyty/dodaj_skierowanie.ts';
 import {DodajRecepte} from '/app/components/wizyty/dodaj_recepte.ts';
+import {WizytaSzczegoly} from '/app/components/wizyty/wizyta_szczegoly.ts';
 
 import {Home} from 'app/components/home/home.ts';
 
@@ -44,7 +45,8 @@ import {Home} from 'app/components/home/home.ts';
     { path: '/pacjenci_lekarza', name: 'PacjenciLekarza', component: PacjenciLekarza },
     { path: '/dodaj_termin', name: 'DodajTermin', component: DodajTermin },
     { path: '/dodaj_skierowanie', name: 'DodajSkierowanie', component: DodajSkierowanie },
-    { path: '/dodaj_recepte', name: 'DodajRecepte', component: DodajRecepte }
+    { path: '/dodaj_recepte', name: 'DodajRecepte', component: DodajRecepte },
+    { path: '/wizyta_szczegoly', name: 'WizytaSzczegoly', component: WizytaSzczegoly }
 ])
 
 export class App implements OnChanges  {

@@ -1,0 +1,18 @@
+
+<div id="content-header">Wizyta z dnia {{wizyta.data_wizyty}}</div>
+<div>Skierowania</div>
+<div *ngFor="#item of skierowania; #i = index">
+    <div>
+        {{i+1}}. Data wystawienia: {{item.data}}<br>
+        Tytuł skierowania: {{item.nazwa}}<br>
+        Opis skierowania: {{item.opis}}
+    </div>
+</div>
+<div>Recepty</div>
+<div *ngFor="#item of recepty; #i = index">
+    <div>
+        {{i+1}}. Data wystawienia: {{item.data}}<br>
+        Tytuł recepty {{item.nazwa}}<br>
+        Szczegóły recepty {{item.opis}}
+    </div>
+</div>
