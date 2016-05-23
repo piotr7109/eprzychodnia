@@ -8,11 +8,11 @@ import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Wizyta} from 'app/modules/wizyta/wizyta.ts';
 import {WizytaFactory} from 'app/modules/wizyta/wizyta_factory.ts';
 import {Skierowanie} from '/app/modules/wizyta/skierowanie/skierowanie.ts';
-
+import { ValidationService, ControlMessages } from '/app/services/form/form_helpers.ts';
 
 @Component({
     selector: "dodaj-skierowanie",
-    directives: [FORM_DIRECTIVES, NgIf],
+    directives: [FORM_DIRECTIVES, NgIf , ControlMessages],
     templateUrl: "app/views/wizyty/dodaj_skierowanie.html"
 })
 

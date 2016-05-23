@@ -9,15 +9,18 @@
         </div>
         <div class="form-group col-sm-12">
             <input type="text" class="form-control" placeholder="Data wystawienia skierowania" ngControl="data" required="">
+            <control-messages control="data"></control-messages>
         </div>
         <div class="form-group col-sm-12">
             <input type="text" class="form-control" placeholder="Tytuł skierowania" ngControl="nazwa" required="">
+            <control-messages control="nazwa"></control-messages>
         </div>
         <div class="form-group col-sm-12">
             <textarea type="textarea" class="form-control" placeholder="Opis skierowania" ngControl="opis" required=""></textarea>
+            <control-messages control="opis"></control-messages>
         </div>
         <div class="form-group ">
-            <button type="submit" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj skierowanie</button>
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj skierowanie</button>
         </div>
 
     </form>

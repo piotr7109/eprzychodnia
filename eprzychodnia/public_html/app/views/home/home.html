@@ -51,7 +51,7 @@
         </div>
         <div style="margin-top: 10px;"> </div>
         <div id="wyslij_dane_do_bazy_button" href="#">
-            <button class="btn btn-info col-sm-6" type="submit" (click)="zapiszDane(form.value)">
+            <button class="btn btn-info col-sm-6" type="submit" [disabled]="!form.valid" (click)="zapiszDane(form.value)">
                 <span class="glyphicon glyphicon-repeat"></span> Wyślij dane do bazy
             </button>
         </div>

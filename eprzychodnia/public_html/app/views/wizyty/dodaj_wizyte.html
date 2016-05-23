@@ -15,15 +15,18 @@
         </div>
         <div class="form-group col-sm-12">
             <input type="text" class="form-control" placeholder="Data wizyty" ngControl="data_wizyty" required="">
+            <control-messages control="data_wizyty"></control-messages>
         </div>
         <div class="form-group col-sm-12">
             <input type="text" class="form-control" placeholder="Nazwa choroby" ngControl="choroba_nazwa" required="">
+            <control-messages control="choroba_nazwa"></control-messages>
         </div>
         <div class="form-group col-sm-12">
             <textarea type="textarea" class="form-control" placeholder="Opis choroby" ngControl="choroba_opis" required=""></textarea>
+            <control-messages control="choroba_opis"></control-messages>
         </div>
         <div class="form-group ">
-            <button type="submit" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj wizytę</button>
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj wizytę</button>
         </div>
 
     </form>

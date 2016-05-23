@@ -6,10 +6,11 @@ import {Http} from 'angular2/http';
 import {Recepta} from '/app/modules/wizyta/skierowanie/skierowanie.ts';
 import {DodajSkierowanie} from '/app/components/wizyty/dodaj_skierowanie.ts';
 
+import { ValidationService, ControlMessages } from '/app/services/form/form_helpers.ts';
 
 @Component({
     selector: "dodaj-recepte",
-    directives: [FORM_DIRECTIVES, NgIf],
+    directives: [FORM_DIRECTIVES, NgIf, ControlMessages],
     templateUrl: "app/views/wizyty/dodaj_recepte.html"
 })
 

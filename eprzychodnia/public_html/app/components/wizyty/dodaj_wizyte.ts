@@ -7,11 +7,11 @@ import {PacjentLista}  from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
 import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Wizyta} from 'app/modules/wizyta/wizyta.ts';
 import {WizytaFactory} from 'app/modules/wizyta/wizyta_factory.ts';
-
+import { ValidationService, ControlMessages } from '/app/services/form/form_helpers.ts';
 
 @Component({
     selector: "dodaj-wizyte",
-    directives: [FORM_DIRECTIVES, NgIf],
+    directives: [FORM_DIRECTIVES, NgIf, ControlMessages],
     templateUrl: "app/views/wizyty/dodaj_wizyte.html"
 })
 
