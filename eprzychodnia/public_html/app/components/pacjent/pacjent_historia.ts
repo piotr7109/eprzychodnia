@@ -42,5 +42,9 @@ export class PacjentHistoria implements OnInit
     {
         this._router.navigate(['DodajRecepte',  { id: wizyta.id }]);
     }
+    navigateToSzczegoly(wizyta:Wizyta)
+    {
+        //this._router.navigate(['WizytaSzczegoly', {id: wizyta.id}]);
+    }
     
 }

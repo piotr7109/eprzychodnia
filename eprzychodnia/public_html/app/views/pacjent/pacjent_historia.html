@@ -1,14 +1,14 @@
-<div id="content-header">Lista wizyt</div>
+<div id="content-header">Lista wizyt    </div>
 <h3 class="col-lg-4">Login: {{pacjent.login}}</h3>
 <div class="col-lg-4">Imię: {{pacjent.imie}}</div>
 <div class="col-lg-4">Nazwisko: {{pacjent.nazwisko}}</div>
 <div class="col-lg-4">PESEL: {{pacjent.pesel}}</div>
 <div class="col-lg-4">Telefon: {{pacjent.telefon}}</div>
 <div class="col-lg-4">E-mail {{pacjent.email}}</div>
-
 <div *ngFor="#wizyta of wizyty; #i = index">
     <div>
         {{i+1}}. Data: {{wizyta.data_wizyty}}, Choroba: {{wizyta.choroba_nazwa}}, Opis choroby: {{wizyta.choroba_opis}}
+        <p><button (click)="navigateToSzczegoly(wizyta)" >Wyświetl szczegóły</button></p>
         <p><button (click)="navigateDodajSkierowanie(wizyta)" >Dodaj skierowanie</button></p>
         <p><button (click)="navigateDodajRecepte(wizyta)" >Dodaj receptę</button></p>
     </div>
