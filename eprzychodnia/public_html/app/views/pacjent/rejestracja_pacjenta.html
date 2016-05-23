@@ -1,18 +1,20 @@
 <div class="col-sm-offset-4  col-sm-4 jumbotron patient_registration img-rounded">
     <div id="content-header" class="text-capitalize text-center">Rejestracja pacjenta</div>
 
-    <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
-        class=" navbar-left form-singin">
+        <form novalidate [ngFormModel]="form" (submit)="onSubmit(form.value)"
+            class=" navbar-left form-singin" >
         <div *ngIf="error" class="alert alert-danger" role="alert" id="logowanie_alert" >
                 <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
                 Błędne dane logowania :(
         </div>
 
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="Login" ngControl="login" required="">
+            <input type="text" class="form-control" placeholder="Login" ngControl="login" >
+            <control-messages control="login"></control-messages>
         </div>
         <div class="form-group col-sm-12">
-            <input id="registration_password" type="password" class="form-control" placeholder="Hasło" ngControl="haslo" required="">
+            <input id="registration_password" type="password" class="form-control" placeholder="Hasło" ngControl="haslo" >
+            <control-messages control="haslo"></control-messages>
         </div>
         <div class="progress  col-sm-11 nopadding">
             <div id="registration_progressbar" class="progress-bar-danger" role="progressbar" aria-valuenow="70"
@@ -21,22 +23,27 @@
             </div>
         </div>
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="Imię" ngControl="imie" required="">
+            <input type="text" class="form-control" placeholder="Imię" ngControl="imie" >
+            <control-messages control="imie"></control-messages>
         </div>
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="Nazwisko" ngControl="nazwisko" required="">
+            <input type="text" class="form-control" placeholder="Nazwisko" ngControl="nazwisko" >
+            <control-messages control="nazwisko"></control-messages>
         </div>
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="PESEL" ngControl="pesel" required="">
+            <input type="text" class="form-control" placeholder="PESEL" ngControl="pesel" >
+            <control-messages control="pesel"></control-messages>
         </div>
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="Telefon kontaktowy" ngControl="telefon" required="">
+            <input type="text" class="form-control" placeholder="Telefon kontaktowy" ngControl="telefon" >
+            <control-messages control="telefon"></control-messages>
         </div>
         <div class="form-group col-sm-12">
-            <input type="text" class="form-control" placeholder="E-mail" ngControl="email" required="">
+            <input type="text" class="form-control" placeholder="E-mail" ngControl="email" >
+            <control-messages control="email"></control-messages>
         </div>
         <div class="form-group ">
-            <button type="submit" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-edit"></span> Rejestruj</button>
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-edit"></span> Rejestruj</button>
         </div>
 
     </form>

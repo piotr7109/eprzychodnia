@@ -4,10 +4,12 @@ import {Router, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from '
 import {Pacjent} from 'app/modules/uzytkownik/pacjent/pacjent.ts';
 import {PacjentFactory} from 'app/modules/uzytkownik/pacjent/pacjent_factory.ts';
 import {Http} from 'angular2/http';
+import { ValidationService } from '/app/services/form/validation.ts';
+import {ControlMessages} from '/app/services/form/messages.ts';
 
 @Component({
     selector: 'rejestracja-pacjenta',
-    directives: [FORM_DIRECTIVES, NgIf],
+    directives: [FORM_DIRECTIVES, NgIf,ControlMessages],
     templateUrl: "app/views/pacjent/rejestracja_pacjenta.html"
 
 })
@@ -22,9 +24,9 @@ export class RejestracjaPacjenta implements OnInit()
             haslo: ['', Validators.required],
             imie: ['', Validators.required],
             nazwisko: ['', Validators.required],
-            pesel: ['', Validators.required],
-            telefon: ['', Validators.required],
-            email : ['', Validators.required]
+            pesel: ['', Validators.compose([Validators.required, ValidationService.peselValidator])],
+            telefon: ['', Validators.compose([Validators.required, ValidationService.numberValidator])],
+            email : ['', Validators.compose([Validators.required, ValidationService.emailValidator])]
         });
     }
     ngOnInit()
@@ -38,7 +40,8 @@ export class RejestracjaPacjenta implements OnInit()
         uz.kategoria = "uzytkownik";
         uz.typ_uzytkownika = "pacjent";
         uz.id_lekarza = "";
-        uz.insert(this.http,uz);
+        //uz.insert(this.http,uz);
+        console.log(uz);
         
     }
 }
