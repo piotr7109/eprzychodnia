@@ -134,3 +134,10 @@ body
 {
     font-size: 150%;
 }
+.patient_list_temp
+{
+    font-weight: bold;
+    color: black;
+    background-image: url(../img/1511.jpg);
+    background-size: cover;
+}
