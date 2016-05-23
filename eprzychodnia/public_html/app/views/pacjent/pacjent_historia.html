@@ -1,15 +1,29 @@
-<div id="content-header">Lista wizyt    </div>
-<h3 class="col-lg-4">Login: {{pacjent.login}}</h3>
-<div class="col-lg-4">Imię: {{pacjent.imie}}</div>
-<div class="col-lg-4">Nazwisko: {{pacjent.nazwisko}}</div>
-<div class="col-lg-4">PESEL: {{pacjent.pesel}}</div>
-<div class="col-lg-4">Telefon: {{pacjent.telefon}}</div>
-<div class="col-lg-4">E-mail {{pacjent.email}}</div>
-<div *ngFor="#wizyta of wizyty; #i = index">
-    <div>
-        {{i+1}}. Data: {{wizyta.data_wizyty}}, Choroba: {{wizyta.choroba_nazwa}}, Opis choroby: {{wizyta.choroba_opis}}
-        <p><button (click)="navigateToSzczegoly(wizyta)" >Wyświetl szczegóły</button></p>
-        <p><button (click)="navigateDodajSkierowanie(wizyta)" >Dodaj skierowanie</button></p>
-        <p><button (click)="navigateDodajRecepte(wizyta)" >Dodaj receptę</button></p>
-    </div>
-</div>
+<div class="container jumbotron img-rounded">
+    <table class="table">
+    <tr>
+        <td>
+            <div id="content-header">Lista wizyt    </div>
+            <h3 class="col-lg-4">Login: {{pacjent.login}}</h3>
+            <div class="col-lg-4">Imię: {{pacjent.imie}}</div>
+            <div class="col-lg-4">Nazwisko: {{pacjent.nazwisko}}</div>
+            <div class="col-lg-4">PESEL: {{pacjent.pesel}}</div>
+            <div class="col-lg-4">Telefon: {{pacjent.telefon}}</div>
+            <div class="col-lg-4">E-mail {{pacjent.email}}</div>
+        </td>
+    </tr>
+
+        
+        <div *ngFor="#wizyta of wizyty; #i = index">
+            <tr>
+                <div>
+                    <td class='col-sm-4'>{{i+1}}. Data: {{wizyta.data_wizyty}}, Choroba: {{wizyta.choroba_nazwa}}, Opis choroby: {{wizyta.choroba_opis}}</td>
+                    <td class='col-sm-offset-3 col-sm-4'>
+                        <p><button (click)="navigateToSzczegoly(wizyta)" >Wyświetl szczegóły</button></p>
+                        <p><button (click)="navigateDodajSkierowanie(wizyta)" >Dodaj skierowanie</button></p>
+                        <p><button (click)="navigateDodajRecepte(wizyta)" >Dodaj receptę</button></p>
+                    </td>
+                </div>
+            </tr>
+        </div>
+    </table>
+    

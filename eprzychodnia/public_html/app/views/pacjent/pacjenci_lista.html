@@ -1,7 +1,48 @@
 
-<div id="content-header">Lista pacjentów</div>
+<div id="content-header" class="col-sm-12 text-center">Lista pacjentów</div>
 
-<div *ngFor="#pacjent of pacjenci; #i = index">
+
+<div class="container jumbotron img-rounded">
+    <table class="table">
+        <thead>
+            <tr>
+<!--                <th>Login</th>
+                <th>Dane personalne</th>
+                <th>Opcje</th>-->
+            </tr>
+        </thead>
+        <tbody>
+            
+            <div class='col-sm-12' *ngFor="#pacjent of pacjenci; #i = index">
+                <tr>
+                    <td><h4 class="col-lg-4">Login: {{pacjent.login}}</h4></td>
+                    <td>
+                        <div class="col-lg-4">Imię: {{pacjent.imie}}</div>
+                        <div class="col-lg-4">Nazwisko: {{pacjent.nazwisko}}</div>
+                        <div class="col-lg-4">PESEL: {{pacjent.pesel}}</div>
+                        <div class="col-lg-4">Telefon: {{pacjent.telefon}}</div>
+                        <div class="col-lg-4">E-mail {{pacjent.email}}</div>
+                        <div  class="col-lg-4">Lekarz: {{getDaneLekarza(i)}} </div>
+                    </td>
+                    <td>
+                        <a *ngIf="!czyPrzypisany(i)" (click)="przypiszPacjenta(i)">
+                        <button type="button" class="btn btn-warning">
+                            Przypisz pacjenta
+                        </button>
+                        </a>
+                        <a (click)="onSelect(pacjent)">
+                            <button type="button" class="btn btn-warning">
+                                Historia pacjenta
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            </div>       
+
+        </tbody>
+    </table>
+</div>
+<!--<div *ngFor="#pacjent of pacjenci; #i = index">
     <h3 class="col-lg-4">Login: {{pacjent.login}}</h3>
     <div class="col-lg-4">Imię: {{pacjent.imie}}</div>
     <div class="col-lg-4">Nazwisko: {{pacjent.nazwisko}}</div>
@@ -19,4 +60,4 @@
                 Historia pacjenta
         </button>
     </a>
-</div>
+</div>-->
