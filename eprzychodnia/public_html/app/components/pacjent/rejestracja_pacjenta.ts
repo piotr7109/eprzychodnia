@@ -17,6 +17,7 @@ export class RejestracjaPacjenta implements OnInit()
 {
     form: ControlGroup;
     error: boolean = false;
+    public success = false;
     constructor(fb: FormBuilder,  public router: Router, public http:Http) {
         this.form = fb.group({
             login: ['', Validators.required],
@@ -40,6 +41,6 @@ export class RejestracjaPacjenta implements OnInit()
         uz.typ_uzytkownika = "pacjent";
         uz.id_lekarza = "";
         uz.insert(this.http,uz);
-        
+        this.success = true;
     }
 }
