@@ -18,6 +18,7 @@ export class UzytkownikFactory {
         uz.setTypUzytkownika(row.typ_uzytkownika);
         uz.setAktywny(row.aktywny);
         uz.setRev(row._rev);
+        uz.godziny = row.godziny;
         
         return uz;
     }

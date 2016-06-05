@@ -14,18 +14,20 @@ export class Uzytkownik extends BaseModule {
     protected email: String;
     protected typ_uzytkownika: String;
     protected aktywny:String;
+    protected godziny:Godziny;
     
 
     constructor(private http: Http) {
         super();
-        login = "ddda";
-        haslo = "";
-        data_zalozenia = "";
-        imie = "";
-        nazwisko = "";
-        pesel = 0;
-        telefon = 0;
-        email = "";
+        this.login = "ddda";
+        this.haslo = "";
+        this.data_zalozenia = "";
+        this.imie = "";
+        this.nazwisko = "";
+        this.pesel = 0;
+        this.telefon = 0;
+        this.email = "";
+        this.godziny = new Godziny();
         this.kategoria = "uzytkownik";
         this.typ_uzytkownika = "base_uzytkownik";
     }
@@ -123,6 +125,23 @@ export class Uzytkownik extends BaseModule {
             headers: headers
         })
         .map(res => return res.json());
+    }
+
+}
+
+export class Godziny
+{
+    public pn:number;
+    public wt:number;
+    public sr:number;
+    public czw:number;
+    public pt:number;
+    public sb:number;
+    public ndz:number;
+    
+    constructor()
+    {
+        this.pn = this.wt = this.sr = this.czw = this.pt = this.sb = this.ndz = 1;
     }
 
 }

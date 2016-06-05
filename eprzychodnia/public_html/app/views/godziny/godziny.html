@@ -1,0 +1,48 @@
+<div class="col-sm-offset-4  col-sm-4 jumbotron patient_registration img-rounded">
+    <div id="content-header" class="text-capitalize text-center">Ustal godziny pracy</div>
+    <form *ngIf="!disabled" [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
+        class=" navbar-left form-singin">
+
+        <div *ngIf="success" class="alert alert-success" role="alert" id="form-success" >
+                <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
+                Zmiany zapisane!
+        </div>
+        <div *ngIf="error_za_duzo_wolnych" class="alert alert-danger" role="alert" id="form-danger" >
+                <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
+                Za dużo wolnych dni! Weź się za robotę!
+        </div>
+        <div *ngIf="error_nie_wszystkie_wypelnione" class="alert alert-warning" role="alert" id="form-warning" >
+                <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
+                Należy wypełnić wszystkie dni.
+        </div>
+        <div *ngFor="#dzien of dni" class="form-group col-sm-12">
+            {{dzien.dzien}}
+            <select  class="form-control" ngControl="{{dzien.skrot}}" (change)="onChange($event.target.value)">
+                <option *ngFor="#zmiana of zmiany" [value]="zmiana.numer"v>
+                    <x *ngIf="zmiana.numer==99"> 
+                    Wolne
+                    </x>
+                    <x *ngIf="zmiana.numer!=99"> 
+                    {{zmiana.start}}:00 - {{zmiana.koniec}}:00
+                    </x>
+                </option>
+            </select>
+            
+        </div>
+        <div class="form-group ">
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Ustal godziny</button>
+        </div>
+
+    </form>
+    
+    <div *ngIf="disabled" class=" navbar-left form-singin">
+        <div *ngFor="#dzien of dni" >
+            <span *ngIf="uzytkownik.godziny[dzien.skrot]!=99"  class="form-group col-sm-12">
+                {{dzien.dzien}}: {{zmiany[uzytkownik.godziny[dzien.skrot]-1].start}}:00 - {{zmiany[uzytkownik.godziny[dzien.skrot]-1].koniec}}:00
+            </span>
+            <span *ngIf="uzytkownik.godziny[dzien.skrot]==99"  class="form-group col-sm-12">
+                {{dzien.dzien}}: Wolne
+            </span>
+        </div>
+    </div>
+</div>
