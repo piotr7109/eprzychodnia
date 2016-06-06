@@ -35,8 +35,8 @@
 
     </form>
     
-    <div *ngIf="disabled" class=" navbar-left form-singin">
-        <div *ngFor="#dzien of dni" >
+    <div *ngIf="disabled" class=" col-sm-12 navbar-left form-singin text-center">
+        <strong><div *ngFor="#dzien of dni" >
             <span *ngIf="uzytkownik.godziny[dzien.skrot]!=99"  class="form-group col-sm-12">
                 {{dzien.dzien}}: {{zmiany[uzytkownik.godziny[dzien.skrot]-1].start}}:00 - {{zmiany[uzytkownik.godziny[dzien.skrot]-1].koniec}}:00
             </span>
@@ -44,5 +44,6 @@
                 {{dzien.dzien}}: Wolne
             </span>
         </div>
+        </strong>
     </div>
 </div>
