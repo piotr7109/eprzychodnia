@@ -1,10 +1,30 @@
-<div id="content-header">Dodaj nowy termin</div>
-<form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
-    class=" navbar-left form-singin">
-    
-    <div *ngIf="success" class="alert alert-success" role="alert" id="form-success" >
-            <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
-            Termin został ustalony!
+<div class="dodaj_termin jumbotron col-sm-offset-4 col-sm-4 img-rounded">
+    <div class="col-sm-offset-2 col-sm-10 ">
+        <div id="content-header">Dodaj nowy termin</div>
+        <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
+            class=" navbar-left form-singin">
+
+            <div *ngIf="success" class="alert alert-success" role="alert" id="form-success" >
+                    <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
+                    Termin został ustalony!
+            </div>
+
+            <div class="form-group">
+                <select (change)="onChange($event.target.value)" class="form-control">
+                    <option *ngFor="#lekarz of lekarze" [value]="lekarz">{{lekarz.imie}} {{lekarz.nazwisko}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Data wizyty" ngControl="data" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Godzina wizyty" ngControl="godzina" required="">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Umów się na wizytę</button>
+            </div>
+
+        </form>
     </div>
     <div *ngIf="error_termin_zajety" class="alert alert-danger" role="alert" id="form-alert" >
             <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
