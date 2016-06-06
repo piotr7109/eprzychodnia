@@ -24,6 +24,29 @@
         </script>
 </head>
 <body>
-<script src="1st.spec.ts"></script>
+      <!-- #1. add the system.js library -->
+  <script src="../node_modules/systemjs/dist/system.src.js"></script>
+
+  <script>
+    // #2. Configure systemjs to use the .js extension
+    //     for imports from the app folder
+    System.config({
+      packages: {
+        'app': {defaultExtension: 'ts'}
+      }
+    });
+
+    // #3. Import the spec file explicitly
+    System.import('app/hero.spec')
+
+      // #4. wait for all imports to load ...
+      //     then re-execute `window.onload` which
+      //     triggers the Jasmine test-runner start
+      //     or explain what went wrong.
+      .then(window.onload)
+      .catch(console.error.bind(console));
+  </script>
+<script src="testy/hero.ts"></script>
+<script src="testy/hero.spec.ts"></script>
 </body>
 </html>

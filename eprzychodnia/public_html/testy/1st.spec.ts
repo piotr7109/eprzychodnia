@@ -4,7 +4,7 @@ describe('ValidationService'), () => {
     if('pesel', () => {
         let obiekt;
         obiekt.value = 92060603556;
-        let peselOk = peselValidator(obiekt)
+        let peselOk = ValidationService.peselValidator(obiekt)
         expect(peselOk).toEqual(true);
     })
 }
