@@ -19,6 +19,7 @@ export class LekarzFactory extends UzytkownikFactory
         uz.setAktywny(row.aktywny);
         uz.setRev(row._rev);
         uz.setTerminy(row.terminy);
+        uz.godziny = row.godziny;
         
         return uz;
     }

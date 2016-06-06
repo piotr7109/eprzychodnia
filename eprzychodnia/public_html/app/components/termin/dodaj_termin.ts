@@ -3,6 +3,7 @@ import {Router, CanActivate} from 'angular2/router';
 import {FORM_DIRECTIVES, FormBuilder, Validators, ControlGroup, NgIf} from 'angular2/common';
 import {Http} from 'angular2/http';
 
+import {Zmiany} from '/app/services/zmiany/zmiany.ts';
 import {LekarzLista}  from 'app/modules/uzytkownik/lekarz/lekarz_lista.ts';
 import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Termin} from 'app/modules/termin/termin.ts';
@@ -48,10 +49,46 @@ export class DodajTermin implements OnInit {
     onChange(lekarz) {
         this.selected_lekarz = lekarz;
     }
-    DataOnChange(data)
+    dataOnChange(value:Date)
     {
-        console.log(data);
-        this.godziny = new Array(9,8,7);
+        let date = new Date(value);
+        let dzien_tygodnia = date.getDay();
+        if(dzien_tygodnia==0)
+        {
+            dzien_tygodnia = 7;
+        }
+        let zmiana = this.selected_lekarz.godziny[Zmiany.dni[dzien_tygodnia-1].skrot];
+        this.godziny = new Array();
+        if(zmiana == 99)
+        {
+            //this.godziny.push("Lekarz ma wolne");
+        }
+        else
+        {
+            for(let i = Zmiany.zmiany[zmiana-1].start; i<= Zmiany.zmiany[zmiana-1].koniec; i++)
+            {
+                let czy_wolne = this.sprawdzCzyWolne(date, i);
+                
+                if(czy_wolne)
+                {
+                    this.godziny.push(i);
+                }
+                
+            }
+        }
+    }
+    sprawdzCzyWolne(_data, _godzina)
+    {
+        for(let termin of this.selected_lekarz.terminy )
+        {
+            let data = new Date(termin.data);
+            if(data.getTime() == _data.getTime() && termin.godzina == _godzina)
+            {
+                return false;
+            }
+
+        }
+        return true;
     }
     onSubmit(values: any) 
     {
