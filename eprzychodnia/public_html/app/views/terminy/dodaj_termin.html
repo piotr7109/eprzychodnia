@@ -6,6 +6,10 @@
             <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
             Termin został ustalony!
     </div>
+    <div *ngIf="error_termin_zajety" class="alert alert-danger" role="alert" id="form-alert" >
+            <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
+            Termin zajęty, wybierz inny!
+    </div>
     
     <div class="form-group">
         <select (change)="onChange($event.target.value)" class="form-control">
@@ -13,10 +17,13 @@
         </select>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Data wizyty" ngControl="data" required="">
+        <input id="datepicker" type="text" class="form-control" (change)="DataOnChange($event.target.value)" placeholder="Data wizyty" ngControl="data" required="">
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Godzina wizyty" ngControl="godzina" required="">
+        <select  class="form-control" ngControl="godzina" >
+            <option *ngFor="#godzina of godziny" [value]="godzina">{{godzina}}:00</option>
+        </select>
+        <!--<input type="text" class="form-control" placeholder="Godzina wizyty" ngControl="godzina" required="">-->
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Umów się na wizytę</button>

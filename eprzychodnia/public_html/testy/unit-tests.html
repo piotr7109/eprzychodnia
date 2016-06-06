@@ -25,7 +25,6 @@
 </head>
 <body>
       <!-- #1. add the system.js library -->
-  <script src="../node_modules/systemjs/dist/system.src.js"></script>
 
   <script>
     // #2. Configure systemjs to use the .js extension
@@ -37,7 +36,7 @@
     });
 
     // #3. Import the spec file explicitly
-    System.import('app/hero.spec')
+    System.import('/testy/hero.spec.ts')
 
       // #4. wait for all imports to load ...
       //     then re-execute `window.onload` which
@@ -46,7 +45,5 @@
       .then(window.onload)
       .catch(console.error.bind(console));
   </script>
-<script src="testy/hero.ts"></script>
-<script src="testy/hero.spec.ts"></script>
 </body>
 </html>

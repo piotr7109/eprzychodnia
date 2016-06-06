@@ -21,6 +21,9 @@ export class DodajTermin implements OnInit {
     form: ControlGroup;
     success:boolean = false;
     selected_lekarz:Lekarz;
+    godziny:Array;
+    error_termin_zajety:boolean = false;
+    
     
     
     constructor(public http: Http, fb: FormBuilder) 
@@ -44,6 +47,11 @@ export class DodajTermin implements OnInit {
     }
     onChange(lekarz) {
         this.selected_lekarz = lekarz;
+    }
+    DataOnChange(data)
+    {
+        console.log(data);
+        this.godziny = new Array(9,8,7);
     }
     onSubmit(values: any) 
     {

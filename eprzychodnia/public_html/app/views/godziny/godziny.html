@@ -18,7 +18,7 @@
         <div *ngFor="#dzien of dni" class="form-group col-sm-12">
             {{dzien.dzien}}
             <select  class="form-control" ngControl="{{dzien.skrot}}" (change)="onChange($event.target.value)">
-                <option *ngFor="#zmiana of zmiany" [value]="zmiana.numer"v>
+                <option *ngFor="#zmiana of zmiany" [value]="zmiana.numer">
                     <x *ngIf="zmiana.numer==99"> 
                     Wolne
                     </x>

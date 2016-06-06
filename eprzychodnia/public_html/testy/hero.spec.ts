@@ -1,4 +1,4 @@
-import { Hero } from './hero';
+import { Hero } from '/testy/hero.ts';
 describe('Hero', () => {
   it('has name', () => {
     let hero: Hero = {id: 1, name: 'Super Cat'};
