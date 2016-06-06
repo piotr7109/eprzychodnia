@@ -141,3 +141,9 @@ body
     background-image: url(../img/1511.jpg);
     background-size: cover;
 }
+.pacjenci_lista_row
+{
+    height: 70px;
+    background-color: #2aabd2;
+    margin-bottom: 10px;
+}
