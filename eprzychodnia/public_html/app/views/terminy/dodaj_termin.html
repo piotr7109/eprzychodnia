@@ -8,7 +8,7 @@
     </div>
     <div *ngIf="error_termin_zajety" class="alert alert-danger" role="alert" id="form-alert" >
             <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
-            Termin zajęty, wybierz inny!
+            W tym dni nie ma wolnych terminów u wybranego lekarza!
     </div>
     
     <div class="form-group">
@@ -26,7 +26,7 @@
         <!--<input type="text" class="form-control" placeholder="Godzina wizyty" ngControl="godzina" required="">-->
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Umów się na wizytę</button>
+        <button type="submit" [disabled]="error_nie_wybrano_godziny"  class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Umów się na wizytę</button>
     </div>
     
 </form>

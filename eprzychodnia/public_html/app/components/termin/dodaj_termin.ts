@@ -24,6 +24,7 @@ export class DodajTermin implements OnInit {
     selected_lekarz:Lekarz;
     godziny:Array;
     error_termin_zajety:boolean = false;
+    error_nie_wybrano_godziny = true;
     
     
     
@@ -38,6 +39,10 @@ export class DodajTermin implements OnInit {
     }
     
     ngOnInit() {
+        this.getLekarze();
+    }
+    getLekarze()
+    {
         LekarzLista.getLekarzeLista(this.http)
         .subscribe(
         (lekarze:Lekarz[]) => {
@@ -51,6 +56,7 @@ export class DodajTermin implements OnInit {
     }
     dataOnChange(value:Date)
     {
+        this.error_nie_wybrano_godziny = true;
         let date = new Date(value);
         let dzien_tygodnia = date.getDay();
         if(dzien_tygodnia==0)
@@ -76,6 +82,14 @@ export class DodajTermin implements OnInit {
                 
             }
         }
+        if(this.godziny.length == 0)
+        {
+            this.error_termin_zajety = true;
+        }
+        else
+        {
+            this.error_termin_zajety = false;
+        }
     }
     sprawdzCzyWolne(_data, _godzina)
     {
@@ -90,6 +104,10 @@ export class DodajTermin implements OnInit {
         }
         return true;
     }
+    godzinaOnChange(value)
+    {
+        this.error_nie_wybrano_godziny = false;
+    }
     onSubmit(values: any) 
     {
         let termin:Termin = new Termin();
@@ -98,8 +116,12 @@ export class DodajTermin implements OnInit {
         termin.setIdPacjenta(localStorage.getItem('token'));
         this.selected_lekarz.addTermin(termin);
         this.selected_lekarz.update(this.http, this.selected_lekarz)
-        .subscribe((success: boolean) => {this.success = success} );;
-
+        .subscribe((success: boolean) => 
+        {
+            this.success = success;
+            this.getLekarze();
+        } );
+        
     }
 
     
