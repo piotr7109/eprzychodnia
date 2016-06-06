@@ -17,10 +17,10 @@
         </select>
     </div>
     <div class="form-group">
-        <input id="datepicker" type="text" class="form-control" (change)="DataOnChange($event.target.value)" placeholder="Data wizyty" ngControl="data" required="">
+        <input id="datepicker" type="date" class="form-control" (change)="dataOnChange($event.target.value)" placeholder="Data wizyty" ngControl="data" required="">
     </div>
     <div class="form-group">
-        <select  class="form-control" ngControl="godzina" >
+        <select  class="form-control" ngControl="godzina" (change)="godzinaOnChange($event.target.value)">
             <option *ngFor="#godzina of godziny" [value]="godzina">{{godzina}}:00</option>
         </select>
         <!--<input type="text" class="form-control" placeholder="Godzina wizyty" ngControl="godzina" required="">-->
