@@ -95,7 +95,15 @@ function init_rejestracja_pacjenta()
 function show_doctors_calendar()
 {
     $("#kalendarz_lekarza").html("");
-    $("#kalendarz_lekarza").monthly();
+    $("#kalendarz_lekarza").monthly({mode: 'event',
+    // The element that will have its value set to the date you picked
+    target: '#mytarget',
+    // Set to true if you want monthly to appear on click
+    xmlUrl: 'assets/scripts/monthly.xml',
+    // Add a style to days in the past
+    stylePast: true,
+    // Disable clicking days in the past
+    disablePast: true});
 }
 function show_alert()
 {

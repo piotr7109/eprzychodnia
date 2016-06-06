@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<monthly>
+
+    <event>
+        <id>1</id>
+        <name>Godziny pracy</name>
+        <startdate>2016-2-28</startdate>
+        <enddate>2017-3-1</enddate> <!-- optional -->
+        <starttime>0:00</starttime> <!-- optional (military time) -->
+        <endtime>8:00</endtime> <!-- optional (military time) -->
+        <color>#ffb128</color> <!-- optional -->
+        
+    </event>
+
+</monthly>
