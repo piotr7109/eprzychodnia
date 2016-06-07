@@ -163,3 +163,14 @@ body
     background-color: #2aabd2;
     opacity: 0.5;
 }
+
+.pacjent_historia_button
+{
+    height: 50px;
+}
+
+.pacjent_historia_header
+{
+    color:white;
+    margin-bottom: 100px;
+}
