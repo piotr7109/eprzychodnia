@@ -177,7 +177,7 @@ body
 
 .wizyta_szczegoly_container
 {
-    position: relative;
+/*    position: relative;*/
     width: 545px;
     height: 772px;
 }
@@ -187,5 +187,5 @@ body
     height: 100%;
     position: absolute;
     top: 263px;
-    left: 150px;
+    left: 487px;
 }
