@@ -174,3 +174,18 @@ body
     color:white;
     margin-bottom: 100px;
 }
+
+.wizyta_szczegoly_container
+{
+    position: relative;
+    width: 545px;
+    height: 772px;
+}
+.wizyta_szczegoly_text
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 263px;
+    left: 150px;
+}
