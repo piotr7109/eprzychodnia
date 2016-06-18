@@ -40,7 +40,6 @@ export class Home implements OnInit {
     ngOnInit() {
         this.getUzytkownik();
         
-        show_doctors_calendar();
         ukrywanie_przyciskow_w_home();
         podmiana_przycisków_w_home();
 
