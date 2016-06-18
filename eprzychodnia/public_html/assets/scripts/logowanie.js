@@ -44,6 +44,7 @@
 //    }
 //
 //});
+$.material.init();
 function podmiana_przycisków_w_home()
 {
     $("#zmień_dane_użytkownika_button").click(function (){
