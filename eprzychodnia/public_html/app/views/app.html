@@ -1,26 +1,14 @@
-<div *ngIf='typ_uzytkownika=="DEFAULT"' id="menu"  class="col-sm-12 ">
+<div  id="menu"  class="col-sm-12 ">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
+                <a class="navbar-brand" [routerLink]="['/Epop']">EPOP</a>
             </div>
-            <ul class="nav navbar-nav">                
+            <ul *ngIf='typ_uzytkownika=="DEFAULT"' class="nav navbar-nav">                
 
                 <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<div *ngIf='typ_uzytkownika=="lekarz"' id="menu"  class="col-sm-12 menu_gorne">
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
-            </div>
-            <ul class="nav navbar-nav">                
+            <ul *ngIf='typ_uzytkownika=="lekarz"' class="nav navbar-nav">                
                 <li><a [routerLink]="['/Home']">Lekarz</a></li>
                 <li><a [routerLink]="['/Kalendarz']">Kalendarz</a></li> 
                 <li><a [routerLink]="['/PacjenciLista']">Lista pacjentów</a></li> 
@@ -28,59 +16,16 @@
                 <li><a [routerLink]="['/DodajWizyte']">Dodaj wizytę</a></li>
                 <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<div *ngIf='typ_uzytkownika=="pacjent"' id="menu" class="col-sm-12">
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
-            </div>
-            <ul class="nav navbar-nav">                
+            <ul *ngIf='typ_uzytkownika=="pacjent"' class="nav navbar-nav">                
                 <li><a [routerLink]="['/Home']">Pacjent</a></li>
                 <li><a [routerLink]="['/Kalendarz']">Kalendarz</a></li>
                 <li><a [routerLink]="['/DodajTermin']">Umów się z lekarzem</a></li>
 
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<div *ngIf='typ_uzytkownika=="pielegniarka"' id="menu" class="col-sm-12">
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
-            </div>
-            <ul class="nav navbar-nav">               
+            <ul *ngIf='typ_uzytkownika=="pielegniarka"' class="nav navbar-nav">               
                 <li><a [routerLink]="['/Home']">Pielęgniarka</a></li>
                 <li><a [routerLink]="['/Kalendarz']">Kalendarz</a></li>
                 <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>                 
-                <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
-                <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<div *ngIf='typ_uzytkownika=="asystent"' id="menu" class="col-sm-12">
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" [routerLink]="['/Home']">EPOP</a>
-            </div>
-            <ul class="nav navbar-nav">                
-                <li><a [routerLink]="['/Home']">Asystent</a></li>
-                <li><a [routerLink]="['/Kalendarz']">Kalendarz</a></li>
-                <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>                
                 <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
                 <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
             </ul>

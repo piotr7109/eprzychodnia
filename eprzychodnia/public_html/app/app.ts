@@ -22,6 +22,7 @@ import {DodajRecepte} from '/app/components/wizyty/dodaj_recepte.ts';
 import {WizytaSzczegoly} from '/app/components/wizyty/wizyta_szczegoly.ts';
 
 import {Home} from 'app/components/home/home.ts';
+import {Epop} from 'app/components/home/epop.ts';
 
 
 @Component({
@@ -49,7 +50,8 @@ import {Home} from 'app/components/home/home.ts';
     { path: '/dodaj_recepte', name: 'DodajRecepte', component: DodajRecepte },
     { path: '/wizyta_szczegoly', name: 'WizytaSzczegoly', component: WizytaSzczegoly },
     { path: '/godziny', name: 'Godziny', component: Godziny },
-    { path: '/kalendarz', name: 'Kalendarz', component: Kalendarz }
+    { path: '/kalendarz', name: 'Kalendarz', component: Kalendarz },
+    { path: '/main', name: 'Epop', component: Epop }
 ])
 
 export class App implements OnChanges  {

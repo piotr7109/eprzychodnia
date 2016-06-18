@@ -1,0 +1,30 @@
+<div class="col-sm-offset-1 col-sm-12 jumbotron ">
+    <div class="col-sm-12">
+        <div class="container-fluid">
+            <ul *ngIf='typ_uzytkownika=="DEFAULT"'>                
+
+                <li>Strona główna</li>
+            </ul>
+            <ul *ngIf='typ_uzytkownika=="lekarz"'>                
+                <li>Lekarz</li>
+                <li>Kalendarz</li> 
+                <li>Lista pacjentów</li> 
+                <li>Moi pacjenci</li> 
+                <li>Dodaj wizytę</li>
+                <li>Godziny pracy</li>
+            </ul>
+            <ul *ngIf='typ_uzytkownika=="pacjent"' >                
+                <li>Pacjent</li>
+                <li>Kalendarz</li>
+                <li>Umów się z lekarzem</li>
+
+            </ul>
+            <ul *ngIf='typ_uzytkownika=="pielegniarka"' >               
+                <li>Pielęgniarka</li>
+                <li>Kalendarz</li>
+                <li>Rejestracja pacjenta</li>                 
+                <li>Strona główna</li>
+                <li>Godziny pracy</li>
+            </ul>
+        </div>
+    </div></div>
