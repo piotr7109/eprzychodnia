@@ -15,7 +15,7 @@ export class Lekarz extends Uzytkownik
     }
     addTermin(termin:Termin)
     {
-        if(this.terminy == null)
+        if(this.terminy == null || !this.terminy.length)
         {
             this.terminy = new Array(); 
         }

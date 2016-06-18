@@ -65,16 +65,11 @@ export class DodajTermin implements OnInit {
         }
         let zmiana = this.selected_lekarz.godziny[Zmiany.dni[dzien_tygodnia-1].skrot];
         this.godziny = new Array();
-        if(zmiana == 99)
-        {
-            //this.godziny.push("Lekarz ma wolne");
-        }
-        else
+        if(zmiana != 99)
         {
             for(let i = Zmiany.zmiany[zmiana-1].start; i<= Zmiany.zmiany[zmiana-1].koniec; i++)
             {
                 let czy_wolne = this.sprawdzCzyWolne(date, i);
-                
                 if(czy_wolne)
                 {
                     this.godziny.push(i);
@@ -93,6 +88,7 @@ export class DodajTermin implements OnInit {
     }
     sprawdzCzyWolne(_data, _godzina)
     {
+        console.log(this.selected_lekarz);
         for(let termin of this.selected_lekarz.terminy )
         {
             let data = new Date(termin.data);

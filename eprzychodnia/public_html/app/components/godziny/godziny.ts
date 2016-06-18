@@ -65,6 +65,7 @@ export class Godziny implements OnInit
         {
             this.disabled = true;
         }
+        this.disabled = false;
     }
     
     czyZaDuzoWolnych(value):boolean

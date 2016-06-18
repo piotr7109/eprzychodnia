@@ -67,12 +67,6 @@ export class Home implements OnInit {
 
 
     }
-    onLogout() {
-        this.auth.logout()
-            .subscribe(
-            () => this.router.navigate(['../Login']),
-        );
-    }
     
     zapiszDane(val:Uzytkownik)
     {
