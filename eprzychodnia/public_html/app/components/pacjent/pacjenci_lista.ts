@@ -3,7 +3,8 @@ import {Router, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from '
 import {Http} from 'angular2/http';
 import {NgIf} from 'angular2/common';
 
-import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
+import {LekarzFactory}  from 'app/modules/uzytkownik/lekarz/lekarz_factory.ts';
+import {Lekarz}  from 'app/modules/uzytkownik/lekarz/lekarz.ts';
 import {Pacjent}  from 'app/modules/uzytkownik/pacjent/pacjent.ts';
 import {PacjentLista}  from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
 
@@ -39,10 +40,10 @@ export class PacjenciLista implements OnInit {
         this.pacjenci[i].update(this.http, this.pacjenci[i])
         .subscribe(() =>{ this.getLekarz(this.pacjenci[i].getIdLekarza(),i)  });
     }
-    getLekarz(id:number, j):Uzytkownik
+    getLekarz(id:number, j):Lekarz
     {
-        return UzytkownikFactory.getUzytkownik(this.http, id)
-        .subscribe((uz:Uzytkownik) => {
+        return LekarzFactory.getUzytkownik(this.http, id)
+        .subscribe((uz:Lekarz) => {
             this.pacjenci[j].setLekarz(uz);
         });
         

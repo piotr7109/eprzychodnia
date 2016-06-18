@@ -1,6 +1,6 @@
 <div id="content-header" class="col-sm-12 text-center text-capitalize">Lista pacjentów</div>
 <div class="container jumbotron img-rounded patient_list_temp">
-              
+
     <div class="col-sm-12 pacjenci_lista_row img-rounded" *ngFor="#pacjent of pacjenci; #i = index">
          <div class="pacjenci_lista_row_background img-rounded"></div>  
         <div class="col-sm-9">    
@@ -10,18 +10,11 @@
             <div class="col-lg-3">PESEL: {{pacjent.pesel}}</div>
             <div class="col-lg-3">Telefon: {{pacjent.telefon}}</div>
             <div class="col-lg-3">E-mail {{pacjent.email}}</div>
-            <div class="col-lg-3">Lekarz: {{getDaneLekarza(i)}} </div>
         </div>
-        
-            <a class="col-sm-offset-1" *ngIf="!czyPrzypisany(i)" (click)="przypiszPacjenta(i)">
+        <a class="col-sm-offset-1" (click)="onSelect(pacjent)">
             <button type="button" class="btn btn-warning">
-                Przypisz pacjenta
+                Historia pacjenta
             </button>
-            </a>
-            <a class="col-sm-offset-1" (click)="onSelect(pacjent)">
-                <button type="button" class="btn btn-warning">
-                    Historia pacjenta
-                </button>
-            </a>                  
+        </a>                  
     </div>       
 </div>

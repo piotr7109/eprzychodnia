@@ -46,7 +46,6 @@ export class UzytkownikFactory {
         })
             .map((res: any) => {
                 let data = res.json();
-                console.log(data.rows.length);
                 if (data.rows.length > 0) {
 
                     return false;

@@ -1,10 +1,11 @@
+import {Lekarz}  from 'app/modules/uzytkownik/lekarz/lekarz.ts';
 import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
 
 export class Pacjent extends Uzytkownik
 {
     
     protected id_lekarza:String = "0";
-    protected lekarz:Uzytkownik = new Uzytkownik();
+    protected lekarz:Lekarz;
     
     
     public getIdLekarza():number
@@ -15,11 +16,11 @@ export class Pacjent extends Uzytkownik
     {
         this.id_lekarza = id_lekarza;
     }
-    public getLekarz():Uzytkownik
+    public getLekarz():Lekarz
     {
         return this.lekarz;
     }
-    public setLekarz(lekarz:Uzytkownik)
+    public setLekarz(lekarz:Lekarz)
     {
         this.lekarz = lekarz;
     }
