@@ -32,7 +32,6 @@ export class PacjenciLekarza extends PacjenciLista implements OnInit {
            
         });
     }
-    
     loadLekarz()
     {
         LekarzFactory.getUzytkownik(this.http, localStorage.getItem('token'))
@@ -42,7 +41,6 @@ export class PacjenciLekarza extends PacjenciLista implements OnInit {
         });
 
     }
-    
     sprawdzTerminy()
     {
         let data = new Date();
@@ -61,9 +59,7 @@ export class PacjenciLekarza extends PacjenciLista implements OnInit {
                 }
             }
             
-        }
-        
-        
+        }  
     }
     porownajDaty(a,b)
     {
@@ -74,6 +70,10 @@ export class PacjenciLekarza extends PacjenciLista implements OnInit {
         }
         
         return false;
+    }
+    dodajWizyte(pacjent)
+    {
+        this.router.navigate(['DodajWizyte',  { id: pacjent._id }]);
     }
     
     

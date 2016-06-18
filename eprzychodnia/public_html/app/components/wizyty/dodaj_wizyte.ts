@@ -1,10 +1,10 @@
 import {Component, OnInit} from 'angular2/core';
-import {Router, CanActivate} from 'angular2/router';
+import {Router, CanActivate, RouteParams} from 'angular2/router';
 import {FORM_DIRECTIVES, FormBuilder, Validators, ControlGroup, NgIf} from 'angular2/common';
 import {Http} from 'angular2/http';
 
-import {PacjentLista}  from 'app/modules/uzytkownik/pacjent/pacjent_lista.ts';
 import {UzytkownikFactory}  from 'app/modules/uzytkownik/uzytkownik_factory.ts';
+import {Uzytkownik}  from 'app/modules/uzytkownik/uzytkownik.ts';
 import {Wizyta} from 'app/modules/wizyta/wizyta.ts';
 import {WizytaFactory} from 'app/modules/wizyta/wizyta_factory.ts';
 import { ValidationService, ControlMessages } from '/app/services/form/form_helpers.ts';
@@ -16,17 +16,15 @@ import { ValidationService, ControlMessages } from '/app/services/form/form_help
 })
 
 export class DodajWizyte implements OnInit {
-    
-   
-    pacjenci:Pacjent[];
-    selected_pacjent:Uzytkownik;
+
+
+    pacjent: Uzytkownik new Uzytkownik();
     form: ControlGroup;
-    success:boolean = false;
-    id_pacjenta:number;
-    
-    
-    constructor(public http: Http, fb: FormBuilder) 
-    {
+    success: boolean = false;
+    id_pacjenta: number;
+
+
+    constructor(public http: Http, fb: FormBuilder, public _routeParams: RouteParams) {
         this.form = fb.group({
             data_wizyty: ['', Validators.required],
             choroba_nazwa: ['', Validators.required],
@@ -34,28 +32,23 @@ export class DodajWizyte implements OnInit {
         });
 
     }
-    
+
     ngOnInit() {
-        PacjentLista.getPacjenciLista(this.http)
-        .subscribe(
-        (pacjenci:Pacjent[]) => {
-            this.pacjenci = pacjenci;
-            
-            this.id_pacjenta = pacjenci[0].getId();
-           
-        });
+        UzytkownikFactory.getUzytkownik(this.http, this._routeParams.get('id'))
+            .subscribe(
+            (pacjent: Pacjent) => {
+                console.log(pacjent);
+                this.pacjent = pacjent;
+
+            });
     }
-    onChange(id_pacjenta) {
-        this.id_pacjenta = id_pacjenta;
-    }
-    onSubmit(values: any) 
-    {
-        values.id_pacjenta = this.id_pacjenta;
+    onSubmit(values: any) {
+        values.id_pacjenta = this.pacjent._id;
         values.id_lekarza = localStorage.getItem('token');
-        let wizyta:Wizyta = WizytaFactory.fetchObject( values);
+        let wizyta: Wizyta = WizytaFactory.fetchObject(values);
         wizyta.insert(this.http, wizyta).
-            subscribe((success: boolean) => {this.success = success} );
+            subscribe((success: boolean) => { this.success = success });
     }
 
-    
+
 }
