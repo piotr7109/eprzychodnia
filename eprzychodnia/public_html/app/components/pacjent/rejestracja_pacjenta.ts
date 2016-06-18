@@ -3,6 +3,7 @@ import {FORM_DIRECTIVES, FormBuilder, Validators, ControlGroup, NgIf} from 'angu
 import {Router, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {Pacjent} from 'app/modules/uzytkownik/pacjent/pacjent.ts';
 import {PacjentFactory} from 'app/modules/uzytkownik/pacjent/pacjent_factory.ts';
+import {UzytkownikFactory} from 'app/modules/uzytkownik/uzytkownik_factory.ts';
 import {Http} from 'angular2/http';
 import { ValidationService, ControlMessages } from '/app/services/form/form_helpers.ts';
 
@@ -16,7 +17,7 @@ import { ValidationService, ControlMessages } from '/app/services/form/form_help
 export class RejestracjaPacjenta implements OnInit()
 {
     form: ControlGroup;
-    error: boolean = false;
+    duplikat: boolean = false;
     public success = false;
     constructor(fb: FormBuilder,  public router: Router, public http:Http) {
         this.form = fb.group({
@@ -35,12 +36,24 @@ export class RejestracjaPacjenta implements OnInit()
     }
 
     onSubmit(value: any) {
-
+        
+        this.success = false;
+        this.duplikat = false;
         let uz:Pacjent = PacjentFactory.fetchObject( value);
         uz.kategoria = "uzytkownik";
         uz.typ_uzytkownika = "pacjent";
         uz.id_lekarza = "";
-        uz.insert(this.http,uz);
-        this.success = true;
+        UzytkownikFactory.getUzytkownikByLogin(this.http, uz.login).subscribe((value: boolean) => {
+            if(value)
+            {
+                uz.insert(this.http,uz);
+                this.success = true;
+            }
+            else
+            {
+                this.duplikat = true; 
+            }    
+        }
+        
     }
 }

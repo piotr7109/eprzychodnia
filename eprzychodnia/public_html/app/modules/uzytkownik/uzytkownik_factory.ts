@@ -37,6 +37,23 @@ export class UzytkownikFactory {
                 return null;
             });
     }
+    static getUzytkownikByLogin(http: Http, login:String) 
+    {
+        let db = Database.db;
+        let query = sprintf('_design/users/_view/getUserByLogin?key=["%1$s"]', login);
+        return http.get(db + query, {
+            headers: Database.getHeaders()
+        })
+            .map((res: any) => {
+                let data = res.json();
+                console.log(data.rows.length);
+                if (data.rows.length > 0) {
+
+                    return false;
+                }
+                return true;
+            });
+    }
 
     static getIdUzytkownikaByLoginAndHaslo(http: Http, uzytkownik: Uzytkownik): number {
         let db = Database.db;
