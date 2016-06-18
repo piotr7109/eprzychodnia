@@ -1,5 +1,6 @@
-<div class="col-sm-offset-4  col-sm-4 jumbotron patient_registration img-rounded">
-    <div id="content-header" class="text-capitalize text-center">Zapisz wyniki wizyty</div>
+<div class="col-sm-offset-4  col-sm-4 well bs-component  img-rounded">
+    <div id="content-header" class="text-capitalize text-center">Podsumowanie wizyty</div>
+    <br/><br/>
     <form [ngFormModel]="form" (submit)="$event.preventDefault(); onSubmit(form.value)"
         class=" navbar-left form-singin">
 
@@ -24,7 +25,7 @@
             <control-messages control="choroba_opis"></control-messages>
         </div>
         <div class="form-group ">
-            <button type="submit" [disabled]="!form.valid" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj wizytę</button>
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span>  Dodaj wizytę</button>
         </div>
 
     </form>

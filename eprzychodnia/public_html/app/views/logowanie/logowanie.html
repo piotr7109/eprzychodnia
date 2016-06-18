@@ -20,27 +20,57 @@
 
     
     
-    <div class="col-sm-4">
-        <div class="text-center jumbotron home_page_jumbotron img-rounded" (click)="navigate(['../LogowaniePacjenta'])">
-            <img src="assets/img/People-Patient-Male-icon.png" width="256" height="256" alt="People-Patient-Male-icon"/>
-            <h2>Jestem pacjentem</h2>
-            <h5>Kliknij poniżej jeżeli jesteś pacjentem i chcesz się zarejestrować 
-            , bądź wejść na swój panel</h5>
+    <div style="margin-left: 9.8%;" class="col-sm-offset-1 col-sm-3 card-1">
+        <div class="text-center home_page_jumbotron img-rounded" (click)="navigate(['../LogowaniePacjenta'])">
+            <div style="position:relative; margin-bottom: 36px;">
+                <div style = "width: 305px;    height: 437px; margin:auto">
+                    <img src="assets/img/patient.jpg" height="437" width="305" alt="People-Patient-Male-icon"/>
+                </div>
+                
+                <h2 id="home_patient_h2">Jestem pacjentem</h2>
+                <!--<h5 style="font-weight: bold; color:#393ddc; position: absolute;    bottom: 5px;    left: 5%;    width:305px;">Kliknij poniżej jeżeli jesteś pacjentem i chcesz się zarejestrować--> 
+                <!--, bądź wejść na swój panel</h5>-->
+               
+                
+            </div>
+            
+            
+            
             <!--<a href="#" class="btn btn-default" role="button">Panel pacjenta</a>-->
         </div>
     </div>
     
-    <div class="col-sm-4">    
+    <div style="margin-right: 21px;" class="col-sm-3 card-1">
+        <div class="text-center home_page_jumbotron img-rounded" (click)="navigate(['../LogowanieLekarza'])">
+            <div style="position:relative; margin-bottom: 36px;">
+                <div style = "width: 305px;    height: 437px; margin:auto">
+                    <img src="assets/img/doctor.jpg" height="437" width="305" alt="People-Patient-Male-icon"/>
+                </div>
+                
+                <h2 id="home_doctor_h2">Jestem pracownikiem</h2>
+                <!--<h5 style="font-weight: bold; color:#393ddc; position: absolute;    bottom: 5px;    left: 5%;    width:305px;">Kliknij poniżej jeżeli jesteś pacjentem i chcesz się zarejestrować--> 
+                <!--, bądź wejść na swój panel</h5>-->
+               
+                
+            </div>
+            
+            
+            
+            <!--<a href="#" class="btn btn-default" role="button">Panel pacjenta</a>-->
+        </div>
+    </div>
+    
+<!--    <div class="col-sm-4">    
         <div class="text-center jumbotron home_page_jumbotron img-rounded" (click)="navigate(['../LogowanieLekarza'])">
             <img src="assets/img/doctor.png" width="256" height="256" alt="doctor"/>
             <h3>Jestem pracownikiem przychodni</h3>
             <h5>Kliknij poniżej jeżeli jesteś pracownikiem przychodni i chcesz 
             skorzystać z możliwości jakie oferuje ta platforma</h5>
-            <!--<a href="#" class="btn btn-default" role="button">Panel lekarza</a>-->
+            <a href="#" class="btn btn-default" role="button">Panel lekarza</a>
         </div>
-    </div>
+    </div>-->
     
-        <div class="col-sm-4 home_page_right_panel">
+        <div class="col-sm-3 home_page_right_panel">
             <div class="col-sm-12 well home_page_well system_epop">
                 <img src="assets/img/question_mark.png"  alt="Co to jest?" class="img-rounded home_img center-block"/>
 
