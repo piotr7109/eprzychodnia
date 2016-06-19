@@ -88,15 +88,17 @@ export class DodajTermin implements OnInit {
     }
     sprawdzCzyWolne(_data, _godzina)
     {
-        console.log(this.selected_lekarz);
-        for(let termin of this.selected_lekarz.terminy )
+        if(this.selected_lekarz.terminy)
         {
-            let data = new Date(termin.data);
-            if(data.getTime() == _data.getTime() && termin.godzina == _godzina)
+            for(let termin of this.selected_lekarz.terminy )
             {
-                return false;
-            }
+                let data = new Date(termin.data);
+                if(data.getTime() == _data.getTime() && termin.godzina == _godzina)
+                {
+                    return false;
+                }
 
+            }
         }
         return true;
     }
