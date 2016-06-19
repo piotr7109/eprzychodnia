@@ -16,63 +16,59 @@ import {PacjenciLista} from 'app/components/pacjent/pacjenci_lista.ts';
 
 export class PacjenciLekarza extends PacjenciLista implements OnInit {
     public pacjenci: Pacjent[];
-    public lekarz:Lekarz;
+    public lekarz: Lekarz;
 
-    constructor(public http: Http, public router:Router) {
-        
+    constructor(public http: Http, public router: Router) {
+
     }
     ngOnInit() {
         PacjentLista.getPacjenciLekarzaLista(this.http, localStorage.getItem('token'))
-        .subscribe(
-        (pacjenci:any) => {
-            this.pacjenci = pacjenci;  
-            for(let i=0; i< pacjenci.length; i++ ) 
-               this.getLekarz(pacjenci[i].getIdLekarza(),i);   
-            this.loadLekarz();
-           
-        });
+            .subscribe(
+            (pacjenci: any) => {
+                this.pacjenci = pacjenci;
+                for (let i = 0; i < pacjenci.length; i++)
+                    this.getLekarz(pacjenci[i].getIdLekarza(), i);
+                this.loadLekarz();
+
+            });
     }
-    loadLekarz()
-    {
+    loadLekarz() {
         LekarzFactory.getUzytkownik(this.http, localStorage.getItem('token'))
-        .subscribe((uz:Lekarz) => {
-            this.lekarz = uz;
-            this.sprawdzTerminy();
-        });
+            .subscribe((uz: Lekarz) => {
+                this.lekarz = uz;
+                this.sprawdzTerminy();
+            });
 
     }
-    sprawdzTerminy()
-    {
+    sprawdzTerminy() {
         let data = new Date();
         let l_data;
         let pacjenci = this.pacjenci;
         this.pacjenci = [];
-        for(let item of pacjenci)
-        {
-            for(let termin of this.lekarz.terminy)
-            {
-                l_data = new Date(termin.data);
-                if(this.porownajDaty(l_data, data) && item._id == termin.id_pacjenta)
-                {
-                    this.pacjenci.push(item);
-                    break;
+        if (pacjenci) {
+            for (let item of pacjenci) {
+                if (this.lekarz.terminy) {
+                    for (let termin of this.lekarz.terminy) {
+                        l_data = new Date(termin.data);
+                        if (this.porownajDaty(l_data, data) && item._id == termin.id_pacjenta) {
+                            this.pacjenci.push(item);
+                            break;
+                        }
+                    }
                 }
+
             }
-            
-        }  
+        }
     }
-    porownajDaty(a,b)
-    { 
-        if(a.getDate() == b.getDate() && a.getMonth() == b.getMonth() && a.getFullYear() == b.getFullYear() )
-        {
+    porownajDaty(a, b) {
+        if (a.getDate() == b.getDate() && a.getMonth() == b.getMonth() && a.getFullYear() == b.getFullYear()) {
             return true;
         }
         return false;
     }
-    dodajWizyte(pacjent)
-    {
-        this.router.navigate(['DodajWizyte',  { id: pacjent._id }]);
+    dodajWizyte(pacjent) {
+        this.router.navigate(['DodajWizyte', { id: pacjent._id }]);
     }
-    
-    
+
+
 }
