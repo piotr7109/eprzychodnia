@@ -62,13 +62,11 @@ export class PacjenciLekarza extends PacjenciLista implements OnInit {
         }  
     }
     porownajDaty(a,b)
-    {
-        
+    { 
         if(a.getDate() == b.getDate() && a.getMonth() == b.getMonth() && a.getFullYear() == b.getFullYear() )
         {
             return true;
         }
-        
         return false;
     }
     dodajWizyte(pacjent)

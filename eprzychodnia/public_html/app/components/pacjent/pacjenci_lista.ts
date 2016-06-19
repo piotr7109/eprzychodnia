@@ -41,7 +41,8 @@ export class PacjenciLista implements OnInit {
     getLekarz(id: number, j): Lekarz {
         return LekarzFactory.getUzytkownik(this.http, id)
             .subscribe((uz: Lekarz) => {
-                this.pacjenci[j].setLekarz(uz);
+                if(this.pacjenci[j])
+                    this.pacjenci[j].setLekarz(uz);
             });
 
     }
