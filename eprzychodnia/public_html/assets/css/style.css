@@ -189,3 +189,33 @@ body
     top: 263px;
     left: 487px;
 }
+
+.wizyta_szczegoly_text #pacjent {
+    position: absolute;
+    top: -106px;
+    left: -100px;
+    font-size: 20px;
+}
+.wizyta_szczegoly_text #lekarz {
+    position: absolute;
+    top: 456px;
+    font-size: 20px;
+    left: -144px;
+}
+.wizyta_szczegoly_text #data {
+    position: absolute;
+    top: -57px;
+    left: 110px;
+    font-size:20px;
+}
+.wizyta_szczegoly_text #wizyta_tytul {
+
+    font-size:22px;
+}
+.wizyta_szczegoly_text #wizyta_opis {
+
+    font-size: 20px;
+    position: absolute;
+    top: 90px;
+    left: -221px;
+}
