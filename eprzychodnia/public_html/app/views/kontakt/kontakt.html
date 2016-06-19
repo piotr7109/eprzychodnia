@@ -1,0 +1,12 @@
+<div class="col-sm-offset-4  col-sm-4 jumbotron patient_registration img-rounded">
+    <div id="content-header" class="text-capitalize text-center">Kontakt</div>
+    <div class="col-sm-12  img-rounded" *ngFor="#uzytkownik of uzytkownicy; #i = index">
+    
+        <div class="col-sm-12">    
+            <div class="col-lg-6">{{uzytkownik.imie}} {{uzytkownik.nazwisko}}</div>
+            <div class="col-lg-6">Kontakt: {{uzytkownik.telefon}}, {{uzytkownik.email}}</div>
+        </div>
+        
+                 
+    </div>       
+</div>

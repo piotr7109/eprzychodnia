@@ -7,6 +7,7 @@
             <ul *ngIf='typ_uzytkownika=="DEFAULT"' class="nav navbar-nav">                
 
                 <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
+                <li><a [routerLink]="['/Kontakt']">Kontakt</a></li>
             </ul>
             <ul *ngIf='typ_uzytkownika=="lekarz"' class="nav navbar-nav">                
                 <li><a [routerLink]="['/Home']">Lekarz</a></li>
@@ -14,12 +15,13 @@
                 <li><a [routerLink]="['/PacjenciLista']">Lista pacjentów</a></li> 
                 <li><a [routerLink]="['/PacjenciLekarza']">Pacjenci na dziś</a></li> 
                 <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
+                <li><a [routerLink]="['/Kontakt']">Kontakt</a></li>
             </ul>
             <ul *ngIf='typ_uzytkownika=="pacjent"' class="nav navbar-nav">                
                 <li><a [routerLink]="['/Home']">Pacjent</a></li>
                 <li><a [routerLink]="['/Kalendarz']">Kalendarz</a></li>
                 <li><a [routerLink]="['/DodajTermin']">Umów się z lekarzem</a></li>
-
+                <li><a [routerLink]="['/Kontakt']">Kontakt</a></li>
             </ul>
             <ul *ngIf='typ_uzytkownika=="pielegniarka"' class="nav navbar-nav">               
                 <li><a [routerLink]="['/Home']">Pielęgniarka</a></li>
@@ -27,6 +29,7 @@
                 <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>                 
                 <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
                 <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
+                <li><a [routerLink]="['/Kontakt']">Kontakt</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
