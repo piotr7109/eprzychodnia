@@ -32,6 +32,10 @@
                 <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
                 <li><a [routerLink]="['/Kontakt']">Kontakt</a></li>
             </ul>
+            <ul *ngIf='typ_uzytkownika=="admin"' class="nav navbar-nav">               
+                <li><a [routerLink]="['/Home']">ADMIN</a></li>
+                <li><a [routerLink]="['/DodajUzytkownika']">Dodaj użytkownika</a></li>
+            </ul>
             <ul *ngIf='typ_uzytkownika!="DEFAULT"' class="nav navbar-nav navbar-right">
                 <li><a href='#' (click)='onLogout()' ><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
             </ul>

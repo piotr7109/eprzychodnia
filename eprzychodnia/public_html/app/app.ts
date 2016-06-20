@@ -28,6 +28,9 @@ import {Epop} from 'app/components/home/epop.ts';
 
 import {Kontakt} from 'app/components/kontakt/kontakt.ts';
 
+
+import {DodajUzytkownika} from 'app/components/admin/dodaj_uzytkownika.ts';
+
 @Component({
     selector: 'app',
     directives: [ROUTER_DIRECTIVES, Home],
@@ -56,7 +59,8 @@ import {Kontakt} from 'app/components/kontakt/kontakt.ts';
     { path: '/kalendarz', name: 'Kalendarz', component: Kalendarz },
     { path: '/main', name: 'Epop', component: Epop },
     { path: '/kontakt', name: 'Kontakt', component: Kontakt },
-    { path: '/dodaj_zamowienie', name: 'DodajZamowienie', component: DodajZamowienie }
+    { path: '/dodaj_zamowienie', name: 'DodajZamowienie', component: DodajZamowienie },
+    { path: '/dodaj_uzytkownika', name: 'DodajUzytkownika', component: DodajUzytkownika }
     
 ])
 
