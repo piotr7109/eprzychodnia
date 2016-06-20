@@ -44,7 +44,7 @@
 //    }
 //
 //});
-$.material.init();
+//$.material.init();
 function podmiana_przycisków_w_home()
 {
     $("#zmień_dane_użytkownika_button").click(function (){
@@ -100,6 +100,7 @@ function show_doctors_calendar()
     // The element that will have its value set to the date you picked
     target: '#mytarget',
     // Set to true if you want monthly to appear on click
+    maxWidth:'587px',
     xmlUrl: 'assets/scripts/monthly.xml',
     // Add a style to days in the past
     stylePast: true,
