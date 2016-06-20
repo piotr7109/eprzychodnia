@@ -21,6 +21,8 @@ import {DodajSkierowanie} from 'app/components/wizyty/dodaj_skierowanie.ts';
 import {DodajRecepte} from '/app/components/wizyty/dodaj_recepte.ts';
 import {WizytaSzczegoly} from '/app/components/wizyty/wizyta_szczegoly.ts';
 
+import {DodajZamowienie} from '/app/components/zamowienia/dodaj_zamowienie.ts';
+
 import {Home} from 'app/components/home/home.ts';
 import {Epop} from 'app/components/home/epop.ts';
 
@@ -53,7 +55,8 @@ import {Kontakt} from 'app/components/kontakt/kontakt.ts';
     { path: '/godziny', name: 'Godziny', component: Godziny },
     { path: '/kalendarz', name: 'Kalendarz', component: Kalendarz },
     { path: '/main', name: 'Epop', component: Epop },
-    { path: '/kontakt', name: 'Kontakt', component: Kontakt }
+    { path: '/kontakt', name: 'Kontakt', component: Kontakt },
+    { path: '/dodaj_zamowienie', name: 'DodajZamowienie', component: DodajZamowienie }
     
 ])
 

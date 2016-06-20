@@ -1,0 +1,29 @@
+<div class="col-sm-offset-3  col-sm-6 jumbotron patient_registration img-rounded">
+    <div id="content-header" class="text-capitalize text-center">Dodaj zamowienie</div>
+
+    <form [ngFormModel]="form" (submit)="$event.preventDefault()"
+        class=" navbar-left form-singin">
+
+        <div *ngIf="success" class="alert alert-success" role="alert" id="form-success" >
+            <span aria-hidden="false" class="glyphicon glyphicon-alert"></span> 
+            Dane zamówienia zapisane!
+        </div>
+        <div *ngFor="#item of sprzet #i = index" class="col-sm-12">
+            <div *ngIf="item==1" class="form-group col-sm-6" >
+                <input  type="text" class="form-control" placeholder="Nazwa" ngControl="nazwa_{{i}}" >
+                <control-messages *ngIf="item==1" control="nazwa_{{i}}"></control-messages>
+            </div>
+            <div *ngIf="item==1" class="form-group col-sm-6" >
+                <input  type="text" class="form-control" placeholder="Ilość" ngControl="ilosc_{{i}}" >
+                <control-messages *ngIf="item==1" control="ilosc_{{i}}"></control-messages>
+            </div>
+        </div>
+        <div class="form-group ">
+            <button type="submit" (click)="dodajSprzet()" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj nowy</button>
+        </div>
+        <div class="form-group ">
+            <button type="submit" (click)="dodajZamowienie(form.value)" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Złóż zamówienie</button>
+        </div>
+
+    </form>
+</div>
