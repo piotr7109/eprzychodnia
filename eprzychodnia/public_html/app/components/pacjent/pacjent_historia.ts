@@ -24,6 +24,10 @@ export class PacjentHistoria implements OnInit
     ngOnInit()
     {
         let id:String = this._routeParams.get('id');
+        if(id == "" || id == "null" || id == null)
+        {
+            id = localStorage.getItem("token");
+        }
         UzytkownikFactory.getUzytkownik(this.http, id)
             .subscribe((pacjent:Uzytkownik) =>
             { 
