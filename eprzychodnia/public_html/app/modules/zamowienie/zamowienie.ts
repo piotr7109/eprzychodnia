@@ -7,18 +7,18 @@ export class Zamowienie extends BaseModule
 {
     public sprzet:Sprzet[];
     
-    constuctor(private http: Http)
+    constructor(private http: Http)
     {
-        sprzet = new Array();
+        this.sprzet = new Array();
+        this.kategoria = "zamowienie";
     }
-    public insert(http:Http, value:any) 
+    public insert(http:Http) 
     {
-        value.kategoria = "zamowienie";
         let db = Database.db;
         let headers = Database.getHeaders();
         headers.append('Accept', 'application/json');
         headers.append('Content-Type', 'application/json');
-        return http.post(db, JSON.stringify(value), {
+        return http.post(db, JSON.stringify(this), {
             headers: headers
         })
         .map(res => res.json()).subscribe();

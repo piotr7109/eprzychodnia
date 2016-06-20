@@ -19,7 +19,7 @@ export class DodajZamowienie implements OnInit {
     public index=0;
     form: ControlGroup;
 
-    constructor(http: Http, public fb: FormBuilder) {
+    constructor(public http: Http, public fb: FormBuilder) {
 
         this.initForm();
     }
@@ -61,16 +61,15 @@ export class DodajZamowienie implements OnInit {
     }
 
     dodajZamowienie(value: any) {
-        let zamowienie = [];
-        zamowienie.sprzet = [];
+        let zamowienie = new Zamowienie();
         for(let i=0; i< this.index+1; i++)
         {
             let sprzet:Sprzet = new Sprzet();
             sprzet.nazwa = value["nazwa_"+i];
             sprzet.ilosc = value["ilosc_"+i];
-            zamowienie.sprzet.push(sprzet);
+            zamowienie.dodajSprzet(sprzet);
         }
-        console.log(zamowienie);
+        zamowienie.insert(this.http);
     }
 
 
