@@ -25,9 +25,13 @@ export class DodajZamowienie implements OnInit {
     }
 
     dodajSprzet() {
+        this.index++;
+        this.sprzet[this.index] = 1;
         
-        this.sprzet[++this.index] = 1;
-        
+    }
+    usunSprzet() {
+        this.sprzet[this.index] = 0;
+        this.index--;
     }
     initForm()
     {

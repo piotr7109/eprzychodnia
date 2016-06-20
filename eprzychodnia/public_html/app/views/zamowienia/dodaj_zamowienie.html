@@ -18,11 +18,14 @@
                 <control-messages *ngIf="item==1" control="ilosc_{{i}}"></control-messages>
             </div>
         </div>
-        <div class="form-group ">
+        <div *ngIf="index<9" class="form-group col-sm-6">
             <button type="submit" (click)="dodajSprzet()" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Dodaj nowy</button>
         </div>
+        <div *ngIf="index>0" class="form-group col-sm-6">
+            <button type="submit" (click)="usunSprzet()" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Usuń ostatni</button>
+        </div>
         <div class="form-group ">
-            <button type="submit" (click)="dodajZamowienie(form.value)" class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Złóż zamówienie</button>
+            <button type="submit" (click)="dodajZamowienie(form.value)"  class="btn btn-primary col-sm-11 nopadding"><span class="glyphicon glyphicon-plus"></span> Złóż zamówienie</button>
         </div>
 
     </form>

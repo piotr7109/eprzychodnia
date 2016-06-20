@@ -80,6 +80,7 @@ export class App implements OnChanges  {
 
     onLogout() {
         this.auth.logout();
+        localStorage.setItem('typ_uzytkownika', "DEFAULT");
         this.router.navigate(['../Logowanie']);
         
     }
