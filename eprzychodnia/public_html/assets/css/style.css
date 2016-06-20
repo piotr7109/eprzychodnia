@@ -10,9 +10,13 @@ body
     background-attachment: fixed;
     background-size: cover;
 }
-.form-control
+.form-control  
 {
     color: white; 
+}
+.form-control option
+{
+    color: black; 
 }
 .home_font
 {
@@ -245,19 +249,19 @@ body
 .wizyta_szczegoly_text #pacjent {
     position: absolute;
     top: -106px;
-    left: -100px;
+    left: -30px;
     font-size: 20px;
 }
 .wizyta_szczegoly_text #lekarz {
     position: absolute;
     top: 456px;
     font-size: 20px;
-    left: -144px;
+    left: -74px;
 }
 .wizyta_szczegoly_text #data {
     position: absolute;
     top: -57px;
-    left: 110px;
+    left: 180px;
     font-size:20px;
 }
 .wizyta_szczegoly_text #wizyta_tytul {
@@ -269,5 +273,5 @@ body
     font-size: 20px;
     position: absolute;
     top: 90px;
-    left: -221px;
+    left: -151px;
 }
