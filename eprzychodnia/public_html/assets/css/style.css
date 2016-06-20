@@ -10,6 +10,10 @@ background-position: center center;
 background-attachment: fixed;
 background-size: cover;
 }
+.form-control
+{
+    color: white;
+}
 .home_header_div
 {
     border-left-style: solid;
