@@ -1,0 +1,25 @@
+<div id="content-header" class="col-sm-12 text-center text-capitalize">Lista zamówień</div>
+<div class="container jumbotron img-rounded patient_list_temp">
+    <div class="row">          
+        <div  *ngFor="#zam of zamowienia; #i = index">
+             <div class="col-sm-12  img-rounded" *ngIf='zam.aktywny=="T"'>
+                <div class="pacjenci_lista_row_background img-rounded"></div>  
+                <div class="col-sm-9">    
+                    <h4 class="col-sm-9">Zamówienie nr {{zam._id.substring(20,50)}} </h4>
+                    <div class="col-sm-4" *ngFor="#spr of zam.sprzet">
+                         <div class="sm-6">Nazwa: {{spr.nazwa}}</div>
+                        <div class="sm-3">Ilość:{{spr.ilosc}}</div>
+
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <a class="col-sm-12" (click)="zrealizujZamowienie(i)">
+                        <button type="button" class="btn btn-warning">
+                            Zrealizuj zamówienie
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

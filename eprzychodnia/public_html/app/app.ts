@@ -22,6 +22,7 @@ import {DodajRecepte} from '/app/components/wizyty/dodaj_recepte.ts';
 import {WizytaSzczegoly} from '/app/components/wizyty/wizyta_szczegoly.ts';
 
 import {DodajZamowienie} from '/app/components/zamowienia/dodaj_zamowienie.ts';
+import {ListaZamowien} from '/app/components/zamowienia/lista_zamowien.ts';
 
 import {Home} from 'app/components/home/home.ts';
 import {Epop} from 'app/components/home/epop.ts';
@@ -60,6 +61,8 @@ import {DodajUzytkownika} from 'app/components/admin/dodaj_uzytkownika.ts';
     { path: '/main', name: 'Epop', component: Epop },
     { path: '/kontakt', name: 'Kontakt', component: Kontakt },
     { path: '/dodaj_zamowienie', name: 'DodajZamowienie', component: DodajZamowienie },
+    { path: '/lista_zamowien', name: 'ListaZamowien', component: ListaZamowien }
+    
     { path: '/dodaj_uzytkownika', name: 'DodajUzytkownika', component: DodajUzytkownika }
     
 ])

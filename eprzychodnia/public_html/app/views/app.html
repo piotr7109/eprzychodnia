@@ -16,6 +16,7 @@
                 <li><a [routerLink]="['/PacjenciLekarza']">Pacjenci na dziś</a></li> 
                 <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
                 <li><a [routerLink]="['/DodajZamowienie']">Dodaj zamówienie</a></li>
+                <li><a [routerLink]="['/ListaZamowien']">Lista zamówień</a></li>
                 <li><a [routerLink]="['/Kontakt']">Kontakt</a></li>
             </ul>
             <ul *ngIf='typ_uzytkownika=="pacjent"' class="nav navbar-nav">                
@@ -31,6 +32,16 @@
                 <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>                 
                 <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
                 <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
+                <li><a [routerLink]="['/ListaZamowien']">Lista zamówień</a></li>
+                <li><a [routerLink]="['/Kontakt']">Kontakt</a></li>
+            </ul>
+            <ul *ngIf='typ_uzytkownika=="asystent"' class="nav navbar-nav">               
+                <li><a [routerLink]="['/Home']">Asystent</a></li>
+                <li><a [routerLink]="['/Kalendarz']">Kalendarz</a></li>
+                <li><a [routerLink]="['/RejestracjaPacjenta']">Rejestracja pacjenta</a></li>                 
+                <li><a [routerLink]="['/Logowanie']">Strona główna</a></li>
+                <li><a [routerLink]="['/Godziny']">Godziny pracy</a></li>
+                <li><a [routerLink]="['/ListaZamowien']">Lista zamówień</a></li>
                 <li><a [routerLink]="['/Kontakt']">Kontakt</a></li>
             </ul>
             <ul *ngIf='typ_uzytkownika=="admin"' class="nav navbar-nav">               

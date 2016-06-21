@@ -18,6 +18,7 @@ export class DodajZamowienie implements OnInit {
     public sprzet: Array = new Array(1,0,0,0,0,0,0,0,0,0);
     public index=0;
     form: ControlGroup;
+    public success:boolean = false;
 
     constructor(public http: Http, public fb: FormBuilder) {
 
@@ -73,7 +74,10 @@ export class DodajZamowienie implements OnInit {
             sprzet.ilosc = value["ilosc_"+i];
             zamowienie.dodajSprzet(sprzet);
         }
-        zamowienie.insert(this.http);
+        zamowienie.insert(this.http)
+        .subscribe(()=>{
+            this.success = true;
+        });
     }
 
 
