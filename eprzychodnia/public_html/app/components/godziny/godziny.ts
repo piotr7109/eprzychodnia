@@ -12,19 +12,17 @@ import {Uzytkownik} from '/app/modules/uzytkownik/uzytkownik.ts';
     templateUrl: "/app/views/godziny/godziny.html"
 })
 
-export class Godziny implements OnInit
-{
-    public zmiany:Array;
-    private success:boolean = false;
+export class Godziny implements OnInit {
+    public zmiany: Array;
+    private success: boolean = false;
     public form: ControlGroup;
-    public dni:Array;
+    public dni: Array;
     public disabled = false;
-    public uzytkownik:Uzytkownik = new Uzytkownik();
+    public uzytkownik: Uzytkownik = new Uzytkownik();
     public error_za_duzo_wolnych = false;
     public error_nie_wszystkie_wypelnione = false;
-    
-    constructor(public fb: FormBuilder, public router: Router, public http: Http) 
-    {
+
+    constructor(public fb: FormBuilder, public router: Router, public http: Http) {
         this.zmiany = Zmiany.zmiany;
         this.dni = Zmiany.dni;
         this.form = fb.group({
@@ -36,63 +34,51 @@ export class Godziny implements OnInit
             sb: ['', null],
             ndz: ['', null],
         });
-        
-        
+
+
     }
-    
-    ngOnInit()
-    {
+
+    ngOnInit() {
         this.getUzytkownik();
         this.zablokujGrafik();
     }
-    getUzytkownik()
-    {
+    getUzytkownik() {
         let id_uzytkownika = localStorage.getItem('token');
         UzytkownikFactory.getUzytkownik(this.http, id_uzytkownika).
             subscribe(
-            (uzytkownik:Uzytkownik) =>{
+            (uzytkownik: Uzytkownik) => {
                 this.uzytkownik = uzytkownik;
             });
     }
-    zablokujGrafik()
-    {
-//        let data = new Date();
-//        if(data.getDay() == 0 || data.getDay() == 6)
-//        {
-//            this.disabled = false;
-//        }
-//        else
-//        {
-//            this.disabled = true;
-//        }
+    zablokujGrafik() {
+        let data = new Date();
+        if (data.getDay() == 0 || data.getDay() == 6) {
+            this.disabled = false;
+        }
+        else {
+            this.disabled = true;
+        }
     }
-    
-    czyZaDuzoWolnych(value):boolean
-    {
-        let ile_wolnych =0;
-        for (let dzien of this.dni) 
-        {
+
+    czyZaDuzoWolnych(value): boolean {
+        let ile_wolnych = 0;
+        for (let dzien of this.dni) {
             let val = value[dzien.skrot]);
-            if(val == 99 || val.value == 99)
-            {
+            if (val == 99 || val.value == 99) {
                 ile_wolnych++;
             }
         }
-        if(ile_wolnych > 2)
-        {
+        if (ile_wolnych > 2) {
             this.error_za_duzo_wolnych = true;
             return true;
         }
         this.error_za_duzo_wolnych = false;
         return false;
     }
-    czyWszystkieWypelnione(value):boolean
-    {
-        for (let dzien of this.dni) 
-        {
+    czyWszystkieWypelnione(value): boolean {
+        for (let dzien of this.dni) {
             let val = value[dzien.skrot];
-            if(val == "") 
-            {
+            if (val == "") {
                 this.error_nie_wszystkie_wypelnione = true;
                 return false;
             }
@@ -100,26 +86,23 @@ export class Godziny implements OnInit
         this.error_nie_wszystkie_wypelnione = false;
         return true;
     }
-    
-    onChange(event)
-    {
-        this.success = false; 
+
+    onChange(event) {
+        this.success = false;
         this.czyZaDuzoWolnych(this.form.controls);
     }
-    
-    onSubmit(value: any)
-    {
+
+    onSubmit(value: any) {
         this.success = false;
-        if(this.czyWszystkieWypelnione(value) &&!this.czyZaDuzoWolnych(value) )
-        {
-            
+        if (this.czyWszystkieWypelnione(value) && !this.czyZaDuzoWolnych(value)) {
+
             this.uzytkownik.godziny = value;
             this.uzytkownik.update(this.http, this.uzytkownik)
                 .subscribe(() => {
-                    this.success = true; 
+                    this.success = true;
                     this.getUzytkownik();
-                });       
+                });
         }
     }
-    
+
 }
