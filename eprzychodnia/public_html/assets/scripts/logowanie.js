@@ -93,7 +93,7 @@ function init_rejestracja_pacjenta()
         }
     });
 }
-function show_doctors_calendar()
+function show_doctors_calendar(var uzytkownik)
 {
 //    $("#kalendarz_lekarza").html("");
 //    $("#kalendarz_lekarza").monthly({mode: 'event',
@@ -106,6 +106,7 @@ function show_doctors_calendar()
 //    stylePast: true,
 //    // Disable clicking days in the past
 //    disablePast: true});
+    alert(uzytkownik);
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
