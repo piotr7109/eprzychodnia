@@ -1,25 +1,27 @@
 <div id="content-header" class="col-sm-12 text-center text-capitalize">Lista pacjentów</div>
 <div class="container jumbotron img-rounded patient_list_temp">
-
-    <div class="col-sm-12 pacjenci_lista_row img-rounded" *ngFor="#pacjent of pacjenci; #i = index">
-         <div class="pacjenci_lista_row_background img-rounded"></div>  
-        <div class="col-sm-9">    
-            <h4 class="col-lg-3">Login: {{pacjent.login}}</h4>
-            <div class="col-lg-3">Imię: {{pacjent.imie}}</div>
-            <div class="col-lg-3">Nazwisko: {{pacjent.nazwisko}}</div>
-            <div class="col-lg-3">PESEL: {{pacjent.pesel}}</div>
-            <div class="col-lg-3">Telefon: {{pacjent.telefon}}</div>
-            <div class="col-lg-3">E-mail {{pacjent.email}}</div>
-        </div>
-        <a class="col-sm-offset-1" (click)="onSelect(pacjent)">
-            <button type="button" class="btn btn-warning">
-                Historia pacjenta
-            </button>
-        </a>   
-        <a class="col-sm-offset-1" (click)="dodajWizyte(pacjent)">
-            <button type="button" class="btn btn-warning">
-                Dodaj wizytę
-            </button>
-        </a>
-    </div>       
+    <div class="row"> 
+        <div class="col-sm-12 pacjenci_lista_row img-rounded" *ngFor="#pacjent of pacjenci; #i = index">
+             <div class="pacjenci_lista_row_background img-rounded"></div>  
+            <div class="col-sm-9">    
+                <h4 class="col-lg-3">Login: {{pacjent.login}}</h4>
+                <div class="col-lg-3">Imię: {{pacjent.imie}}</div>
+                <div class="col-lg-3">Nazwisko: {{pacjent.nazwisko}}</div>
+                <div class="col-lg-3">PESEL: {{pacjent.pesel}}</div>
+                <div class="col-lg-3">Telefon: {{pacjent.telefon}}</div>
+                <div class="col-lg-3">E-mail {{pacjent.email}}</div>
+            </div>
+            <div class="col-sm-3">
+                <a class="col-sm-12" (click)="onSelect(pacjent)">
+                    <button type="button" class="btn btn-warning">
+                        Historia pacjenta
+                    </button>
+                </a>   
+                <a class="col-sm-12" (click)="dodajWizyte(pacjent)">
+                    <button type="button" class="btn btn-warning">
+                        Dodaj wizytę
+                    </button>
+                </a>
+            </div>
+        </div>       
 </div>
