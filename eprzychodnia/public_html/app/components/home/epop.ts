@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 
 @Component({
     selector: 'epop',
-    templateUrl: "app/views/home/epop.html"
+    templateUrl: "app/views/logowanie/logowanie.html"
 })
 
 export class Epop implements OnInit
