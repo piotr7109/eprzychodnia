@@ -15,6 +15,10 @@ import {Uzytkownik} from '/app/modules/uzytkownik/uzytkownik.ts';
 export class Kalendarz implements OnInit
 {
     public uzytkownik:Uzytkownik = new Uzytkownik();
+    constructor(public fb: FormBuilder, public router: Router, public http: Http) 
+    {
+    }
+    
     
     ngOnInit() {
         this.getUzytkownik();
