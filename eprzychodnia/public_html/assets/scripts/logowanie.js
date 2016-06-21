@@ -93,7 +93,7 @@ function init_rejestracja_pacjenta()
         }
     });
 }
-function show_doctors_calendar(var uzytkownik)
+function show_doctors_calendar(uzytkownik)
 {
 //    $("#kalendarz_lekarza").html("");
 //    $("#kalendarz_lekarza").monthly({mode: 'event',
@@ -106,12 +106,63 @@ function show_doctors_calendar(var uzytkownik)
 //    stylePast: true,
 //    // Disable clicking days in the past
 //    disablePast: true});
-    alert(uzytkownik);
+    console.log(uzytkownik.godziny);
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
 
+    var tytul=[];
+    var zmiana=[];
+    var godzina_s=[];
+    var minuta_s=[];
+    var godzina_k=[];
+    var minuta_k=[];
+    
+    zmiana.push(uzytkownik.godziny.pn);
+    zmiana.push(uzytkownik.godziny.wt);
+    zmiana.push(uzytkownik.godziny.sr);
+    zmiana.push(uzytkownik.godziny.czw);
+    zmiana.push(uzytkownik.godziny.pt);
+    zmiana.push(uzytkownik.godziny.sb);
+    zmiana.push(uzytkownik.godziny.ndz);
+    
+    for(var i =0;i<zmiana.length;i++)
+    {
+        if(zmiana[i]==1)
+        {
+            tytul.push("Praca");
+            godzina_s.push(0);
+            minuta_s.push(0);
+            godzina_k.push(8);
+            minuta_k.push(0);
+        }
+        else if(zmiana[i]==2)
+        {
+            tytul.push("Praca");
+            godzina_s.push(8);
+            minuta_s.push(0);
+            godzina_k.push(16);
+            minuta_k.push(0);
+        }
+        else if(zmiana[i]==3)
+        {
+            tytul.push("Praca");
+            godzina_s.push(16);
+            minuta_s.push(0);
+            godzina_k.push(24);
+            minuta_k.push(0);
+        }
+        else if(zmiana[i]==99)
+        {
+            tytul.push("Wolne");
+            godzina_s.push(0);
+            minuta_s.push(0);
+            godzina_k.push(23);
+            minuta_k.push(0);
+        }
+    }
+    
     /*
             Initialize fullCalendar and store into variable.
             Why in variable?
@@ -182,51 +233,37 @@ function show_doctors_calendar(var uzytkownik)
                     events is the main option for calendar.
                     for demo we have added predefined events in json object.
             */
-            events: [
+            events: [                    
                     {
-                            title: 'All Day Event',
-                            start: new Date(y, m, 1)
+                            title: tytul[0],
+                            start: new Date(y, m, 20,godzina_s[0],minuta_s[0]),
+                            end: new Date(y, m, 20,godzina_k[0],minuta_k[0])
                     },
                     {
-                            title: 'Long Event',
-                            start: new Date(y, m, d-5),
-                            end: new Date(y, m, d-2)
+                            title: tytul[1],
+                            start: new Date(y, m, 21,godzina_s[1],minuta_s[1]),
+                            end: new Date(y, m, 21,godzina_k[1],minuta_k[1])
+                    },{
+                            title: tytul[2],
+                            start: new Date(y, m, 22,godzina_s[2],minuta_s[2]),
+                            end: new Date(y, m, 22,godzina_k[2],minuta_k[2])
+                    },{
+                            title: tytul[3],
+                            start: new Date(y, m, 23,godzina_s[3],minuta_s[3]),
+                            end: new Date(y, m, 23,godzina_k[3],minuta_k[3])
+                    },{
+                            title: tytul[4],
+                            start: new Date(y, m, 24,godzina_s[4],minuta_s[4]),
+                            end: new Date(y, m, 24,godzina_k[4],minuta_k[4])
+                    },{
+                            title: tytul[5],
+                            start: new Date(y, m, 25,godzina_s[5],minuta_s[5]),
+                            end: new Date(y, m, 25,godzina_k[5],minuta_k[5])
+                    },{
+                            title: tytul[6],
+                            start: new Date(y, m, 26,godzina_s[6],minuta_s[6]),
+                            end: new Date(y, m, 26,godzina_k[6],minuta_k[6])
                     },
-                    {
-                            id: 999,
-                            title: 'Repeating Event',
-                            start: new Date(y, m, d-3, 16, 0),
-                            allDay: false
-                    },
-                    {
-                            id: 999,
-                            title: 'Repeating Event',
-                            start: new Date(y, m, d+4, 16, 0),
-                            allDay: false
-                    },
-                    {
-                            title: 'Meeting',
-                            start: new Date(y, m, d, 10, 30),
-                            allDay: false
-                    },
-                    {
-                            title: 'Lunch',
-                            start: new Date(y, m, d, 12, 0),
-                            end: new Date(y, m, d, 14, 0),
-                            allDay: false
-                    },
-                    {
-                            title: 'Birthday Party',
-                            start: new Date(y, m, d+1, 19, 0),
-                            end: new Date(y, m, d+1, 22, 30),
-                            allDay: false
-                    },
-                    {
-                            title: 'Click for Google',
-                            start: new Date(y, m, 28),
-                            end: new Date(y, m, 29),
-                            url: 'http://google.com/'
-                    }
             ]
     });
 }

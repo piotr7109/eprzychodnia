@@ -56,15 +56,15 @@ export class Godziny implements OnInit
     }
     zablokujGrafik()
     {
-        let data = new Date();
-        if(data.getDay() == 0 || data.getDay() == 6)
-        {
-            this.disabled = false;
-        }
-        else
-        {
-            this.disabled = true;
-        }
+//        let data = new Date();
+//        if(data.getDay() == 0 || data.getDay() == 6)
+//        {
+//            this.disabled = false;
+//        }
+//        else
+//        {
+//            this.disabled = true;
+//        }
     }
     
     czyZaDuzoWolnych(value):boolean

@@ -22,7 +22,7 @@ export class Kalendarz implements OnInit
     
     ngOnInit() {
         this.getUzytkownik();
-        show_doctors_calendar(this.uzytkownik);
+        
 
     }
     getUzytkownik()
@@ -32,6 +32,7 @@ export class Kalendarz implements OnInit
             subscribe(
             (uzytkownik:Uzytkownik) =>{
                 this.uzytkownik = uzytkownik;
+                show_doctors_calendar(this.uzytkownik);
             });
     }
 }
